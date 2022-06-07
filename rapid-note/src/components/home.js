@@ -1,26 +1,19 @@
 import React from 'react';
-import "./home.css";
+import logo from '../img/logo.png';
+import logotext from '../img/logotext.png';
 
-function home() {
-    return (
-    <div className="home">
-        <div id='welcome" class="welcomeForm'>
-          <div className="title-home">
-            <p className="title"> ¡Bienvenid@!</p>
-          </div>
-          <div className="welcome-wrapper">
-            <div className="textWelcome">
-              <p>
-                Somos una comunidad de viajer@s conectados alrededor del mundo,
-                sé parte de esta gran familia
-              </p>
-            </div>
-            <button className="btnUnete">Crea tu cuenta</button>
-            <button className="btnIniciar">Iniciar Sesion</button>
-          </div>
-        </div>
-      </div>
+
+
+function Home() {
+  return (
+    <div className='Container-home'>
+    <div className='Content-home'>
+      <img src={logotext} className='App-logotext' alt='text' />
+      <img src={logo} className='App-logo' alt='logo' />
+      <h1 className='Title-home'>Escribe tus notas, sin temor a perderlas</h1>
+    </div>
+    </div>
   );
 }
 
-export default home;
+export default Home;

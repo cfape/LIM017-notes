@@ -1,11 +1,20 @@
 
-import './App.css';
+import './components/Home.css';
+import Home  from  './components/Home.js'
+import Button from './components/Button.js'
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <p>hola</p>
-    </div>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>} />
+    </Routes>
+    </BrowserRouter>
   );
 }
 
