@@ -1,14 +1,14 @@
-/*import React from 'react';
+import React from 'react';
 
-function Button({ text, btnOnClick}) {
+function Button(props) {
     return (
         <button
             id='btnHome'
-            className={'btnOnClick'}
-            onlclick={listenClick}>
-            { text }
+            className={props.btnOnClick}
+            onClick={props.listenClick}>
+            { props.text }
         </button>
     )
 }
 
-export default Button*/
+export default Button
