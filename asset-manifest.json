@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rapid-note/static/css/main.f8e34917.css",
+    "main.js": "/rapid-note/static/js/main.6ab9a375.js",
+    "static/media/logo.png": "/rapid-note/static/media/logo.6aa85d9aa5f083e62b16.png",
+    "static/media/logotext.png": "/rapid-note/static/media/logotext.15ab2e376612adf025aa.png",
+    "index.html": "/rapid-note/index.html",
+    "main.f8e34917.css.map": "/rapid-note/static/css/main.f8e34917.css.map",
+    "main.6ab9a375.js.map": "/rapid-note/static/js/main.6ab9a375.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f8e34917.css",
+    "static/js/main.6ab9a375.js"
+  ]
+}
