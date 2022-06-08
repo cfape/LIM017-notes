@@ -1,0 +1,11 @@
+
+.BtnOnClick {
+    height: 10vmin;
+    width: 26vmin;
+    font-size: calc(16px + 2vmin);
+    background-color: rgb(255, 156, 181);
+    border-radius: 3vmin;
+    border: 2px solid white;
+    color: white;
+    margin-top: -5vmin;
+}

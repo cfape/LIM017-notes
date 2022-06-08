@@ -1,20 +1,21 @@
-
-import './components/Home.css';
-import Home  from  './components/Home.js'
-import Button from './components/Button.js'
+/* eslint-disable no-unused-vars */
+import React from 'react';
+import './component/Home.css';
+import Home  from  './component/Home.js'
+//import Button from './components/Button.js'
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Route,
   Routes
 } from 'react-router-dom';
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
     <Routes>
       <Route path='/' element={<Home/>} />
     </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
