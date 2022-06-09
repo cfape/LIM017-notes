@@ -3,7 +3,7 @@ import logo from "../img/logo.png";
 import logotext from "../img/logotext.png";
 import Button from "./Button.js";
 
-function Home() {
+function Register() {
   return (
     <div className="Container-home">
       <div className="Content-home">
@@ -22,4 +22,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Register;

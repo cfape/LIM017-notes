@@ -1,17 +1,45 @@
+@media only screen and (min-width:550px) and (max-width: 1089px) {
 .App {
   text-align: center;
 }
 .App-logotext {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 15vmin;
-  width: 85vmin;
+  width: 8vmin;
+  margin: 0px , 0px 0px 0px;
 }
 .App-logo {
-  height: 60vmin;
-  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 16vmin;
+  animation: App-logo-spin infinite 2s linear;
+  margin-top: -5vmin;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logotext {
+.Title-home {
+  text-align: center;
+  font-size: calc(20px + 3vmin);
+  padding: 20px;
+  margin-top: 0vmin;
+}
+.Content-home {
+  background-color: #92daee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(15px + 2vmin);
+  color: #15181a;
+}
+}
+/*For desktop*/
+@media only screen and (min-width: 821px) {
+.App-logotext {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,13 +47,16 @@
     height: 22vmin;
     width: 65vmin;
     margin-top: -5vmin;
-  }
-  .App-logo {
-    animation: App-logo-spin infinite 2s linear;
-    margin-top: -12vmin;
-  }
 }
-
+.App-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: App-logo-spin infinite 2s linear;
+  margin-top: -12vmin;
+  width: 60vmin;
+}
 .Content-home {
   background-color: #92daee;
   min-height: 100vh;
@@ -34,7 +65,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #15181a;
 }
 .Title-home {
   display: flex;
@@ -42,13 +73,14 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: calc(35px + 2vmin);
-  color: white;
+  font-size: calc(20px + 2vmin);
+  color: #15181a;
   padding: 40px;
-  margin-top: -5vmin;
+  margin-top: -10vmin;
 }
 .App-link {
   color: #61dafb;
+}
 }
 
 @keyframes App-logo-spin {
@@ -56,6 +88,6 @@
     transform: translate(0px,10px);
   }
   to {
-    transform: translate(20px,80px);
+    transform: translate(20px,50px);
   }
 }
