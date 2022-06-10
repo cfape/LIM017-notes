@@ -1,85 +1,106 @@
-@media only screen and (min-width:550px) and (max-width: 1089px) {
+@media only screen and (min-width: 768px)   {
 .App {
   text-align: center;
 }
 .App-logotext {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 15vmin;
-  width: 8vmin;
-  margin: 0px , 0px 0px 0px;
+  height: 12vmin;
+  width: 28vmin;
+  margin: 65px;
+  margin-top: -85vmin;
 }
 .App-logo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 16vmin;
+  margin: 45px;
+  width: 30vmin;
   animation: App-logo-spin infinite 2s linear;
-  margin-top: -5vmin;
+  margin-top: -13vmin;
 }
 .Title-home {
-  text-align: center;
-  font-size: calc(20px + 3vmin);
-  padding: 20px;
-  margin-top: 0vmin;
+  margin: 22px;
+  font-size: calc(1px + 2vmin);
+  margin-top: -3vmin;
 }
 .Content-home {
   background-color: #92daee;
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   font-size: calc(15px + 2vmin);
   color: #15181a;
 }
-}
-/*For desktop*/
-@media only screen and (min-width: 821px) {
-.App-logotext {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 22vmin;
-    width: 65vmin;
-    margin-top: -5vmin;
-}
-.App-logo {
+.Container-btn {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: #92daee ;
+  margin-top: -25vmin;
+}
+.btnOnClick {
+  height: 12vmin;
+  width: 35vmin;
+  font-size: calc(16px + 3vmin);
+  background-color: rgb(255, 156, 181);
+  border-radius: 3vmin;
+  border: 2px solid #15181a ;
+  color: #15181a ;
+  margin-top: -5vmin;
+}
+}
+/*For desktop*/
+@media only screen and (min-width: 1024px) {
+.App-logotext {
+    margin: 96px;
+    height: 11vmin;
+    width: 38vmin;
+    margin-top: -75vmin;
+}
+.Title-home {
+  font-size: calc(9px + 2vmin);
+  color: #15181a;
+  padding: 0px 0px 0px 0px;
+  margin: 25px;
+  margin-top: -31vmin;
+}
+.App-logo {
   animation: App-logo-spin infinite 2s linear;
+  margin-left: 0vmin;
   margin-top: -12vmin;
-  width: 60vmin;
+  width: 25vmin;
 }
 .Content-home {
   background-color: #92daee;
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(15px + 2vmin);
   color: #15181a;
-}
-.Title-home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: calc(20px + 2vmin);
-  color: #15181a;
-  padding: 40px;
-  margin-top: -10vmin;
 }
 .App-link {
   color: #61dafb;
+}
+.Container-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: #92daee ;
+  margin-top: -25vmin;
+}
+  .btnOnClick {
+  height: 10vmin;
+  width: 30vmin;
+  font-size: calc(6px + 4vmin);
+  background-color: rgb(255, 156, 181);
+  border-radius: 3vmin;
+  border: 2px solid #15181a ;
+  color: #15181a ;
+  margin-top: 10vmin;
 }
 }
 
@@ -91,3 +112,14 @@
     transform: translate(20px,50px);
   }
 }
+
+/*.Content-home {
+  background-color: #92daee;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #15181a;
+}*/

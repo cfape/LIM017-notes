@@ -1,11 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './component/Home.css';
-import './component/Button.css';
-import Home  from  './component/Home.js';
-import Register from './component/Register.js'
-import Login from './component/Login.js';
-
+import {Home}  from  './component/Home.js';
+import {Register} from './component/Register.js'
+import {Login} from './component/Login.js';
+//import {AuthProvider} from './contex/authContext.js';
 import {
   BrowserRouter as Router,
   Route,
