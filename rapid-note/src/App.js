@@ -1,25 +1,30 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import './component/Home.css';
-import {Home}  from  './component/Home.js';
-import {Register} from './component/Register.js'
-import {Login} from './component/Login.js';
-//import {AuthProvider} from './contex/authContext.js';
+import './components/Home.css';
+import { Home }  from  './components/Home.js';
+import { Login } from './components/Login.js';
+import { Register } from './components/Register.js'
+import { AuthProvider } from './contex/authContext.js';
+
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Route,
   Routes
 } from 'react-router-dom';
 
 function App() {
   return (
-    <Router>
-    <Routes>
-      <Route path='/' element={<Home/>} />
-      <Route path='/register' element={<Register/>} />
-      <Route path='login' element={<Login/>} />
-    </Routes>
-    </Router>
+    <div className='App-route'>
+    <AuthProvider>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+      </Routes>
+    </BrowserRouter>
+    </AuthProvider>
+    </div>
   );
 }
 

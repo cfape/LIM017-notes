@@ -1,0 +1,171 @@
+/*For tablet vertical*/
+@media only screen and (min-device-width: 810px)  {
+.App {
+  text-align: center;
+}
+.App-logotext {
+  width: 70vmin;
+  margin-left: 14vmin;
+  margin-top: -35vmin;
+}
+.App-logo {
+  margin-left: 24vmin;
+  width: 50vmin;
+  animation: App-logo-spin infinite 2s linear;
+  margin-top: -3vmin;
+}
+
+.Title-home {
+  font-family: 'Sanchez';
+  font-size: calc(24px + 2vmin);
+  margin-top: 4vmin;
+  margin-left: 25px;
+}
+.Content-home {
+  background-color: #92daee;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-top: 0vmin;
+  font-size: calc(12px + 2vmin);
+  color: #15181a;
+}
+.Content-btn {
+  background-color: #92daee ;
+  margin-top: -42vmin;
+  margin-left: 32vmin;
+}
+.Btn-home {
+  height: 11vmin;
+  width: 37vmin;
+  font-family: 'Sanchez';
+  font-size: calc(20px + 2vmin);
+  background-color: #d6e8ed;
+  border-radius: 2vmin;
+  border: 3px solid rgb(213 44 128);
+  color: rgb(213 44 128);
+}
+.Content-link {
+  margin-top: 1vmin;
+  background-color: #92daee;
+  margin-right: 0vmin;
+}
+.App-link{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: calc(20px + 2vmin);
+  color: rgb(213 44 128);
+  padding: 2vmin 2vmin 2vmin 2vmin;
+}
+}
+/*For tablet horizontal*/
+@media only screen and (min-device-width: 1180px)  {
+.App-logotext {
+  margin-left: 25vmin;
+  height: 23vmin;
+  width: 90vmin;
+  margin-top: -40vmin;
+}
+.Title-home {
+  font-size: calc(28px + 2vmin);
+  color: #15181a;
+  padding: 0px 0px 0px 0px;
+  margin-left: 25vmin;
+  margin-top: -60vmin;
+}
+.App-logo {
+  animation: App-logo-spin infinite 2s linear;
+  margin-top: 8vmin;
+  width: 55vmin;
+  margin-left: 12vmin;
+}
+.Content-home {
+  background-color: #92daee;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: calc(15px + 2vmin);
+  color: #15181a;
+}
+.Content-btn {
+  background-color: #92daee;
+  margin-top: -45vmin;
+  margin-left: 65vmin;
+}
+.Content-link {
+  margin-top: 1vmin;
+  background-color: #92daee;
+  margin-left: 25vmin;
+}
+.App-link{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: calc(18px + 2vmin);
+  color: rgb(213 44 128);
+  padding: 2vmin 2vmin 2vmin 2vmin;
+}
+}
+
+/*For Desktop*/
+@media only screen and (min-width: 1200px) {
+  .App-logotext {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0px;
+    height: 20vmin;
+    width: 60vmin;
+    margin-top: -10vmin;
+  }
+  .Title-home {
+    font-size: calc(9px + 2vmin);
+    color: #15181a;
+    padding: 0px 0px 0px 0px;
+    margin: 25px;
+    margin-top: 0vmin;
+  }
+  .App-logo {
+    animation: App-logo-spin infinite 2s linear;
+    margin-top: 0vmin;
+    width: 43vmin;
+  }
+  .Content-home {
+    background-color: #92daee;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(15px + 2vmin);
+    color: #15181a;
+  }
+  .Content-link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-left: -58vmin;
+    padding: 2vmin 2vmin 2vmin 2vmin;
+    margin-top: -78vmin;
+    color: rgb(255, 156, 181);
+    background-color: #92daee ;
+    font-size: calc(6px + 2vmin);
+  }
+}
+@keyframes App-logo-spin {
+  from {
+    transform: translate(0px,10px);
+  }
+  to {
+    transform: translate(20px,50px);
+  }
+}
