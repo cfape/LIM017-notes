@@ -26,10 +26,3 @@ export function Home() {
       </div>
   );
 }
-      /*<div className='Container-btn'>
-        <Button
-          text='¡Bienvenidx!'
-          className='btnOnClick'
-          onClick='onClick'
-        ></Button>
-        </div>*/

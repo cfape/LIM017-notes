@@ -5,12 +5,11 @@ import logotext from "../img/logotext.png";
 
 export function Login() {
   const [user, setUser] = useState({
-    nameUser: "",
     email: "",
     password: "",
   });
 
-  const { signUp } = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState();
 
@@ -21,7 +20,7 @@ export function Login() {
     e.preventDefault();
     setError("");
     try {
-      await signUp(user.nameUser, user.email, user.password);
+      await login(user.email, user.password);
       navigate("/");
     } catch (error) {
       console.log(error.code);
@@ -40,16 +39,8 @@ export function Login() {
   return (
     <section className="Content-register">
       <img src={logotext} className="Logotext-register" alt="text" />
-      <h1 className="Title-register">Registro</h1>
 
       <form onSubmit={handleSubmit} className="Form-register">
-        <label htmlFor="nameUser">Nombre </label>
-        <input
-          type="text"
-          name="nameUser"
-          placeholder="Escribe tu nombre"
-          onChange={handleChange}
-        />
 
         <label htmlFor="text">Email </label>
         <input
@@ -68,17 +59,10 @@ export function Login() {
         />
 
         <div className="Content-btn-register">
-          <button>Regístrate</button>
+          <button>Inicia Sesión</button>
           {error && <p>{error}</p>}
         </div>
       </form>
     </section>
   );
 }
-
-/*<button
-      id="btnHome"
-      className={props.btnOnClick}
-      onClick={() => onClickButton('Aquí se debe abrir un modal')}>
-      {props.text}
-    </button>*/
