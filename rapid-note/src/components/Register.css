@@ -1,62 +1,116 @@
-@media only screen and (min-device-width: 810px)  {
-.App {
-  text-align: center;
+@media only screen and (min-device-width: 810px) {
+  .App {
+    text-align: center;
+  }
+  .Logotext-register {
+    width: 70vmin;
+    height: 22vmin;
+    margin-right: 0vmin;
+    margin-top: -20vmin;
+  }
+  .Content-register {
+    background-color: #92daee;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sanchez";
+    font-size: calc(20px + 2vmin);
+    color: #15181a;
+  }
+  .Title-register {
+    font-family: "Sanchez";
+    font-size: calc(40px + 2vmin);
+    margin-top: 1vmin;
+  }
+  .Form-register {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  input[type="email"],
+  input[type="text"],
+  input[type="password"] {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 15px;
+    color: black;
+    font-family: "Sanchez";
+    font-size: calc(20px + 2vmin);
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 15px 1px;
+    cursor: pointer;
+  }
+  .Content-btn-register {
+    background-color: #92daee;
+    margin-top: 5vmin;
+    margin-left: 10vmin;
+  }
+  button {
+    height: 11vmin;
+    width: 37vmin;
+    font-family: "Sanchez";
+    font-size: calc(20px + 2vmin);
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: black;
+  }
 }
-.Logotext-register {
-  width: 70vmin;
-  height: 22vmin;
-  margin-right: 0vmin;
-  margin-top: -20vmin;
-}
-.Content-register {
-  background-color: #92daee;
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-family: 'Sanchez';
-  font-size: calc(20px + 2vmin);
-  color: #15181a;
-}
-.Title-register {
-  font-family: 'Sanchez';
-  font-size: calc(40px + 2vmin);
-  margin-top: 1vmin;
-}
-.Form-register {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-}
-input[type=email], input[type=text],input[type=password] {
-  background-color: rgb(255, 255, 255);
-  border: none;
-  border-radius: 15px;
-  color: black;
-  font-family: 'Sanchez';
-  font-size: calc(20px + 2vmin);
-  padding: 16px 32px;
-  text-decoration: none;
-  margin: 15px 1px;
-  cursor: pointer;
-}
-.Content-btn-register {
-  background-color: #92daee ;
-  margin-top: 5vmin;
-  margin-left: 10vmin;
-}
-button {
-  height: 11vmin;
-  width: 37vmin;
-  font-family: 'Sanchez';
-  font-size: calc(20px + 2vmin);
-  background-color: rgb(255, 255, 255);
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  color: black;
-}
+/*For tablet horizontal*/
+@media only screen and (min-device-width: 1180px) {
+  .Logotext-register {
+    margin-left: 0vmin;
+    height: 20vmin;
+    width: 80vmin;
+    margin-top: 0vmin;
+  }
+  .Title-register {
+    font-family: "Sanchez";
+    font-size: calc(40px + 2vmin);
+    margin-top: 0vmin;
+  }
+  .Form-register {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: -3vmin;
+  }
+
+  input[type="email"],
+  input[type="text"],
+  input[type="password"] {
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 15px;
+    color: black;
+    font-family: "Sanchez";
+    font-size: calc(20px + 2vmin);
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 15px 1px;
+    cursor: pointer;
+  }
+  .Content-btn-register {
+    background-color: #92daee;
+    margin-top: 0vmin;
+    margin-left: 10vmin;
+  }
+  button {
+    height: 11vmin;
+    width: 37vmin;
+    font-family: "Sanchez";
+    font-size: calc(20px + 2vmin);
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: black;
+  }
 }

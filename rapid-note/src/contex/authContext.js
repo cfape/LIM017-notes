@@ -14,9 +14,10 @@ export function AuthProvider({ children }) {
   const signUp = ( email, password) =>
     createUserWithEmailAndPassword( auth, email, password);
 
-    const login = (email, password) =>
-    signInWithEmailAndPassword(auth, email, password);
-
+    const login = async (email, password) => {
+    const userCredentials = await signInWithEmailAndPassword(auth, email, password);
+    console.log(userCredentials);
+    }
   return (
   <authContext.Provider value={{signUp, login}}>{children}</authContext.Provider>
   );

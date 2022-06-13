@@ -9,6 +9,7 @@ export function Home() {
   const { user } = useAuth()
   console.log(user);
 
+
   return (
     <div className='Container-home'>
       <div className='Content-home'>

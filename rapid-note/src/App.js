@@ -5,6 +5,7 @@ import './components/Register.css';
 import { Home }  from  './components/Home.js';
 import { Login } from './components/Login.js';
 import { Register } from './components/Register.js'
+import { RapidNote } from './components/RapidNote.js'
 import { AuthProvider } from './contex/authContext.js';
 
 import {
@@ -22,6 +23,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route path='/rapidnote' element={<RapidNote />} />
       </Routes>
     </BrowserRouter>
     </AuthProvider>

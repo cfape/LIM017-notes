@@ -21,7 +21,7 @@ export function Register() {
     setError('')
     try {
       await signUp(user.email, user.password)
-      navigate('/')
+      navigate('/rapidnote')
     } catch (error) {
       console.log(error.code);
       if (error.code === 'auth/invalid-email') {
@@ -31,7 +31,7 @@ export function Register() {
         setError('La contraseña debe contener mínimo 6 caracteres')
       }
       if (error.code === 'auth/email-already-in-use') {
-        setError('Cuenta registrada')
+        setError('Cuenta ya registrada')
       }
     }
 

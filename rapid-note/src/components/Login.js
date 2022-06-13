@@ -21,7 +21,7 @@ export function Login() {
     setError("");
     try {
       await login(user.email, user.password);
-      navigate("/");
+      navigate("/rapidnote");
     } catch (error) {
       console.log(error.code);
       if (error.code === "auth/invalid-email") {
