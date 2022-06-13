@@ -1,12 +1,12 @@
-@media only screen and (min-width: 768px) {
+@media only screen and (min-device-width: 810px)  {
 .App {
   text-align: center;
 }
-.App-logotext {
-  height: 13vmin;
-  width: 40vmin;
-  margin: 10px;
-  margin-top: -110vmin;
+.Logotext-register {
+  width: 70vmin;
+  height: 22vmin;
+  margin-right: 0vmin;
+  margin-top: -20vmin;
 }
 .Content-register {
   background-color: #92daee;
@@ -16,14 +16,47 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(12px + 2vmin);
+  font-family: 'Sanchez';
+  font-size: calc(20px + 2vmin);
   color: #15181a;
 }
 .Title-register {
   font-family: 'Sanchez';
-  font-size: calc(12px + 2vmin);
+  font-size: calc(40px + 2vmin);
   margin-top: 1vmin;
-  margin-left: 15vmin;
 }
-
+.Form-register {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+input[type=email], input[type=text],input[type=password] {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 15px;
+  color: black;
+  font-family: 'Sanchez';
+  font-size: calc(20px + 2vmin);
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 15px 1px;
+  cursor: pointer;
+}
+.Content-btn-register {
+  background-color: #92daee ;
+  margin-top: 5vmin;
+  margin-left: 10vmin;
+}
+button {
+  height: 11vmin;
+  width: 37vmin;
+  font-family: 'Sanchez';
+  font-size: calc(20px + 2vmin);
+  background-color: rgb(255, 255, 255);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
 }

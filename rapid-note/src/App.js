@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import './components/Home.css';
+import './components/Register.css';
 import { Home }  from  './components/Home.js';
 import { Login } from './components/Login.js';
 import { Register } from './components/Register.js'
