@@ -62,7 +62,7 @@ export function Register() {
         />
 
         <div className='Content-btn-register'>
-          <button>Regístrate</button>
+          <button>Bienvenidx</button>
           {error && <p>{error}</p>}
         </div>
 

@@ -1,11 +1,46 @@
 @media only screen and (min-device-width: 810px) {
-  .BtnGoogle {
-    width: 60vmin;
+
+  .App {
+    text-align: center;
   }
+  .Logotext-register {
+    width: 80vmin;
+    height: 25vmin;
+    margin-left: 0vmin;
+    margin-top: -25vmin;
+  }
+  .Content-btn-login {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin-left: 7vmin;
+}
+.BtnLogin {
+  height: 11vmin;
+  width: 40vmin;
+  font-family: "Sanchez";
+  font-size: calc(16px + 2vmin);
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: black;
+  margin: 4vmin;
+}
+.BtnGoogle {
+  height: 11vmin;
+  width: 40vmin;
+  font-family: "Sanchez";
+  font-size: calc(16px + 2vmin);
+  background-color: white;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  color: black;
+}
 }
 
 @media only screen and (min-device-width: 1180px) {
-  .BtnGoogle {
-    width: 60vmin;
-  }
+
 }

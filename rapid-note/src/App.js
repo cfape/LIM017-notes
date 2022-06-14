@@ -2,6 +2,7 @@
 import React from 'react';
 import './components/Home.css';
 import './components/Register.css';
+import './components/Login.css';
 import { Home }  from  './components/Home.js';
 import { Login } from './components/Login.js';
 import { Register } from './components/Register.js'

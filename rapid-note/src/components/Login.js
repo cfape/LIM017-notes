@@ -64,16 +64,15 @@ export function Login() {
           onChange={handleChange}
         />
 
-        <div className='Content-btn-register'>
-          <button>Inicia Sesión</button>
+        <div className='Content-btn-login'>
+          <button className='BtnLogin'>Inicia Sesión</button>
+          <button className='BtnGoogle' onClick={handleGoogleSignin}>Acceder con Google</button>
           {error && <p>{error}</p>}
           <Link to='/' className='App-link'>
-            Volver al inicio
+          Volver al inicio
           </Link>
         </div>
       </form>
-
-      <button className='BtnGoogle' onClick={handleGoogleSignin}>Acceder con Google</button>
-    </section>
+      </section>
   );
 }
