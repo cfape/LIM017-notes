@@ -9,9 +9,9 @@ export function Home() {
   const { user } = useAuth()
   console.log(user);
 
-  const navigateLogin = useNavigate();
+  const navigate = useNavigate();
   const btnLogin = () => {
-    navigateLogin('/login');
+    navigate('/login');
     }
 
   return (

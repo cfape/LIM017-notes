@@ -3,10 +3,15 @@
     text-align: center;
   }
   .Logotext-register {
-    width: 70vmin;
-    height: 22vmin;
-    margin-right: 0vmin;
-    margin-top: -20vmin;
+    width: 80vmin;
+    height: 25vmin;
+    margin-left: 5vmin;
+    margin-top: -25vmin;
+  }
+  .cat-register {
+    width: 25vmin;
+    height: 35vmin;
+    margin-top: -10vmin;
   }
   .Content-register {
     background-color: #92daee;
@@ -55,7 +60,7 @@
     width: 37vmin;
     font-family: "Sanchez";
     font-size: calc(20px + 2vmin);
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border-radius: 20px;
     border: none;
     cursor: pointer;
@@ -107,7 +112,7 @@
     width: 37vmin;
     font-family: "Sanchez";
     font-size: calc(20px + 2vmin);
-    background-color: rgb(255, 255, 255);
+    background-color: white;
     border-radius: 20px;
     border: none;
     cursor: pointer;

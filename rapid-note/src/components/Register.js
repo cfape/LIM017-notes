@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useAuth } from '../contex/authContext.js';
 import { useNavigate } from 'react-router-dom'
-import  logotext  from '../img/logotext.png';
+import  logoregister  from '../img/logoregister.png';
+import cat from '../img/cat.gif';
 
 export function Register() {
   const [user, setUser] = useState({
@@ -39,8 +40,8 @@ export function Register() {
 
   return (
     <section className='Content-register'>
-      <img src={logotext} className='Logotext-register' alt='text' />
-      <h1 className='Title-register'>Registro</h1>
+      <img src={logoregister} className='Logotext-register' alt='text' />
+      <img src={cat} className='cat-register' alt='cat' />
 
       <form onSubmit={handleSubmit} className='Form-register'>
 
