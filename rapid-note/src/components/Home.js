@@ -25,7 +25,7 @@ export function Home() {
         <button onClick={btnLogin} className='Btn-home'>Iniciar Sesión</button>
       </div>
       <div className='Content-link'>
-        <Link to='/register' className='App-link'>¿No tienes cuenta? Regístrate</Link>
+        <Link to='/register' className='Link-home'>¿No tienes cuenta? Regístrate</Link>
       </div>
       </div>
   );

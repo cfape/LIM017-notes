@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from "../contex/authContext.js";
-import logotext from "../img/logotext.png";
+import { useAuth } from '../contex/authContext.js';
+import logNote from '../img/logNote.png';
 
 export function RapidNote() {
 
@@ -19,12 +19,19 @@ export function RapidNote() {
   if (loading) return <h1>loading</h1>
 
   return (
-    <div>
-    <img src={logotext} className='Logotext-register' alt='text' />
-    <h1>Bienvenidx {user.displayName ||user.email}</h1>
+    <div className='Container-RapidNote'>
+    <div className='Content-Info'>
+    <img src={logNote} className='LogNote' alt='img' />
+    <h3>Bienvenidx {user.displayName ||user.email}</h3>
+
     <button onClick={handleLogout}>
       Cerrar Sesión
     </button>
+    </div>
+
+    <div className='Content-Note'>
+    </div>
+
     </div>
   );
 }

@@ -54,7 +54,7 @@
   background-color: #92daee;
   margin-right: 0vmin;
 }
-.App-link{
+.Link-home {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -82,7 +82,7 @@
   animation: App-logo-spin infinite 2s linear;
   margin-top: -0vmin;
   width: 55vmin;
-  margin-left: 12vmin;
+  margin-left: 10vmin;
 }
 .Content-home {
   background-color: #92daee;
@@ -97,22 +97,23 @@
 }
 .Content-btn {
   background-color: #92daee;
-  margin-top: -55vmin;
+  margin-top: -45vmin;
   margin-left: 65vmin;
 }
 .Content-link {
-  margin-top: 1vmin;
+  margin-top: 5vmin;
   background-color: #92daee;
   margin-left: 25vmin;
 }
-.App-link{
+.Link-home {
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: calc(18px + 2vmin);
-  color: rgb(213 44 128);
+  font-size: calc(20px + 2vmin);
+  color: black;
   padding: 2vmin 2vmin 2vmin 2vmin;
 }
+
 }
 
 /*For Desktop*/
@@ -122,22 +123,23 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin: 0px;
-    height: 20vmin;
-    width: 60vmin;
-    margin-top: -10vmin;
+    margin-right: 100vmin;
+    height: 26vmin;
+    width: 100vmin;
+    margin-top: -35vmin;
   }
   .Title-home {
-    font-size: calc(9px + 2vmin);
+    font-size: calc(18px + 2vmin);
     color: #15181a;
     padding: 0px 0px 0px 0px;
-    margin: 25px;
-    margin-top: 0vmin;
+    margin-left: -70vmin;
+    margin-top: -40vmin;
   }
   .App-logo {
     animation: App-logo-spin infinite 2s linear;
-    margin-top: 0vmin;
-    width: 43vmin;
+    margin-top: -8vmin;
+    width: 55vmin;
+    margin-left: 90vmin;
   }
   .Content-home {
     background-color: #92daee;
@@ -150,16 +152,34 @@
     font-size: calc(15px + 2vmin);
     color: #15181a;
   }
+  .Content-btn {
+    background-color: #92daee ;
+    margin-top: -40vmin;
+    margin-left: 50vmin;
+  }
+  .Btn-home {
+    height: 11vmin;
+    width: 37vmin;
+    font-family: 'Sanchez';
+    font-size: calc(20px + 2vmin);
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: black;
+  }
   .Content-link {
+  margin-top: 2vmin;
+  background-color: #92daee;
+  margin-right: 100vmin;
+  }
+  .Link-home {
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin-left: -58vmin;
+    font-size: calc(20px + 2vmin);
+    color: black;
     padding: 2vmin 2vmin 2vmin 2vmin;
-    margin-top: -78vmin;
-    color: rgb(255, 156, 181);
-    background-color: #92daee ;
-    font-size: calc(6px + 2vmin);
   }
 }
 @keyframes App-logo-spin {

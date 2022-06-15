@@ -11,6 +11,7 @@
   .cat-register {
     width: 25vmin;
     height: 35vmin;
+    margin-right: 2vmin;
     margin-top: -10vmin;
   }
   .Content-register {
@@ -65,6 +66,15 @@
     border: none;
     cursor: pointer;
     color: black;
+  }
+  .Link-register {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: calc(20px + 2vmin);
+    color: black;
+    padding: 4vmin 0vmin 0vmin 0vmin;
+    margin-left: 13vmin;
   }
 }
 /*For tablet horizontal*/

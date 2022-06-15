@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useAuth } from '../contex/authContext.js';
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import  logoregister  from '../img/logoregister.png';
 import cat from '../img/cat.gif';
 
@@ -65,6 +65,9 @@ export function Register() {
           <button>Bienvenidx</button>
           {error && <p>{error}</p>}
         </div>
+        <Link to='/' className='Link-register'>
+        Volver al inicio
+        </Link>
 
       </form>
     </section>
