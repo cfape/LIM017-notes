@@ -132,7 +132,7 @@
     font-size: calc(18px + 2vmin);
     color: #15181a;
     padding: 0px 0px 0px 0px;
-    margin-left: -70vmin;
+    margin-left: -75vmin;
     margin-top: -40vmin;
   }
   .App-logo {
@@ -155,7 +155,7 @@
   .Content-btn {
     background-color: #92daee ;
     margin-top: -40vmin;
-    margin-left: 50vmin;
+    margin-left: 40vmin;
   }
   .Btn-home {
     height: 11vmin;

@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import logotext from '../img/logotext.png';
 
 export function Login() {
+
   const [user, setUser] = useState({
     email: '',
     password: '',
@@ -45,7 +46,8 @@ export function Login() {
 
   return (
     <section className='Content-register'>
-      <img src={logotext} className='Logotext-register' alt='text' />
+      <img src={logotext} className='Logotext-login' alt='text' />
+      <span>No hay usuario</span>
 
       <form onSubmit={handleSubmit} className='Form-register'>
         <label htmlFor='text'>Email </label>
@@ -54,6 +56,7 @@ export function Login() {
           name='email'
           placeholder='correo@ejemplo.com'
           onChange={handleChange}
+          data-testid='login-email-input'
         />
 
         <label htmlFor='password'>Password </label>
@@ -67,6 +70,7 @@ export function Login() {
         <div className='Content-btn-login'>
           <button className='BtnLogin'>Inicia Sesión</button>
           <button className='BtnGoogle' onClick={handleGoogleSignin}>Acceder con Google</button>
+
           {error && <p>{error}</p>}
           <Link to='/' className='App-link'>
           Volver al inicio

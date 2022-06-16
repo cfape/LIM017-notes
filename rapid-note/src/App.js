@@ -9,7 +9,6 @@ import './components/Home.css';
 import './components/Register.css';
 import './components/Login.css';
 import './components/RapidNote.css';
-
 import {
   BrowserRouter,
   Route,

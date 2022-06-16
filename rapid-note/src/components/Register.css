@@ -3,7 +3,7 @@
     text-align: center;
   }
   .Logotext-register {
-    width: 87vmin;
+    width: 76vmin;
     height: 26vmin;
     margin-left: 2vmin;
     margin-top: -25vmin;
@@ -36,6 +36,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin-top: 0vmin;
   }
   input[type="email"],
   input[type="text"],

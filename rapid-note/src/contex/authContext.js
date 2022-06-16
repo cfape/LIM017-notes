@@ -13,7 +13,7 @@ export const authContext = createContext()
 
 export const useAuth = () => {
   const context = useContext(authContext);
-  if (!context) throw new Error('There is no auth provider')
+  if (!context) throw new Error('No hay usuario');
   return context
 }
 
@@ -25,14 +25,14 @@ export function AuthProvider({ children }) {
   const signUp = ( email, password) =>
     createUserWithEmailAndPassword( auth, email, password);
 
-    const login = (email, password) =>
+  const login = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
 
-    const logOut = () => signOut(auth);
+  const logOut = () => signOut(auth);
 
-    const loginWithGoogle = () => {
-      const googleProvider = new GoogleAuthProvider()
-      return signInWithPopup(auth, googleProvider)
+  const loginWithGoogle = () => {
+    const googleProvider = new GoogleAuthProvider()
+    return signInWithPopup(auth, googleProvider)
     }
 
     useEffect (() => {

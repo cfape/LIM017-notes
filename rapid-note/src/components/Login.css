@@ -2,11 +2,11 @@
   .App {
     text-align: center;
   }
-  .Logotext-register {
-    width: 80vmin;
+  .Logotext-login {
+    width: 70vmin;
     height: 25vmin;
     margin-left: 0vmin;
-    margin-top: -25vmin;
+    margin-top: -20vmin;
   }
   .Content-btn-login {
     display: flex;
