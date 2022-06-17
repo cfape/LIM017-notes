@@ -5,21 +5,30 @@
   .Logotext-login {
     width: 70vmin;
     height: 25vmin;
-    margin-left: 0vmin;
+    margin-right: 15vmin;
     margin-top: -20vmin;
+  }
+  .Form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 12vmin;
+    margin-top: 0vmin;
   }
   .Content-btn-login {
     display: flex;
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin-left: 7vmin;
+
+    margin-left: 8vmin;
   }
   .BtnLogin {
-    height: 11vmin;
+    height: 12vmin;
     width: 40vmin;
     font-family: "Sanchez";
-    font-size: calc(16px + 2vmin);
+    font-size: calc(16px + 3vmin);
     background-color: white;
     border-radius: 20px;
     border: none;
@@ -27,8 +36,14 @@
     color: black;
     margin: 4vmin;
   }
+  .LogoGoogle {
+    height: 9vmin;
+    width: 38vmin;
+    margin-top: 1vmin;
+    margin-left: 0vmin;
+  }
   .BtnGoogle {
-    height: 11vmin;
+    height: 12vmin;
     width: 40vmin;
     font-family: "Sanchez";
     font-size: calc(16px + 2vmin);
@@ -42,7 +57,7 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    font-size: calc(20px + 2vmin);
+    font-size: calc(17px + 3vmin);
     color: black;
     padding: 4vmin 0vmin 0vmin 0vmin;
     margin-left: 1vmin;

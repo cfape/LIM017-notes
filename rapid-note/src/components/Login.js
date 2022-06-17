@@ -1,7 +1,9 @@
+
 import { useState } from 'react';
 import { useAuth } from '../contex/authContext.js';
 import { Link, useNavigate } from 'react-router-dom';
 import logotext from '../img/logotext.png';
+import btnGoogle from '../img/btnGoogle.png';
 
 export function Login() {
 
@@ -41,16 +43,14 @@ export function Login() {
       navigate('/rapidnote');
     } catch (error) {
       setError(error.message);
-    
     }
   };
 
   return (
     <section className='Content-register'>
       <img src={logotext} className='Logotext-login' alt='text' />
-      <span>No hay usuario</span>
 
-      <form onSubmit={handleSubmit} className='Form-register'>
+      <form onSubmit={handleSubmit} className='Form-login'>
         <label htmlFor='text'>Email </label>
         <input
           type='email'
@@ -71,7 +71,7 @@ export function Login() {
 
         <div className='Content-btn-login'>
           <button className='BtnLogin'>Inicia Sesión</button>
-          <button className='BtnGoogle' onClick={handleGoogleSignin}>Acceder con Google</button>
+          <button className='BtnGoogle' onClick={handleGoogleSignin}><img src={btnGoogle} className='LogoGoogle' alt='logo' /></button>
 
           {error && <p>{error}</p>}
           <Link to='/' className='App-link'>

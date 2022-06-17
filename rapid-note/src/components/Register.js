@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useAuth } from '../contex/authContext.js';
 import { Link, useNavigate } from 'react-router-dom'
@@ -63,11 +64,17 @@ export function Register() {
 
         <div className='Content-btn-register'>
           <button>Bienvenidx</button>
-          {error && <p>{error}</p>}
         </div>
+
+        <div className='Content-link-register'>
         <Link to='/' className='Link-register'>
         Volver al inicio
         </Link>
+        </div>
+
+        <div className='Content-error-register'>
+        {error && <p>{error}</p>}
+        </div>
 
       </form>
     </section>
