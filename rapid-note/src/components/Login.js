@@ -1,15 +1,13 @@
-
-import { useState } from 'react';
-import { useAuth } from '../contex/authContext.js';
-import { Link, useNavigate } from 'react-router-dom';
-import logotext from '../img/logotext.png';
-import btnGoogle from '../img/btnGoogle.png';
+import { useState } from "react";
+import { useAuth } from "../contex/authContext.js";
+import { Link, useNavigate } from "react-router-dom";
+import logotext from "../img/logotext.png";
+import btnGoogle from "../img/btnGoogle.png";
 
 export function Login() {
-
   const [user, setUser] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   });
 
   const { login, loginWithGoogle } = useAuth();
@@ -21,18 +19,18 @@ export function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError('');
+    setError("");
     try {
       await login(user.email, user.password);
-      navigate('/rapidnote');
+      navigate("/rapidnote");
     } catch (error) {
       console.log(error.code);
-      if (error.code === 'auth/invalid-email') {
-        setError('Correo inválido');
-      } else if (error.code === 'auth/weak-password') {
-        setError('La contraseña debe contener mínimo 6 caracteres');
-      } else if (error.code === 'auth/user-not-found') {
-        setError('El correo no está registrado');
+      if (error.code === "auth/invalid-email") {
+        setError("Correo inválido");
+      } else if (error.code === "auth/weak-password") {
+        setError("La contraseña debe contener mínimo 6 caracteres");
+      } else if (error.code === "auth/user-not-found") {
+        setError("El correo no está registrado");
       }
     }
   };
@@ -40,45 +38,56 @@ export function Login() {
   const handleGoogleSignin = async () => {
     try {
       await loginWithGoogle();
-      navigate('/rapidnote');
+      navigate("/rapidnote");
     } catch (error) {
       setError(error.message);
     }
   };
 
   return (
-    <section className='Content-register'>
-      <img src={logotext} className='Logotext-login' alt='text' />
+    <section className="Content-register">
+      <img src={logotext} className="Logotext-login" alt="text" />
 
-      <form onSubmit={handleSubmit} className='Form-login'>
-        <label htmlFor='text'>Email </label>
+      <form onSubmit={handleSubmit} className="Form-login">
+        <label htmlFor="text">Email </label>
         <input
-          type='email'
-          name='email'
-          placeholder='correo@ejemplo.com'
+          type="email"
+          name="email"
+          placeholder="correo@ejemplo.com"
           onChange={handleChange}
-          data-testid='login-email-input'
+          data-testid="login-email-input"
         />
 
-        <label htmlFor='password'>Password </label>
+        <label htmlFor="password">Password </label>
         <input
-          type='password'
-          name='password'
-          placeholder='******'
+          type="password"
+          name="password"
+          placeholder="******"
           onChange={handleChange}
-          data-testid='login-password-input'
+          data-testid="login-password-input"
         />
 
-        <div className='Content-btn-login'>
-          <button className='BtnLogin'>Inicia Sesión</button>
-          <button className='BtnGoogle' onClick={handleGoogleSignin}><img src={btnGoogle} className='LogoGoogle' alt='logo' /></button>
+        <div className="Content-btn-login">
+          <button className="BtnLogin">Inicia Sesión</button>
+        </div>
 
-          {error && <p>{error}</p>}
-          <Link to='/' className='App-link'>
-          Volver al inicio
+        <div className="Content-btn-google">
+          <button className="BtnGoogle" onClick={handleGoogleSignin}>
+            <img src={btnGoogle} className="LogoGoogle" alt="logo" />
+          </button>
+        </div>
+
+        <div className="Content-link-login">
+          <Link to="/" className="App-link">
+            Volver al inicio
           </Link>
         </div>
+
+        <div className="Content-error-login">
+          {error && <p>{error}</p>}
+        </div>
+
       </form>
-      </section>
+    </section>
   );
 }

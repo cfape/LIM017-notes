@@ -21,11 +21,78 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-
-    margin-left: 8vmin;
+    margin-left: 7vmin;
   }
   .BtnLogin {
     height: 12vmin;
+    width: 42vmin;
+    font-family: "Sanchez";
+    font-size: calc(16px + 3vmin);
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: black;
+    margin: 4vmin;
+  }
+  .Content-btn-google{
+    margin-left: -5vmin;
+  }
+  .LogoGoogle {
+    height: 9vmin;
+    width: 38vmin;
+    margin-top: 1vmin;
+    margin-left: 1vmin;
+  }
+  .BtnGoogle {
+    height: 12vmin;
+    width: 42vmin;
+    font-family: "Sanchez";
+    font-size: calc(16px + 2vmin);
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    margin-left: 16vmin;
+    cursor: pointer;
+    color: black;
+  }
+  .App-link {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: calc(17px + 3vmin);
+    color: black;
+    padding: 4vmin 0vmin 0vmin 0vmin;
+    margin-left: 14vmin;
+  }
+}
+
+@media only screen and (min-device-width: 1180px) {
+
+  .Logotext-login {
+    width: 70vmin;
+    height: 24vmin;
+    margin-left: -5vmin;
+    margin-top: -20vmin;
+  }
+  .Form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-right: 15vmin;
+    margin-top: 0vmin;
+  }
+  .Content-btn-login {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    margin-left: 60vmin;
+    margin-top: -36vmin;
+  }
+  .BtnLogin {
+    height: 11vmin;
     width: 40vmin;
     font-family: "Sanchez";
     font-size: calc(16px + 3vmin);
@@ -36,6 +103,10 @@
     color: black;
     margin: 4vmin;
   }
+  .Content-btn-google{
+    margin-left: 48vmin;
+    margin-top: 5vmin;
+  }
   .LogoGoogle {
     height: 9vmin;
     width: 38vmin;
@@ -43,7 +114,7 @@
     margin-left: 0vmin;
   }
   .BtnGoogle {
-    height: 12vmin;
+    height: 11vmin;
     width: 40vmin;
     font-family: "Sanchez";
     font-size: calc(16px + 2vmin);
@@ -60,9 +131,6 @@
     font-size: calc(17px + 3vmin);
     color: black;
     padding: 4vmin 0vmin 0vmin 0vmin;
-    margin-left: 1vmin;
+    margin-left: 35vmin;
   }
-}
-
-@media only screen and (min-device-width: 1180px) {
 }

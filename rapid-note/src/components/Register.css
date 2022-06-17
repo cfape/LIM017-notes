@@ -5,13 +5,13 @@
   .Logotext-register {
     width: 85vmin;
     height: 31vmin;
-    margin-right: 10vmin;
-    margin-top: -23vmin;
+    margin-right: 11vmin;
+    margin-top: -25vmin;
   }
   .cat-register {
     width: 25vmin;
     height: 35vmin;
-    margin-right: 10vmin;
+    margin-right: 13vmin;
     margin-top: -12vmin;
   }
   .Content-register {
@@ -55,7 +55,7 @@
   }
   .Content-btn-register {
     background-color: #92daee;
-    margin-top: 4vmin;
+    margin-top: 3vmin;
     margin-left: 12vmin;
   }
   button {
