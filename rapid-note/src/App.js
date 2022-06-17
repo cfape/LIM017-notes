@@ -11,8 +11,8 @@ import './components/Login.css';
 import './components/RapidNote.css';
 import {
   BrowserRouter,
-  Route,
-  Routes
+  Routes,
+  Route
 } from 'react-router-dom';
 
 function App() {

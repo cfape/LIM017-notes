@@ -41,6 +41,7 @@ export function Login() {
       navigate('/rapidnote');
     } catch (error) {
       setError(error.message);
+    
     }
   };
 
@@ -65,6 +66,7 @@ export function Login() {
           name='password'
           placeholder='******'
           onChange={handleChange}
+          data-testid='login-password-input'
         />
 
         <div className='Content-btn-login'>
