@@ -5,13 +5,13 @@
   .Logotext-register {
     width: 85vmin;
     height: 31vmin;
-    margin-right: 11vmin;
-    margin-top: -25vmin;
+    margin-right: 3vmin;
+    margin-top: -15vmin;
   }
   .cat-register {
     width: 25vmin;
     height: 35vmin;
-    margin-right: 13vmin;
+    margin-right: 10vmin;
     margin-top: -12vmin;
   }
   .Content-register {
@@ -36,7 +36,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin-right: 12vmin;
+    margin-right: 6vmin;
     margin-top: -5vmin;
   }
   input[type="email"],
@@ -55,7 +55,7 @@
   }
   .Content-btn-register {
     background-color: #92daee;
-    margin-top: 3vmin;
+    margin-top: 5vmin;
     margin-left: 12vmin;
   }
   button {
@@ -77,6 +77,7 @@
     color: black;
     padding: 2vmin 0vmin 0vmin 0vmin;
     margin-left: 13vmin;
+    margin-top: 2vmin;
   }
 }
 /*For tablet horizontal*/
@@ -85,7 +86,7 @@
     margin-left: 0vmin;
     width: 85vmin;
     height: 31vmin;
-    margin-top: -21vmin;
+    margin-top: -15vmin;
   }
   .Title-register {
     font-family: "Sanchez";
@@ -95,8 +96,8 @@
   .cat-register {
     width: 30vmin;
     height: 45vmin;
-    margin-top: -5vmin;
-    margin-left: 55vmin;
+    margin-top: -3vmin;
+    margin-left: 75vmin;
   }
   .Form-register {
     display: flex;
@@ -122,7 +123,7 @@
     cursor: pointer;
   }
   .Content-btn-register {
-    margin-top: 0vmin;
+    margin-top: 5vmin;
     margin-left: 12vmin;
   }
   button {
@@ -138,7 +139,7 @@
   }
   .Content-link-register {
     width: 0vmin;
-    margin-top: -10vmin;
+    margin-top: -13vmin;
     background-color: #92daee;
   }
   .Link-register {
@@ -148,7 +149,7 @@
     font-size: calc(20px + 3vmin);
     color: black;
     width: 40vmin;
-    margin-left: 60vmin;
+    margin-left: 68vmin;
     padding: 2vmin 0vmin 0vmin 0vmin;
   }
 }
