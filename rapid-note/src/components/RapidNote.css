@@ -7,10 +7,14 @@
     margin-left: 2vmin;
     margin-top: -65vmin;
   }
-  .Container-RapidNote {
+  .Content-cat {
+    margin-left: 10vmin;
+    margin-top: -30vmin;
+  }
+  .Container-note-form {
     background-color: #92daee;
-    height: 100vh;
     width: 100vw;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,6 +22,40 @@
     font-family: "Sanchez";
     font-size: calc(20px + 2vmin);
     color: #15181a;
+    margin-top: 0vmin;
   }
-
+  .form-group-input-group {
+    margin-top: 10vmin;
+    margin-left: 0vmin;
+  }
+  /*
+  .input-group-text {
+    width: 100vw;
+    height: 100vh;
+  }*/
+  input.formTitleNote {
+    width: 60vmin;
+    margin-left: 17vmin;
+    margin-top: 5vmin;
+  }
+  .input-group-textarea {
+    width: 100vw;
+    height: 100vh;
+  }
+  textarea.textareaNote {
+    margin-top: 0vmin;
+    width: 65vmin;
+    border-radius: 15px;
+    margin-left: 17vmin;
+    font-family: "Sanchez";
+    font-size: calc(22px + 2vmin);
+    color: #15181a;
+  }
+  .btn-primary {
+    margin-top: -103vmin;
+    margin-right: 1vmin;
+    font-family: "Sanchez";
+    font-size: calc(22px + 3vmin);
+    color: #15181a;
+  }
 }

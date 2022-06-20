@@ -7,9 +7,10 @@ import React from 'react';
 import { Home }  from  './components/Home.js';
 import { Login } from './components/Login.js';
 import { Register } from './components/Register.js'
-import { RapidNote } from './components/RapidNote.js'
 import { AuthProvider } from './contex/authContext.js';
 import { Header } from './components/Header.js';
+import { RapidNote } from './components/RapidNote.js';
+import { Notes } from './components/Notes.js';
 import {
   BrowserRouter,
   Routes,
@@ -26,7 +27,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='login' element={<Login />} />
         <Route path='/register' element={<Register />} />
-        <Route path='/rapidnote' element={<><Header /><RapidNote /></>} />
+        <Route path='/rapidnote' element={<><Header /><RapidNote /> <Notes /></>} />
       </Routes>
     </BrowserRouter>
     </AuthProvider>
