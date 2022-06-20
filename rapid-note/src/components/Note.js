@@ -2,24 +2,24 @@ import React, { useState } from "react";
 import cat from '../img/cat.gif';
 
 
-export function RapidNote() {
+export function Note(props) {
 
     const initialStateValues = {
       title: '',
       description: ''
-    }
+    };
 
     const [values, setValues] = useState(initialStateValues);
 
     const handleInputChange = e => {
       const { name, value } = e.target;
       setValues({...values, [name]: value})
-    }
+    };
 
     const handleSubmit = e => {
       e.preventDefault();
-      console.log(values)
-    }
+      props.addOrEditNote(values);
+    };
 
   return (
     <form className='Container-note-form' onSubmit={handleSubmit}>
@@ -47,7 +47,7 @@ export function RapidNote() {
         </div>
 
         <button className='btn btn-primary btn-block'>
-          Crear Nota
+          Guardar Nota
         </button>
     </form>
   );

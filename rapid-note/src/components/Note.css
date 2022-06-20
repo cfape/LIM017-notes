@@ -8,7 +8,7 @@
     margin-top: -65vmin;
   }
   .Content-cat {
-    margin-left: 10vmin;
+    margin-left: 5vmin;
     margin-top: -30vmin;
   }
   .Container-note-form {
@@ -28,14 +28,9 @@
     margin-top: 10vmin;
     margin-left: 0vmin;
   }
-  /*
-  .input-group-text {
-    width: 100vw;
-    height: 100vh;
-  }*/
   input.formTitleNote {
     width: 60vmin;
-    margin-left: 17vmin;
+    margin-left: 14vmin;
     margin-top: 5vmin;
   }
   .input-group-textarea {
@@ -46,7 +41,7 @@
     margin-top: 0vmin;
     width: 65vmin;
     border-radius: 15px;
-    margin-left: 17vmin;
+    margin-left: 14vmin;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
     color: #15181a;

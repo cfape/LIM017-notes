@@ -1,4 +1,4 @@
-import { createUser } from "./firebase-utils.js";
+import { createUser } from "../Firebase/firebaseConfig";
 
 export const registerWithEmail = (email, password) => {
   return createUser(email, password)
