@@ -13,12 +13,14 @@ export function Note(props) {
 
     const handleInputChange = e => {
       const { name, value } = e.target;
-      setValues({...values, [name]: value})
+      setValues({...values, [name]: value});
+
     };
 
     const handleSubmit = e => {
       e.preventDefault();
       props.addOrEditNote(values);
+      setValues({...initialStateValues})
     };
 
   return (
@@ -33,6 +35,7 @@ export function Note(props) {
           className='formTitleNote'
           placeholder='Título'
           onChange={handleInputChange}
+          value={values.title}
           />
           <div className='input-group-textarea'>
             <textarea
@@ -41,6 +44,7 @@ export function Note(props) {
             rows='6'
             placeholder='Escribe una nota'
             onChange={handleInputChange}
+            value={values.description}
             >
             </textarea>
           </div>

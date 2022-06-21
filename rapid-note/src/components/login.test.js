@@ -1,6 +1,5 @@
-/* eslint-disable jest/no-identical-title */
-/* eslint-disable testing-library/no-wait-for-multiple-assertions */
-//import React from "react";
+/* eslint-disable no-unused-vars */
+import React from 'react';
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
@@ -10,8 +9,8 @@ import { AuthProvider } from "../contex/authContext.js";
 
 jest.mock('../contex/authContext.js')
 
-describe("Usuario disponible", () => {
-  it("Verificar si hay usuario", () => {
+describe("renders Iniciar sesión", () => {
+  it("Iniciar sesión", () => {
     const history = createMemoryHistory();
     render(
       <AuthProvider>
@@ -20,7 +19,8 @@ describe("Usuario disponible", () => {
         </Router>
       </AuthProvider>
     );
-    expect(screen.getByText("No hay usuario")).toBeInTheDocument();
+    const btnLogin = screen.getByText("Inicia Sesión");
+    expect(btnLogin).toBeInTheDocument();
   });
 });
 
@@ -76,8 +76,6 @@ describe('usuario no identificado', () => {
     fireEvent.change(pswInput, { target: { value: "123456" } });
     fireEvent.click(btnLogin);
 
-    //await(() => {
-      //expect(screen.getByText('Correo inválido')).toBeInTheDocument();
       await waitFor(() => {
       expect(history.location.pathname).toBe('/');
     });
@@ -101,8 +99,6 @@ describe('link volver al home', () => {
     );
     const linkGoHome =  await screen.findByText('Volver al inicio');
     fireEvent.change(linkGoHome);
-      //expect(screen.getByText('Correo inválido')).toBeInTheDocument();
       expect(history.location.pathname).toBe('/');
     });
   });
-
