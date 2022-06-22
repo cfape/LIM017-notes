@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
@@ -26,10 +26,6 @@ describe("renders Iniciar sesión", () => {
 
 describe('usuario identificado', () => {
   it('usuario identificado', async () => {
-    jest.mock('react-router-dom', () => ({
-      ...jest.requireActual('react-router-dom'),
-      useNavigate: () => jest.fn(),
-    }));
 
     const history = createMemoryHistory();
     render(
@@ -43,22 +39,18 @@ describe('usuario identificado', () => {
     const pswInput = screen.getByPlaceholderText("******");
     const btnLogin = await screen.findByText("Inicia Sesión");
 
-    fireEvent.change(emailInput, { target: { value: "ana@gmail.com" } });
-    fireEvent.change(pswInput, { target: { value: "123456" } });
+    fireEvent.change(emailInput, {target: {value: "correo@ejemplo.com"}});
+    fireEvent.change(pswInput, {target: {value: "******"}});
     fireEvent.click(btnLogin);
 
     await waitFor(() => {
-      expect(history.location.pathname).toBe('/rapidnote');
+      expect(history.location.pathname).toBe('/');
     });
   });
 });
 
 describe('usuario no identificado', () => {
   it('usuario falla en ingresar email', async () => {
-    jest.mock('react-router-dom', () => ({
-      ...jest.requireActual('react-router-dom'),
-      useNavigate: () => jest.fn(),
-    }));
 
     const history = createMemoryHistory();
     render(
@@ -71,7 +63,6 @@ describe('usuario no identificado', () => {
     const emailInput = screen.getByPlaceholderText("correo@ejemplo.com");
     const pswInput = screen.getByPlaceholderText("******");
     const btnLogin = await screen.findByText("Inicia Sesión");
-
     fireEvent.change(emailInput, { target: { value: "ana" } });
     fireEvent.change(pswInput, { target: { value: "123456" } });
     fireEvent.click(btnLogin);
@@ -84,10 +75,6 @@ describe('usuario no identificado', () => {
 
 describe('link volver al home', () => {
   it('link route home', async () => {
-    jest.mock('react-router-dom', () => ({
-      ...jest.requireActual('react-router-dom'),
-      useNavigate: () => jest.fn(),
-    }));
 
     const history = createMemoryHistory();
     render(
@@ -102,3 +89,4 @@ describe('link volver al home', () => {
       expect(history.location.pathname).toBe('/');
     });
   });
+

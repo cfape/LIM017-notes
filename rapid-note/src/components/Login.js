@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useAuth } from "../contex/authContext.js";
+import {  login, loginWithGoogle} from "../contex/authContext.js";
 import { Link, useNavigate } from "react-router-dom";
 import logotext from "../img/logotext.png";
 import btnGoogle from "../img/btnGoogle.png";
@@ -10,7 +10,7 @@ export function Login() {
     password: "",
   });
 
-  const { login, loginWithGoogle } = useAuth();
+  // const { login, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState();
 
@@ -21,10 +21,12 @@ export function Login() {
     e.preventDefault();
     setError("");
     try {
-      await login(user.email, user.password);
+      const objectUser = await login(user.email, user.password);
+      console.log(objectUser.user);
+      localStorage.setItem('email', objectUser.user.email);
       navigate("/rapidnote");
     } catch (error) {
-      console.log(error.code);
+      console.log(error);
       if (error.code === "auth/invalid-email") {
         setError("Correo inválido");
       } else if (error.code === "auth/weak-password") {
@@ -37,11 +39,21 @@ export function Login() {
 
   const handleGoogleSignin = async () => {
     try {
-      await loginWithGoogle();
+      const objectUser = await  loginWithGoogle();
+      console.log(objectUser.user);
+      localStorage.setItem('email', objectUser.user.email);
       navigate("/rapidnote");
     } catch (error) {
-      setError(error.message);
-    }
+      console.log(error);
+    if (error) {
+  } if (error.code === "auth/invalid-email") {
+    setError("Correo inválido");
+  } else if (error.code === "auth/weak-password") {
+    setError("La contraseña debe contener mínimo 6 caracteres");
+  } else if (error.code === "auth/user-not-found") {
+    setError("El correo no está registrado");
+  }
+  }
   };
 
   return (

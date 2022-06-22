@@ -17,6 +17,14 @@ export const useAuth = () => {
   return context
 }
 
+export const login = (email, password) => signInWithEmailAndPassword(auth, email, password);
+
+
+export   const loginWithGoogle = () => {
+  const googleProvider = new GoogleAuthProvider()
+  return signInWithPopup(auth, googleProvider)
+  }
+
 export function AuthProvider({ children }) {
 
   const [user, setUser] = useState(null);

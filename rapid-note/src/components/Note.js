@@ -6,7 +6,8 @@ export function Note(props) {
 
     const initialStateValues = {
       title: '',
-      description: ''
+      description: '',
+      author: localStorage.getItem('email')
     };
 
     const [values, setValues] = useState(initialStateValues);

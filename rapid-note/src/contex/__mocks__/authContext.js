@@ -2,8 +2,7 @@
 export const createUser = function () {
     return { email: () => Promise.resolve(), password: () => Promise.resolve()}
 }
-
-export const signInWithEmailAndPassword = ( auth = {}, emailUser, passwordUser ) => Promise.resolve( { user: emailUser, password: passwordUser} , Promise.reject({error: 'no hay usuario'}))
+export const signInWithEmailAndPassword = ( auth= {}, emailUser, passwordUser ) => Promise.resolve({})
 
 export const useAuth = function () {
     return { login: () => Promise.resolve(), loginWithGoogle: () => Promise.resolve()}
@@ -19,6 +18,10 @@ export function AuthProvider({ children }) {
 
 export const navigate = function( {useNavigate}) {
     return <>{ useNavigate }</>
+}
+
+export const signUp = function( {createUserWithEmailAndPassword} ) {
+    return <>{ createUserWithEmailAndPassword }</>
 }
 
 
