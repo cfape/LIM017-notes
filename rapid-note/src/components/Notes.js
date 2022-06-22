@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Note } from "./Note.js";
 import { db } from "../Firebase/firebaseConfig.js";
 import { addDoc, collection, getDocs } from "firebase/firestore";
+import logNote from "../img/logNote.png";
+
 
 export const Notes = () => {
 
@@ -20,7 +22,7 @@ export const Notes = () => {
     const querySnapshot = await getDocs(collection(db, "notes"))
     const docs = [];
     querySnapshot.forEach((doc) => {
-      console.log(doc.id, '=>', doc.data());
+      docs.push({...doc.data(), id:doc.id})
     })
     setNotes(docs);
   };
@@ -32,9 +34,19 @@ export const Notes = () => {
 
   return (
     <div>
-      <div className='col-md-4'>
-        <Note addOrEditNote={addOrEditNote} />
+      
+      <Note addOrEditNote={addOrEditNote} />
+      <div className="notesList">
+      <img src={logNote} className="logNote" alt="img" />
+        {notes.map((note) => (
+          <div className="notesContent">
+            <div className="noteCard">
+              <h5>{note.title}</h5>
+              <p>{note.description}</p>
+            </div>
+          </div>
+        ))}
       </div>
-      </div>
-  )
+    </div>
+  );
 };

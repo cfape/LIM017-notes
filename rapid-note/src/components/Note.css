@@ -8,13 +8,13 @@
     margin-top: -65vmin;
   }
   .Content-cat {
-    margin-left: 5vmin;
-    margin-top: -30vmin;
+    margin-left: 10vmin;
+    margin-top: 0vmin;
   }
   .Container-note-form {
     background-color: #92daee;
     width: 100vw;
-    height: 100vh;
+    height: 79vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -30,27 +30,73 @@
   }
   input.formTitleNote {
     width: 60vmin;
-    margin-left: 14vmin;
+    margin-left: 17vmin;
     margin-top: 5vmin;
   }
   .input-group-textarea {
     width: 100vw;
-    height: 100vh;
+    background-color: #92daee;
+
   }
   textarea.textareaNote {
     margin-top: 0vmin;
     width: 65vmin;
     border-radius: 15px;
-    margin-left: 14vmin;
+    margin-left: 17vmin;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
     color: #15181a;
   }
   .btn-primary {
-    margin-top: -103vmin;
-    margin-right: 1vmin;
+    margin-top: 5vmin;
+    margin-right: 0vmin;
     font-family: "Sanchez";
     font-size: calc(22px + 3vmin);
     color: #15181a;
+  }
+  .noteList {
+    width: 100vmin;
+    margin-left: 10vmin;
+
+  }
+  .notesContent {
+    width: 75vmin;
+    margin-left: 12vmin;
+  }
+  .noteCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(247, 247, 156);
+    margin-top: 7vmin;
+    width: 75vmin;
+    border-radius: 15px;
+    font-family: "Sanchez";
+    font-size: calc(22px + 2vmin);
+    color: #15181a;
+  }
+  .noteCard, h5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sanchez";
+    font-size: calc(20px + 2vmin);
+    color: #15181a;
+  }
+  .noteCard, p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sanchez";
+    font-size: calc(20px + 2vmin);
+    color: #15181a;
+  }
+  .logNote{
+    width: 40%;
+    margin-top: 5vmin;
+    margin-left: 32vmin;
   }
 }
