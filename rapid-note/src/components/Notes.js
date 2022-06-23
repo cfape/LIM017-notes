@@ -3,6 +3,7 @@ import { Note } from "./Note.js";
 import { db } from "../Firebase/firebaseConfig.js";
 import { addDoc, collection, getDocs } from "firebase/firestore";
 import logNote from "../img/logNote.png";
+import closeNote from "../img/closeNote.png";
 
 
 export const Notes = () => {
@@ -22,7 +23,9 @@ export const Notes = () => {
     const querySnapshot = await getDocs(collection(db, "notes"))
     const docs = [];
     querySnapshot.forEach((doc) => {
+      if (doc.data().author === localStorage.getItem('email')){
       docs.push({...doc.data(), id:doc.id})
+      }
     })
     setNotes(docs);
   };
@@ -34,13 +37,14 @@ export const Notes = () => {
 
   return (
     <div>
-      
+
       <Note addOrEditNote={addOrEditNote} />
       <div className="notesList">
       <img src={logNote} className="logNote" alt="img" />
         {notes.map((note) => (
-          <div className="notesContent">
+          <div className="notesContent" key={note.id}>
             <div className="noteCard">
+              <img src={closeNote} className="closeNote" alt="img" />
               <h5>{note.title}</h5>
               <p>{note.description}</p>
             </div>

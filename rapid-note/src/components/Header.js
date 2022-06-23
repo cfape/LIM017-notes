@@ -22,7 +22,7 @@ export function Header() {
     <div className='Container-HeaderRapidNote'>
     <div className='Content-HeaderInfo'>
     <img src={logotext} className='LogoHeader' alt='img' />
-    <h3>Bienvenidx {user.displayName || user.email}</h3>
+    <h3>Hola, {user.displayName || user.email}</h3>
     </div>
     <div className='Content-BtnLogOut'>
     <button className='BtnLogOut' onClick={handleLogout}>

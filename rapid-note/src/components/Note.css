@@ -56,12 +56,13 @@
   }
   .noteList {
     width: 100vmin;
+    height: 100vmin;
     margin-left: 10vmin;
 
   }
   .notesContent {
     width: 75vmin;
-    margin-left: 12vmin;
+    margin-left: 14vmin;
   }
   .noteCard {
     display: flex;
@@ -69,8 +70,8 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(247, 247, 156);
-    margin-top: 7vmin;
-    width: 75vmin;
+    margin-top: 8vmin;
+    width: 70vmin;
     border-radius: 15px;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
@@ -84,19 +85,24 @@
     font-family: "Sanchez";
     font-size: calc(20px + 2vmin);
     color: #15181a;
+    margin-top: 3vmin;
   }
   .noteCard, p {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     font-family: "Sanchez";
     font-size: calc(20px + 2vmin);
     color: #15181a;
   }
-  .logNote{
+  .logNote {
     width: 40%;
     margin-top: 5vmin;
     margin-left: 32vmin;
+  }
+  .closeNote {
+    width: 8vmin;
+    margin-left: 55vmin;
+    margin-top: 3vmin;
   }
 }
