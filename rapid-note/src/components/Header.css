@@ -9,19 +9,20 @@
     background-color: white;
   }
   .LogoHeader {
-    width: 40vw;
+    width: 97vw;
+    height: 14vh;
     margin-top: 1vmin;
-    margin-left: -1vmin;
+    margin-left: -4vmin;
   }
   h3 {
-    margin-left: 40vmin;
-    margin-top: -13vmin;
+    margin-left: 4vmin;
+    margin-top: 0vmin;
     font-family: 'apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;';
-  font-size: calc(14px + 2vmin);
+    font-size: calc(14px + 2vmin);
   }
   .Content-BtnLogOut {
-    margin-top: -2vmin;
-    margin-left: 48vmin;
+    margin-top: -8vmin;
+    margin-left: 49vmin;
   }
   .BtnLogOut{
   height: 1vmin;

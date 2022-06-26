@@ -10,7 +10,6 @@ export function Login() {
     password: "",
   });
 
-  // const { login, loginWithGoogle } = useAuth();
   const navigate = useNavigate();
   const [error, setError] = useState();
 
@@ -22,7 +21,7 @@ export function Login() {
     setError("");
     try {
       const objectUser = await login(user.email, user.password);
-      console.log(objectUser.user);
+      console.log(objectUser);
       localStorage.setItem('email', objectUser.user.email);
       navigate("/rapidnote");
     } catch (error) {
@@ -40,11 +39,11 @@ export function Login() {
   const handleGoogleSignin = async () => {
     try {
       const objectUser = await  loginWithGoogle();
-      console.log(objectUser.user);
+      //console.log(objectUser.user);
       localStorage.setItem('email', objectUser.user.email);
       navigate("/rapidnote");
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     if (error) {
   } if (error.code === "auth/invalid-email") {
     setError("Correo inválido");

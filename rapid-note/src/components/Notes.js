@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from "react";
+/* eslint-disable no-undef */
+import React, { useState } from "react";
 import { Note } from "./Note.js";
 import { db } from "../Firebase/firebaseConfig.js";
-import { addDoc, collection, getDocs } from "firebase/firestore";
-import logNote from "../img/logNote.png";
+import {
+  addDoc,
+  collection,
+  onSnapshot,
+  where,
+  query,
+  deleteDoc,
+  doc
+} from "firebase/firestore";
 import closeNote from "../img/closeNote.png";
 
-
 export const Notes = () => {
-
   // eslint-disable-next-line no-unused-vars
-  const [notes, setNotes]= useState([]);
+  const [notes, setNotes] = useState([]);
 
   const addOrEditNote = async (objectNote) => {
     try {
@@ -19,32 +25,41 @@ export const Notes = () => {
       console.error("Error adding document: ", e);
     }
   };
+
+  const onDeleteNote = (id) => {
+    console.log(id);
+    deleteDoc(doc(db, 'notes', id))
+  }
+
   const getNotes = async () => {
-    const querySnapshot = await getDocs(collection(db, "notes"))
-    const docs = [];
-    querySnapshot.forEach((doc) => {
-      if (doc.data().author === localStorage.getItem('email')){
-      docs.push({...doc.data(), id:doc.id})
-      }
-    })
-    setNotes(docs);
+
+    const q = query(collection(db, "notes"), where("author", "==", localStorage.getItem("email")));
+    onSnapshot(q, (querySnapshot) => {
+      const docs = [];
+      querySnapshot.forEach((doc) => {
+        docs.push({...doc.data(), id:doc.id});
+      });
+      setNotes(docs);
+    });
   };
-
-
-  useEffect(() => {
     getNotes();
-  }, []);
+  //useEffect(() => {
+  //  getNotes();
+  //}, []);
 
   return (
     <div>
-
       <Note addOrEditNote={addOrEditNote} />
       <div className="notesList">
-      <img src={logNote} className="logNote" alt="img" />
         {notes.map((note) => (
-          <div className="notesContent" key={note.id}>
+          <div className="notesContent" key={note.id} >
             <div className="noteCard">
-              <img src={closeNote} className="closeNote" alt="img" />
+              <button
+                className="BtnClose"
+                onClick = {(e)=> {e.stopPropagation(); onDeleteNote(note.id)}}
+              >
+                <img src={closeNote} className="closeNote" alt="btn" />
+              </button>
               <h5>{note.title}</h5>
               <p>{note.description}</p>
             </div>

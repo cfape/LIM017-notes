@@ -2,19 +2,8 @@
   .App {
     text-align: center;
   }
-  .LogNote {
-    width: 35vmin;
-    margin-left: 2vmin;
-    margin-top: -65vmin;
-  }
-  .Content-cat {
-    margin-left: 10vmin;
-    margin-top: 0vmin;
-  }
   .Container-note-form {
-    background-color: #92daee;
     width: 100vw;
-    height: 79vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,45 +13,77 @@
     color: #15181a;
     margin-top: 0vmin;
   }
-  .form-group-input-group {
+  .Container-note {
+    background-color: #92daee;
+    width: 50vw;
+    height: 60vh;
+    margin-left: 29vmin;
+    margin-top: 18vmin;
+    border-radius: 15px;
+  }
+  .LogNote {
+    width: 35vmin;
+    margin-left: 2vmin;
+    margin-top: -65vmin;
+  }
+  .Content-cat {
+    margin-left: -30vmin;
+    margin-top: 0vmin;
+    width: 20vmin;
+    height: 30vmin;
+  }
+  .catNote {
+    width: 30vmin;
+    height: 40vmin;
     margin-top: 10vmin;
-    margin-left: 0vmin;
+    margin-left: -5vmin;
+  }
+  .titleAddNote{
+    font-family: "Sanchez";
+    font-size: calc(22px + 3vmin);
+    color: #15181a;
+    margin-top: -20vmin;
+    margin-left: 7vmin;
+  }
+  .form-group-input-group {
+    margin-top: 0vmin;
+    margin-right: 15vmin;
+    width: 30vw;
   }
   input.formTitleNote {
-    width: 60vmin;
-    margin-left: 17vmin;
-    margin-top: 5vmin;
+    width: 40vmin;
+    margin-left: 2vmin;
+    margin-top: -10vmin;
   }
   .input-group-textarea {
-    width: 100vw;
+    width: 30vw;
     background-color: #92daee;
-
   }
   textarea.textareaNote {
     margin-top: 0vmin;
-    width: 65vmin;
+    width: 45vmin;
     border-radius: 15px;
-    margin-left: 17vmin;
+    margin-left: 2vmin;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
     color: #15181a;
   }
   .btn-primary {
-    margin-top: 5vmin;
-    margin-right: 0vmin;
+    margin-top: 2vmin;
+    margin-left: 4vmin;
     font-family: "Sanchez";
-    font-size: calc(22px + 3vmin);
+    font-size: calc(14px + 3vmin);
     color: #15181a;
   }
   .noteList {
     width: 100vmin;
-    height: 100vmin;
+    height: 100vh;
     margin-left: 10vmin;
-
   }
   .notesContent {
     width: 75vmin;
-    margin-left: 14vmin;
+    margin-left: 11vmin;
+    margin-top: 3vmin;
   }
   .noteCard {
     display: flex;
@@ -70,14 +91,16 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(247, 247, 156);
-    margin-top: 8vmin;
-    width: 70vmin;
+    width: 35vw;
+    height: 25vh;
     border-radius: 15px;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
     color: #15181a;
+    margin-top: 1vmin;
+    margin-left: -10vmin;
   }
-  .noteCard, h5 {
+  h5 {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,24 +108,24 @@
     font-family: "Sanchez";
     font-size: calc(20px + 2vmin);
     color: #15181a;
-    margin-top: 3vmin;
+    margin-top: -5vmin;
+    padding: 0vmin;
   }
-  .noteCard, p {
+  p {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     font-family: "Sanchez";
-    font-size: calc(20px + 2vmin);
+    font-size: calc(14px + 2vmin);
+    padding: 5px 5px 5px 5px;
     color: #15181a;
-  }
-  .logNote {
-    width: 40%;
-    margin-top: 5vmin;
-    margin-left: 32vmin;
+    margin-top: 0vmin;
   }
   .closeNote {
-    width: 8vmin;
-    margin-left: 55vmin;
+    width: 7vmin;
+    margin-left: 28vmin;
     margin-top: 3vmin;
   }
 }

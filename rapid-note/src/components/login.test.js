@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
@@ -44,7 +44,7 @@ describe('usuario identificado', () => {
     fireEvent.click(btnLogin);
 
     await waitFor(() => {
-      expect(history.location.pathname).toBe('/');
+      expect(history.location.pathname).toBe('/rapidnote');
     });
   });
 });

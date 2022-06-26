@@ -33,7 +33,7 @@ export function AuthProvider({ children }) {
   const signUp = ( email, password) =>
     createUserWithEmailAndPassword( auth, email, password);
 
-  const login = (email, password) =>
+  const loginNote = (email, password) =>
     signInWithEmailAndPassword(auth, email, password);
 
   const logOut = () => signOut(auth);
@@ -51,6 +51,6 @@ export function AuthProvider({ children }) {
     },[])
 
   return (
-  <authContext.Provider value={{ signUp, login, user, logOut, loading, loginWithGoogle }}>{children}</authContext.Provider>
+  <authContext.Provider value={{ signUp, loginNote, user, logOut, loading, loginWithGoogle }}>{children}</authContext.Provider>
   );
 }

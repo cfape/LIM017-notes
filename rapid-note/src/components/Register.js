@@ -23,7 +23,7 @@ export function Register() {
     setError('')
     try {
       await signUp(user.email, user.password)
-      navigate('/rapidnote')
+      navigate('/login')
     } catch (error) {
       console.log(error.code);
       if (error.code === 'auth/invalid-email') {
