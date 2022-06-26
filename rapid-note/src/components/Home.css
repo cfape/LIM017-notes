@@ -5,11 +5,11 @@
 }
 .App-logotext {
   width: 70vmin;
-  margin-left: 11vmin;
+  margin-left: 14vmin;
   margin-top: -40vmin;
 }
 .App-logo {
-  margin-left: 20vmin;
+  margin-left: 25vmin;
   width: 50vmin;
   animation: App-logo-spin infinite 2s linear;
   margin-top: -10vmin;
@@ -19,7 +19,7 @@
   font-family: 'Sanchez';
   font-size: calc(18px + 2vmin);
   margin-top: 4vmin;
-  margin-left: 7vmin;
+  margin-left: 10vmin;
 }
 .Content-home {
   background-color: #92daee;
@@ -36,7 +36,7 @@
 .Content-btn {
   background-color: #92daee ;
   margin-top: -46vmin;
-  margin-left: 27vmin;
+  margin-left: 30vmin;
 }
 .Btn-home {
   height: 12vmin;
@@ -52,7 +52,7 @@
 .Content-link {
   margin-top: 2vmin;
   background-color: #92daee;
-  margin-right: 8vmin;
+  margin-right: 4vmin;
 }
 .Link-home {
   display: flex;

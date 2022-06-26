@@ -1,1 +1,15 @@
+@media only screen and (min-device-width: 810px) {
 
+  .contentBtnClose {
+    margin-left: 16em;
+    margin-top: 2vmin;
+    width: 2vmin;
+  }
+  .closeNote {
+    width: 6vmin;
+    background-color: rgb(247, 247, 156);
+    margin-left: 0vmin;
+    margin-top: 0vmin;
+    border: none;
+  }
+}

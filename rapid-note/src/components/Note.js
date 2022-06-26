@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import cat from "../img/cat.gif";
+import cat1 from "../img/cat1.gif";
 
 export function Note(props) {
   const initialStateValues = {
@@ -22,35 +22,36 @@ export function Note(props) {
   };
 
   return (
-    <form className="Container-note-form" onSubmit={handleSubmit}>
-      <div className="Container-note">
-        <div className="Content-cat">
-          <img src={cat} className="catNote" alt="cat" />
-        </div>
-        <div className="input-group-text">
-          <p className="titleAddNote">Agregar nota</p>
-          <input
-            type="text"
-            name="title"
-            className="formTitleNote"
-            placeholder="Título"
-            onChange={handleInputChange}
-            value={values.title}
-          />
-          <div className="input-group-textarea">
-            <textarea
-              className="textareaNote"
-              name="description"
-              rows="6"
-              placeholder="Escribe una nota"
-              onChange={handleInputChange}
-              value={values.description}
-            ></textarea>
-          </div>
-        </div>
-
-        <button className="btn btn-primary btn-block">Guardar Nota</button>
+    <div className="Container-rapid-note">
+      <div className="Content-cat">
+        <img src={cat1} className="catNote" alt="cat" />
       </div>
-    </form>
+      <form className="Container-note-form" onSubmit={handleSubmit}>
+        <div className="Container-note">
+          <div className="input-group-text">
+            <p className="titleAddNote">Agregar nota</p>
+            <input
+              type="text"
+              name="title"
+              className="formTitleNote"
+              placeholder="Título"
+              onChange={handleInputChange}
+              value={values.title}
+            />
+            <div className="input-group-textarea">
+              <textarea
+                className="textareaNote"
+                name="description"
+                rows="4"
+                placeholder="Escribe una nota"
+                onChange={handleInputChange}
+                value={values.description}
+              ></textarea>
+            </div>
+          </div>
+          <button className="btnPrimary">Guardar nota</button>
+        </div>
+      </form>
+    </div>
   );
 }

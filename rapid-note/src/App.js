@@ -2,6 +2,7 @@ import './components/Home.css';
 import './components/Register.css';
 import './components/Login.css';
 import './components/Note.css';
+import './components/Notes.css';
 import './components/Header.css';
 import React from 'react';
 import { Home }  from  './components/Home.js';

@@ -63,7 +63,7 @@ export function Register() {
         />
 
         <div className='Content-btn-register'>
-          <button>Regístrate</button>
+          <button className='btnRegister'>Regístrate</button>
         </div>
 
         <div className='Content-link-register'>

@@ -3,9 +3,9 @@
     text-align: center;
   }
   .Logotext-login {
-    width: 70vmin;
+    width: 75vmin;
     height: 25vmin;
-    margin-right: 8vmin;
+    margin-right: 0vmin;
     margin-top: -10vmin;
   }
   .Form-login {
@@ -13,7 +13,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    margin-right: 7vmin;
+    margin-right: 0vmin;
     margin-top: 1vmin;
   }
   .Content-btn-login {

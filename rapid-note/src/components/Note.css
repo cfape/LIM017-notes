@@ -11,49 +11,43 @@
     font-family: "Sanchez";
     font-size: calc(20px + 2vmin);
     color: #15181a;
-    margin-top: 0vmin;
+    margin-top: -5vmin;
   }
   .Container-note {
     background-color: #92daee;
-    width: 50vw;
-    height: 60vh;
-    margin-left: 29vmin;
-    margin-top: 18vmin;
+    width: 88vw;
+    margin-left: 10vmin;
+    margin-top: 10vmin;
     border-radius: 15px;
+    padding: 10px 10px 6vmin 10px;
   }
   .LogNote {
     width: 35vmin;
     margin-left: 2vmin;
     margin-top: -65vmin;
   }
-  .Content-cat {
-    margin-left: -30vmin;
+  .Content.cat {
     margin-top: 0vmin;
-    width: 20vmin;
-    height: 30vmin;
   }
   .catNote {
-    width: 30vmin;
-    height: 40vmin;
-    margin-top: 10vmin;
-    margin-left: -5vmin;
+    width: 25vmin;
+    margin-top: 17vmin;
+    margin-left: 44vmin;
   }
   .titleAddNote{
     font-family: "Sanchez";
-    font-size: calc(22px + 3vmin);
-    color: #15181a;
-    margin-top: -20vmin;
-    margin-left: 7vmin;
+    font-size: calc(22px + 4vmin);
+    color: white;
+    margin-top: 2vmin;
+    margin-left: 0vmin;
   }
-  .form-group-input-group {
+  .input-group-text {
     margin-top: 0vmin;
-    margin-right: 15vmin;
-    width: 30vw;
   }
   input.formTitleNote {
-    width: 40vmin;
-    margin-left: 2vmin;
-    margin-top: -10vmin;
+    width: 80vmin;
+    margin-left: 1vmin;
+    margin-top: -5vmin;
   }
   .input-group-textarea {
     width: 30vw;
@@ -61,19 +55,23 @@
   }
   textarea.textareaNote {
     margin-top: 0vmin;
-    width: 45vmin;
+    width: 85vmin;
     border-radius: 15px;
-    margin-left: 2vmin;
+    margin-left: 1vmin;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
     color: #15181a;
   }
-  .btn-primary {
-    margin-top: 2vmin;
-    margin-left: 4vmin;
+  .btnPrimary {
+    background-color: white;
+    margin-top: 1vmin;
+    margin-left: 25vmin;
+    border: none;
+    border-radius: 15px;
     font-family: "Sanchez";
-    font-size: calc(14px + 3vmin);
+    font-size: calc(22px + 3vmin);
     color: #15181a;
+    padding: 10px 10px 10px 10px;
   }
   .noteList {
     width: 100vmin;
@@ -81,7 +79,7 @@
     margin-left: 10vmin;
   }
   .notesContent {
-    width: 75vmin;
+    width: 88vmin;
     margin-left: 11vmin;
     margin-top: 3vmin;
   }
@@ -91,14 +89,14 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(247, 247, 156);
-    width: 35vw;
+    width: 90vw;
     height: 25vh;
     border-radius: 15px;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
     color: #15181a;
-    margin-top: 1vmin;
-    margin-left: -10vmin;
+    margin-top: 2vmin;
+    margin-left: -1vmin;
   }
   h5 {
     display: flex;
@@ -106,9 +104,9 @@
     align-items: center;
     justify-content: center;
     font-family: "Sanchez";
-    font-size: calc(20px + 2vmin);
+    font-size: 34px;
     color: #15181a;
-    margin-top: -5vmin;
+    margin-top: 0vmin;
     padding: 0vmin;
   }
   p {
@@ -121,11 +119,7 @@
     font-size: calc(14px + 2vmin);
     padding: 5px 5px 5px 5px;
     color: #15181a;
-    margin-top: 0vmin;
+    margin-top: -4vmin;
   }
-  .closeNote {
-    width: 7vmin;
-    margin-left: 28vmin;
-    margin-top: 3vmin;
-  }
+
 }

@@ -54,12 +54,14 @@ export const Notes = () => {
         {notes.map((note) => (
           <div className="notesContent" key={note.id} >
             <div className="noteCard">
+              <div className="contentBtnClose">
               <button
-                className="BtnClose"
+                className="btnClose"
                 onClick = {(e)=> {e.stopPropagation(); onDeleteNote(note.id)}}
               >
                 <img src={closeNote} className="closeNote" alt="btn" />
               </button>
+              </div>
               <h5>{note.title}</h5>
               <p>{note.description}</p>
             </div>
