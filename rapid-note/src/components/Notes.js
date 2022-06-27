@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-undef */
 import React, { useState } from "react";
 import { Note } from "./Note.js";
@@ -9,9 +10,11 @@ import {
   where,
   query,
   deleteDoc,
+  updateDoc,
   doc
 } from "firebase/firestore";
 import closeNote from "../img/closeNote.png";
+import editNote from "../img/editNote.png";
 
 export const Notes = () => {
   // eslint-disable-next-line no-unused-vars
@@ -27,8 +30,16 @@ export const Notes = () => {
   };
 
   const onDeleteNote = (id) => {
-    console.log(id);
     deleteDoc(doc(db, 'notes', id))
+  }
+
+  const onEditNote = (id, title, description, objectNote) => {
+    updateDoc(doc(db, 'notes', id), {title, description}, objectNote);
+  };
+
+  const onEditRapidNotes = (id, title, description, objectNote) => {
+    onEditNote(id, title, description, objectNote);
+    getNotes();
   }
 
   const getNotes = async () => {
@@ -54,6 +65,14 @@ export const Notes = () => {
         {notes.map((note) => (
           <div className="notesContent" key={note.id} >
             <div className="noteCard">
+              <div className="contentBtnEdit">
+              <button
+                className="editNote"
+                onClick = {(e)=> {e.stopPropagation(); onEditRapidNotes(note.id)}}
+              >
+                <img src={editNote} className="closeNote" alt="btn" />
+              </button>
+              </div>
               <div className="contentBtnClose">
               <button
                 className="btnClose"

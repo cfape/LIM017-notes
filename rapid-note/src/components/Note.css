@@ -37,7 +37,7 @@
   .titleAddNote{
     font-family: "Sanchez";
     font-size: calc(22px + 4vmin);
-    color: white;
+    color: black;
     margin-top: 2vmin;
     margin-left: 0vmin;
   }
@@ -90,7 +90,6 @@
     justify-content: center;
     background-color: rgb(247, 247, 156);
     width: 90vw;
-    height: 25vh;
     border-radius: 15px;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);

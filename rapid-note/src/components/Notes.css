@@ -1,15 +1,33 @@
 @media only screen and (min-device-width: 810px) {
 
   .contentBtnClose {
-    margin-left: 16em;
-    margin-top: 2vmin;
+    margin-left: 15em;
+    margin-top: -7vmin;
     width: 2vmin;
+    border: none;
   }
   .closeNote {
     width: 6vmin;
     background-color: rgb(247, 247, 156);
     margin-left: 0vmin;
     margin-top: 0vmin;
+    border: none;
+  }
+  .btnClose {
+    border: none;
+    background-color: rgb(247, 247, 156);
+  }
+  .contentBtnEdit {
+    margin-right: 17em;
+    margin-top: 0vmin;
+    width: 2vmin;
+  }
+  .editNote {
+    width: 7vmin;
+    background-color: rgb(247, 247, 156);
+    margin-left: -1vmin;
+    margin-top: 3vmin;
+    border-radius: 5px;
     border: none;
   }
 }
