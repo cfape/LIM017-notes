@@ -1,7 +1,4 @@
-/* eslint-disable no-undef */
-
 import React, { useState } from "react";
-//import { Note } from "./NoteForm.js";
 import { db } from "../Firebase/firebaseConfig.js";
 import {
   addDoc,
@@ -10,7 +7,7 @@ import {
   where,
   query,
   deleteDoc,
-  updateDoc,
+
   doc,
 } from "firebase/firestore";
 import closeNote from "../img/closeNote.png";
@@ -47,13 +44,9 @@ export const Notes = () => {
       console.error("Error adding document: ", e);
     }
   };
-  /*const handleClickEdit = () => {
-    setValues(currentValues => {
-      currentValues.title = editTitle;
-      currentValues.description = editDescription;
-      return ({...currentValues})
-    })
-  };*/
+  const handleClickEdit = (note) => {
+  console.log("note",note);
+  };
   const getNotes = async () => {
     const q = query(
       collection(db, "notes"),
@@ -72,23 +65,13 @@ export const Notes = () => {
   const onDeleteNote = (id) => {
     deleteDoc(doc(db, "notes", id));
   };
- 
-  const onEditNote = async (id, e) => {
-    e.preventDefault();
-    
-    console.log("estoy entrando a edit");
-    const titled = e.target.parentNode.parentNode.parentNode.children[2];
-    const content = e.target.parentNode.parentNode.parentNode.children[3];
-  
-    titled.setAttribute('contenteditable', true)
-    content.setAttribute('contenteditable', true)
 
-    const keyNote = document.querySelector(id);
-    console.log(keyNote);
-      await updateDoc (doc(db, "notes", id), {
-        title: titled.value,
-        description: content.value,
-      });
+  const [editNoteSelected, setEditNoteSelected] = useState (0);
+  const onEditNote = async (e, index) => {
+    e.preventDefault();
+    console.log(index);
+    console.log(editNoteSelected);
+    setEditNoteSelected (index)
 
     };
   //};
@@ -132,7 +115,7 @@ export const Notes = () => {
 
       <div addnote={"addnote"}>
         <div className="notesList">
-          {notes.map((note) => (
+          {notes.map((note, index) => (
             <div className="notesContent" key={note.id} id={note.id}>
               <div className="noteCard">
                 <div className="contentBtnEdit">
@@ -140,7 +123,7 @@ export const Notes = () => {
                     data-noteid={note.id}
                     className="editNote"
                     onClick={(e) => {
-                      onEditNote(note.id, e);
+                      onEditNote(e, note.id, index);
                     }}
                   >
                     <img src={editNote} className="closeNote" alt="btn" />
@@ -157,8 +140,15 @@ export const Notes = () => {
                     <img src={closeNote} className="closeNote" alt="btn" />
                   </button>
                 </div>
-                <h5>{note.title}</h5>
-                <p>{note.description}</p>
+                <input disabled={editNoteSelected !== index} className="editTitleLoad" value={note.title}/>
+                <textarea disabled={editNoteSelected !== index} className="editDescriptionLoad" >{note.description}</textarea>
+                <div className="contentBtnLoad">
+                  <button
+                  onClick={()=> handleClickEdit(note)}
+                  className="btnLoad">
+                    Actualizar
+                    </button>
+                  </div>
               </div>
             </div>
           ))}

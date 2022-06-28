@@ -150,4 +150,29 @@
     border-radius: 5px;
     border: none;
   }
+  .btnLoad {
+    background-color: white;
+    margin-top: 1vmin;
+    margin-left: 22vmin;
+    border: none;
+    border-radius: 15px;
+    font-family: "Sanchez";
+    font-size: calc(22px + 3vmin);
+    color: #15181a;
+    padding: 10px 10px 10px 10px;
+  }
+  .editTitleLoad{
+    width: 75vmin;
+    margin-left: 1vmin;
+    margin-top: -5vmin;
+  }
+  .editDescriptionLoad {
+    margin-top: 0vmin;
+    width: 80vmin;
+    border-radius: 15px;
+    margin-left: 1vmin;
+    font-family: "Sanchez";
+    font-size: calc(22px + 2vmin);
+    color: #15181a;
+  }
 }
