@@ -18,6 +18,7 @@ import editNote from "../img/editNote.png";
 import cat1 from "../img/cat1.gif";
 
 export const Notes = () => {
+
   const initialStateValues = {
     title: "",
     description: "",
@@ -71,17 +72,27 @@ export const Notes = () => {
   const onDeleteNote = (id) => {
     deleteDoc(doc(db, "notes", id));
   };
-
-  const onEditNote = async (id, title, description) => {
+ 
+  const onEditNote = async (id, e) => {
+    e.preventDefault();
+    
     console.log("estoy entrando a edit");
+    const titled = e.target.parentNode.parentNode.parentNode.children[2];
+    const content = e.target.parentNode.parentNode.parentNode.children[3];
+  
+    titled.setAttribute('contenteditable', true)
+    content.setAttribute('contenteditable', true)
 
-      const editNoteRapid = (doc(db, "notes", id), {
-        title: title,
-        description: description,
+    const keyNote = document.querySelector(id);
+    console.log(keyNote);
+      await updateDoc (doc(db, "notes", id), {
+        title: titled.value,
+        description: content.value,
       });
-      console.log(editNoteRapid);
+
     };
   //};
+
 
   //useEffect(() => {
   //  getNotes();
@@ -122,15 +133,14 @@ export const Notes = () => {
       <div addnote={"addnote"}>
         <div className="notesList">
           {notes.map((note) => (
-            <div className="notesContent" key={note.id}>
+            <div className="notesContent" key={note.id} id={note.id}>
               <div className="noteCard">
                 <div className="contentBtnEdit">
                   <button
                     data-noteid={note.id}
                     className="editNote"
                     onClick={(e) => {
-                      e.stopPropagation();
-                      onEditNote(note.id, note.title, note.description);
+                      onEditNote(note.id, e);
                     }}
                   >
                     <img src={editNote} className="closeNote" alt="btn" />
