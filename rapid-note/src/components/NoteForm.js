@@ -1,5 +1,9 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-sequences */
+import React, { useState} from "react";
 import cat1 from "../img/cat1.gif";
+//{addNote, currentId, editTitle, editDescription}
 
 export function Note(props) {
   const initialStateValues = {
@@ -15,18 +19,28 @@ export function Note(props) {
     setValues({ ...values, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  /*const handleSubmit = (e) => {
     e.preventDefault();
-    props.addOrEditNote(values);
+    props.addNote(values);
     setValues({ ...initialStateValues });
   };
+*/
+/*
+  useEffect(() => {
+    console.log(addNote);
+    if (addNote.currentId === '') {
+      setValues({...initialStateValues});
+    } else {
+      console.log('editing');
+    }
+  }, []); */
 
   return (
     <div className="Container-rapid-note">
       <div className="Content-cat">
         <img src={cat1} className="catNote" alt="cat" />
       </div>
-      <form className="Container-note-form" onSubmit={handleSubmit}>
+      <form className="Container-note-form">
         <div className="Container-note">
           <div className="input-group-text">
             <p className="titleAddNote">Agregar nota</p>

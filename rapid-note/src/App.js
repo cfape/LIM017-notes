@@ -1,21 +1,21 @@
-import './components/Home.css';
-import './components/Register.css';
-import './components/Login.css';
-import './components/Note.css';
-import './components/Notes.css';
-import './components/Header.css';
 import React from 'react';
+import {
+  BrowserRouter,
+  Routes,
+  Route
+} from 'react-router-dom';
 import { Home }  from  './components/Home.js';
 import { Login } from './components/Login.js';
 import { Register } from './components/Register.js'
 import { AuthProvider } from './contex/authContext.js';
 import { Header } from './components/Header.js';
 import { Notes } from './components/Notes.js';
-import {
-  BrowserRouter,
-  Routes,
-  Route
-} from 'react-router-dom';
+import './components/Home.css';
+import './components/Register.css';
+import './components/Login.css';
+import './components/NoteForm.css';
+import './components/Notes.css';
+import './components/Header.css';
 
 
 function App() {
