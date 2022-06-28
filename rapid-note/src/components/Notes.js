@@ -10,31 +10,31 @@ import {
   where,
   query,
   deleteDoc,
-  doc
+  updateDoc,
+  doc,
 } from "firebase/firestore";
 import closeNote from "../img/closeNote.png";
 import editNote from "../img/editNote.png";
 import cat1 from "../img/cat1.gif";
 
 export const Notes = () => {
+  const initialStateValues = {
+    title: "",
+    description: "",
+    author: localStorage.getItem("email"),
+  };
+  const [values, setValues] = useState(initialStateValues);
+  // eslint-disable-next-line no-unused-vars
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
 
-    const initialStateValues = {
-      title: "",
-      description: "",
-      author: localStorage.getItem("email"),
-    };
-    const [values, setValues] = useState(initialStateValues);
-    // eslint-disable-next-line no-unused-vars
-    const handleInputChange = (e) => {
-      const { name, value } = e.target;
-      setValues({ ...values, [name]: value });
-    };
-
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      addnote(values);
-      setValues({ ...initialStateValues });
-    };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    addnote(values);
+    setValues({ ...initialStateValues });
+  };
 
   const [notes, setNotes] = useState([]);
 
@@ -72,7 +72,7 @@ export const Notes = () => {
     deleteDoc(doc(db, "notes", id));
   };
 
-  /*const onEditNote = async (id, title, description) => {
+  const onEditNote = async (id, title, description) => {
     console.log("estoy entrando a edit");
     try {
       const editNoteRapid = await updateDoc(doc(db, "notes", id), {
@@ -83,7 +83,7 @@ export const Notes = () => {
     } catch (e) {
       console.error("Error adding document: ", e);
     }
-  };*/
+  };
 
   //useEffect(() => {
   //  getNotes();
@@ -91,7 +91,6 @@ export const Notes = () => {
 
   return (
     <div className="Container-rapid-note">
-
       <div className="Content-cat">
         <img src={cat1} className="catNote" alt="cat" />
       </div>
@@ -122,7 +121,7 @@ export const Notes = () => {
         </div>
       </form>
 
-      <div addnote={'addnote'}>
+      <div addnote={"addnote"}>
         <div className="notesList">
           {notes.map((note) => (
             <div className="notesContent" key={note.id}>
@@ -131,7 +130,10 @@ export const Notes = () => {
                   <button
                     data-noteid={note.id}
                     className="editNote"
-                    //onClick={onEditNote(note.id, note.title, note.description)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      onEditNote(note.id, note.title, note.description);
+                    }}
                   >
                     <img src={editNote} className="closeNote" alt="btn" />
                   </button>

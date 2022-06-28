@@ -1,5 +1,125 @@
 @media only screen and (min-device-width: 810px) {
 
+  .Container-note-form {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sanchez";
+    font-size: calc(20px + 2vmin);
+    color: #15181a;
+    margin-top: -5vmin;
+  }
+  .Container-note {
+    background-color: #92daee;
+    width: 88vw;
+    margin-left: 10vmin;
+    margin-top: 10vmin;
+    border-radius: 15px;
+    padding: 10px 10px 6vmin 10px;
+  }
+  .LogNote {
+    width: 35vmin;
+    margin-left: 2vmin;
+    margin-top: -65vmin;
+  }
+  .Content.cat {
+    margin-top: 0vmin;
+  }
+  .catNote {
+    width: 40vmin;
+    margin-top: 17vmin;
+    margin-left: 36vmin;
+  }
+  .titleAddNote{
+    font-family: "Sanchez";
+    font-size: calc(22px + 4vmin);
+    color: black;
+    margin-top: 2vmin;
+    margin-left: 0vmin;
+  }
+  .input-group-text {
+    margin-top: 0vmin;
+  }
+  input.formTitleNote {
+    width: 80vmin;
+    margin-left: 1vmin;
+    margin-top: -5vmin;
+  }
+  .input-group-textarea {
+    width: 30vw;
+    background-color: #92daee;
+  }
+  textarea.textareaNote {
+    margin-top: 0vmin;
+    width: 85vmin;
+    border-radius: 15px;
+    margin-left: 1vmin;
+    font-family: "Sanchez";
+    font-size: calc(22px + 2vmin);
+    color: #15181a;
+  }
+  .btnPrimary {
+    background-color: white;
+    margin-top: 1vmin;
+    margin-left: 25vmin;
+    border: none;
+    border-radius: 15px;
+    font-family: "Sanchez";
+    font-size: calc(22px + 3vmin);
+    color: #15181a;
+    padding: 10px 10px 10px 10px;
+  }
+  .noteList {
+    width: 100vmin;
+    height: 100vh;
+    margin-left: 10vmin;
+  }
+  .notesContent {
+    width: 88vmin;
+    margin-left: 11vmin;
+    margin-top: 3vmin;
+  }
+  .noteCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(247, 247, 156);
+    width: 90vw;
+    border-radius: 15px;
+    font-family: "Sanchez";
+    font-size: calc(22px + 2vmin);
+    color: #15181a;
+    margin-top: 2vmin;
+    margin-left: -1vmin;
+  }
+  h5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "Sanchez";
+    font-size: 34px;
+    color: #15181a;
+    margin-top: 0vmin;
+    padding: 0vmin;
+  }
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Sanchez";
+    font-size: calc(14px + 2vmin);
+    padding: 5px 5px 5px 5px;
+    color: #15181a;
+    margin-top: -4vmin;
+  }
+  
+
   .contentBtnClose {
     margin-left: 15em;
     margin-top: -7vmin;

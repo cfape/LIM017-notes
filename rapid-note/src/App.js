@@ -13,10 +13,10 @@ import { Notes } from './components/Notes.js';
 import './components/Home.css';
 import './components/Register.css';
 import './components/Login.css';
-import './components/NoteForm.css';
 import './components/Notes.css';
 import './components/Header.css';
 
+//import './components/NoteForm.css';
 
 function App() {
   return (
