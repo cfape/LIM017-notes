@@ -24,7 +24,7 @@ export const Notes = () => {
     author: localStorage.getItem("email"),
   };
   const [values, setValues] = useState(initialStateValues);
-  // eslint-disable-next-line no-unused-vars
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
@@ -74,16 +74,14 @@ export const Notes = () => {
 
   const onEditNote = async (id, title, description) => {
     console.log("estoy entrando a edit");
-    try {
-      const editNoteRapid = await updateDoc(doc(db, "notes", id), {
+
+      const editNoteRapid = (doc(db, "notes", id), {
         title: title,
         description: description,
       });
       console.log(editNoteRapid);
-    } catch (e) {
-      console.error("Error adding document: ", e);
-    }
-  };
+    };
+  //};
 
   //useEffect(() => {
   //  getNotes();

@@ -13,7 +13,7 @@
   }
   .Container-note {
     background-color: #92daee;
-    width: 88vw;
+    width: 84vw;
     margin-left: 10vmin;
     margin-top: 10vmin;
     border-radius: 15px;
@@ -43,7 +43,7 @@
     margin-top: 0vmin;
   }
   input.formTitleNote {
-    width: 80vmin;
+    width: 75vmin;
     margin-left: 1vmin;
     margin-top: -5vmin;
   }
@@ -53,7 +53,7 @@
   }
   textarea.textareaNote {
     margin-top: 0vmin;
-    width: 85vmin;
+    width: 80vmin;
     border-radius: 15px;
     margin-left: 1vmin;
     font-family: "Sanchez";
@@ -63,7 +63,7 @@
   .btnPrimary {
     background-color: white;
     margin-top: 1vmin;
-    margin-left: 25vmin;
+    margin-left: 22vmin;
     border: none;
     border-radius: 15px;
     font-family: "Sanchez";
@@ -87,13 +87,13 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(247, 247, 156);
-    width: 90vw;
+    width: 86vw;
     border-radius: 15px;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
     color: #15181a;
     margin-top: 2vmin;
-    margin-left: -1vmin;
+    margin-left: 1vmin;
   }
   h5 {
     display: flex;
