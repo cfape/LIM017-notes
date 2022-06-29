@@ -7,7 +7,6 @@ import {
   where,
   query,
   deleteDoc,
-
   doc,
 } from "firebase/firestore";
 import closeNote from "../img/closeNote.png";
@@ -15,7 +14,6 @@ import editNote from "../img/editNote.png";
 import cat1 from "../img/cat1.gif";
 
 export const Notes = () => {
-
   const initialStateValues = {
     title: "",
     description: "",
@@ -45,7 +43,7 @@ export const Notes = () => {
     }
   };
   const handleClickEdit = (note) => {
-  console.log("note",note);
+    console.log("note", note);
   };
   const getNotes = async () => {
     const q = query(
@@ -66,20 +64,15 @@ export const Notes = () => {
     deleteDoc(doc(db, "notes", id));
   };
 
-  const [editNoteSelected, setEditNoteSelected] = useState (0);
+  const [editNoteSelected, setEditNoteSelected] = useState(0);
   const onEditNote = async (e, index) => {
     e.preventDefault();
     console.log(index);
     console.log(editNoteSelected);
-    setEditNoteSelected (index)
-
+    setEditNoteSelected(index);
     };
-  //};
 
 
-  //useEffect(() => {
-  //  getNotes();
-  //}, []);
 
   return (
     <div className="Container-rapid-note">
@@ -123,7 +116,7 @@ export const Notes = () => {
                     data-noteid={note.id}
                     className="editNote"
                     onClick={(e) => {
-                      onEditNote(e, note.id, index);
+                      onEditNote(e, note, index);
                     }}
                   >
                     <img src={editNote} className="closeNote" alt="btn" />
@@ -140,15 +133,26 @@ export const Notes = () => {
                     <img src={closeNote} className="closeNote" alt="btn" />
                   </button>
                 </div>
-                <input disabled={editNoteSelected !== index} className="editTitleLoad" value={note.title}/>
-                <textarea disabled={editNoteSelected !== index} className="editDescriptionLoad" >{note.description}</textarea>
+                <input
+                  disabled={editNoteSelected !== index}
+                  className="editTitleLoad"
+                  value={note.title}
+                />
+                <textarea
+                  disabled={editNoteSelected !== index}
+                  className="editDescriptionLoad"
+                  rows="5"
+                >
+                  {note.description}
+                </textarea>
                 <div className="contentBtnLoad">
                   <button
-                  onClick={()=> handleClickEdit(note)}
-                  className="btnLoad">
+                    onClick={() => handleClickEdit(note)}
+                    className="btnLoad"
+                  >
                     Actualizar
-                    </button>
-                  </div>
+                  </button>
+                </div>
               </div>
             </div>
           ))}
