@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { db } from "../Firebase/firebaseConfig.js";
+import { db, updateNote} from "../Firebase/firebaseConfig.js";
 import {
   addDoc,
   collection,
@@ -47,29 +47,22 @@ export const Notes = () => {
     setValues({ ...docSnap.data()})
   }
 
-  useEffect(() => {
-    console.log(currentId)
-    if (currentId === '') {
-      setValues({...initialStateValues});
-    } else {
-      getNoteById(currentId)
-    }
-  }, [currentId]);
-
-
   const [notes, setNotes] = useState([]);
 
-  const addnote = async (objectNote) => {
+  const addnote = async (objectNote, objectData) => {
+    console.log(currentId);
     if (currentId === '') {
       const docRef = await addDoc(collection(db, "notes"), objectNote);
       console.log("Document written with ID: ", docRef.id);
     } else {
-      addDoc(collection(db, "notes"), objectNote);
+      await updateNote(currentId, objectNote.title, objectNote.description).then(() => {
+        getNotes();
+      })
     }
   };
 
   const getNotes = async () => {
-    const q = query(
+    const q =  query(
       collection(db, "notes"),
       where("author", "==", localStorage.getItem("email"))
     );
@@ -87,19 +80,20 @@ export const Notes = () => {
     deleteDoc(doc(db, "notes", id));
   };
 
-    useEffect (() => {
-      getNotes();
-    }, []);
-  /*const [editNoteSelected, setEditNoteSelected] = useState(0);
-  const onEditNote = async (e, note, index) => {
-    e.preventDefault();
-    console.log(index);
-    console.log(editNoteSelected);
-    setEditNoteSelected(index);
-    await updateNote(e, note, index);
-    };*/
+    useEffect(() => {
+      const initialStateValues = {
+        title: "",
+        description: "",
+        author: localStorage.getItem("email"),
+      };
+      if (currentId === '') {
+        setValues({...initialStateValues});
+      } else {
+        getNoteById(currentId)
+      }
+      getNotes()
+    }, [currentId]);
 
-   
   return (
     <div className="Container-rapid-note">
       <div className="Content-cat">
@@ -132,7 +126,7 @@ export const Notes = () => {
         </div>
       </form>
 
-      <div addnote {...{addnote, currentId, notes}}>
+      <div>
         <div className="notesList">
           {notes.map((note) => (
             <div className="notesContent" key={note.id} id={note.id}>
@@ -158,16 +152,14 @@ export const Notes = () => {
                   </button>
                 </div>
                 <input
-                  //disabled={editNoteSelected !== index}
                   className="editTitleLoad"
                   value={note.title}
                 />
                 <textarea
-                  //disabled={editNoteSelected !== index}
                   className="editDescriptionLoad"
                   rows="5"
+                  value={note.description}
                 >
-                  {note.description}
                 </textarea>
               </div>
             </div>
@@ -177,19 +169,3 @@ export const Notes = () => {
     </div>
   );
 };
-// boton en render
-/*<div className="contentBtnLoad">
-                  <button
-                    onClick={() => handleClickEdit(note)}
-                    className="btnLoad"
-                  >
-                    Actualizar
-                  </button>
-                </div> */
-
-// esto va luego de addnote antes del render
-/* const handleClickEdit = (note) => {
-    console.log("note", note);
-  }; */
-
-// index va en el maps al lado de notes

@@ -44,6 +44,7 @@
   }
   input.formTitleNote {
     width: 75vmin;
+    text-align: center;
     margin-left: 1vmin;
     margin-top: -5vmin;
   }
@@ -56,6 +57,7 @@
     width: 80vmin;
     border-radius: 15px;
     margin-left: 1vmin;
+    text-align: center;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
     color: #15181a;
@@ -63,7 +65,7 @@
   .btnPrimary {
     background-color: white;
     margin-top: 1vmin;
-    margin-left: 22vmin;
+    margin-left: 25vmin;
     border: none;
     border-radius: 15px;
     font-family: "Sanchez";
