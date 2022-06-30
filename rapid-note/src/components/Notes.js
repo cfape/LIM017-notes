@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { db } from "../Firebase/firebaseConfig.js";
 import {
   addDoc,
@@ -7,6 +7,7 @@ import {
   where,
   query,
   deleteDoc,
+  getDoc,
   doc,
 } from "firebase/firestore";
 import closeNote from "../img/closeNote.png";
@@ -20,6 +21,7 @@ export const Notes = () => {
     author: localStorage.getItem("email"),
   };
   const [values, setValues] = useState(initialStateValues);
+  const [currentId, setCurrentId] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -32,19 +34,40 @@ export const Notes = () => {
     setValues({ ...initialStateValues });
   };
 
+  const getNoteById = async (id) => {
+    const docRefId = doc(db, "notes", id);
+    const docSnap = await getDoc(docRefId);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
+    setValues({ ...docSnap.data()})
+  }
+
+  useEffect(() => {
+    console.log(currentId)
+    if (currentId === '') {
+      setValues({...initialStateValues});
+    } else {
+      getNoteById(currentId)
+    }
+  }, [currentId]);
+
+
   const [notes, setNotes] = useState([]);
 
   const addnote = async (objectNote) => {
-    try {
+    if (currentId === '') {
       const docRef = await addDoc(collection(db, "notes"), objectNote);
       console.log("Document written with ID: ", docRef.id);
-    } catch (e) {
-      console.error("Error adding document: ", e);
+    } else {
+      addDoc(collection(db, "notes"), objectNote);
     }
   };
-  const handleClickEdit = (note) => {
-    console.log("note", note);
-  };
+
   const getNotes = async () => {
     const q = query(
       collection(db, "notes"),
@@ -64,16 +87,19 @@ export const Notes = () => {
     deleteDoc(doc(db, "notes", id));
   };
 
-  const [editNoteSelected, setEditNoteSelected] = useState(0);
-  const onEditNote = async (e, index) => {
+    useEffect (() => {
+      getNotes();
+    }, []);
+  /*const [editNoteSelected, setEditNoteSelected] = useState(0);
+  const onEditNote = async (e, note, index) => {
     e.preventDefault();
     console.log(index);
     console.log(editNoteSelected);
     setEditNoteSelected(index);
-    };
+    await updateNote(e, note, index);
+    };*/
 
-
-
+   
   return (
     <div className="Container-rapid-note">
       <div className="Content-cat">
@@ -102,22 +128,20 @@ export const Notes = () => {
               ></textarea>
             </div>
           </div>
-          <button className="btnPrimary">Guardar nota</button>
+          <button className="btnPrimary">{currentId === '' ? 'Guardar': 'Actualizar'}</button>
         </div>
       </form>
 
-      <div addnote={"addnote"}>
+      <div addnote {...{addnote, currentId, notes}}>
         <div className="notesList">
-          {notes.map((note, index) => (
+          {notes.map((note) => (
             <div className="notesContent" key={note.id} id={note.id}>
               <div className="noteCard">
                 <div className="contentBtnEdit">
                   <button
                     data-noteid={note.id}
                     className="editNote"
-                    onClick={(e) => {
-                      onEditNote(e, note, index);
-                    }}
+                    onClick={() => setCurrentId(note.id)}
                   >
                     <img src={editNote} className="closeNote" alt="btn" />
                   </button>
@@ -134,25 +158,17 @@ export const Notes = () => {
                   </button>
                 </div>
                 <input
-                  disabled={editNoteSelected !== index}
+                  //disabled={editNoteSelected !== index}
                   className="editTitleLoad"
                   value={note.title}
                 />
                 <textarea
-                  disabled={editNoteSelected !== index}
+                  //disabled={editNoteSelected !== index}
                   className="editDescriptionLoad"
                   rows="5"
                 >
                   {note.description}
                 </textarea>
-                <div className="contentBtnLoad">
-                  <button
-                    onClick={() => handleClickEdit(note)}
-                    className="btnLoad"
-                  >
-                    Actualizar
-                  </button>
-                </div>
               </div>
             </div>
           ))}
@@ -161,3 +177,19 @@ export const Notes = () => {
     </div>
   );
 };
+// boton en render
+/*<div className="contentBtnLoad">
+                  <button
+                    onClick={() => handleClickEdit(note)}
+                    className="btnLoad"
+                  >
+                    Actualizar
+                  </button>
+                </div> */
+
+// esto va luego de addnote antes del render
+/* const handleClickEdit = (note) => {
+    console.log("note", note);
+  }; */
+
+// index va en el maps al lado de notes

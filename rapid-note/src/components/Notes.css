@@ -173,7 +173,6 @@
     background-color: rgb(247, 247, 156);
   }
   .editDescriptionLoad {
-    margin-top: 0vmin;
     width: 80vmin;
     border-radius: 15px;
     margin-left: 1vmin;
@@ -182,7 +181,7 @@
     font-size: 1em;
     border-color: #818283;
     color: #15181a;
-    margin-top: 1.5vmin;
+    margin-top: 3vmin;
     background-color: rgb(247, 247, 156);
   }
 }
