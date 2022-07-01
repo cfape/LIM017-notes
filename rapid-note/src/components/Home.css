@@ -24,7 +24,7 @@
 .Content-home {
   background-color: #92daee;
   min-height: 100vh;
-  min-width: 100vw;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;

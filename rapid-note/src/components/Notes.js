@@ -47,6 +47,7 @@ export const Notes = () => {
     setValues({ ...docSnap.data()})
   }
 
+
   const [notes, setNotes] = useState([]);
 
   const addnote = async (objectNote, objectData) => {
@@ -60,6 +61,7 @@ export const Notes = () => {
       })
     }
   };
+
 
   const getNotes = async () => {
     const q =  query(
@@ -93,6 +95,16 @@ export const Notes = () => {
       }
       getNotes()
     }, [currentId]);
+
+  /*const [editNoteSelected, setEditNoteSelected] = useState(0);
+  const onEditNote = async (e, note, index) => {
+    e.preventDefault();
+    console.log(index);
+    console.log(editNoteSelected);
+    setEditNoteSelected(index);
+    await updateNote(e, note, index);
+    };*/
+
 
   return (
     <div className="Container-rapid-note">
@@ -152,10 +164,12 @@ export const Notes = () => {
                   </button>
                 </div>
                 <input
+                  //disabled={editNoteSelected !== index}
                   className="editTitleLoad"
                   value={note.title}
                 />
                 <textarea
+                  //disabled={editNoteSelected !== index}
                   className="editDescriptionLoad"
                   rows="5"
                   value={note.description}
