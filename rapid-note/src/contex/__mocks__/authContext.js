@@ -4,12 +4,12 @@ export const createUser = function () {
 }
 export const signInWithEmailAndPassword = ( auth= {}, emailUser, passwordUser ) => Promise.resolve({user: {email:'correo@prueba.com'}})
 
-export const useAuth = function () {
+/*export const useAuth = function () {
     return {
         login: () => Promise.resolve(),
         loginWithGoogle: () => Promise.resolve(),
     }
-}
+} */
 
 export function AuthProvider({ children }) {
     return <>{ children }</>

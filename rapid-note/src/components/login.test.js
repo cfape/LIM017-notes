@@ -50,7 +50,7 @@ describe('usuario identificado', () => {
 });
 
 describe('usuario no identificado', () => {
-  it('usuario falla en ingresar email', async () => {
+  fit('usuario falla en ingresar email', async () => {
 
     const history = createMemoryHistory();
     render(
@@ -62,7 +62,7 @@ describe('usuario no identificado', () => {
     );
     const emailInput = screen.getByPlaceholderText("correo@ejemplo.com");
     const pswInput = screen.getByPlaceholderText("******");
-    const btnLogin = await screen.findByText("Inicia Sesión");
+    const btnLogin = screen.getByText("Inicia Sesión");
     fireEvent.change(emailInput, { target: { value: "ana" } });
     fireEvent.change(pswInput, { target: { value: "123456" } });
     fireEvent.click(btnLogin);

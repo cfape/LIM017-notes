@@ -1,10 +1,12 @@
 {
   "name": "rapid-note",
   "version": "0.1.0",
+  "homepage": "https://cfape.github.io/LIM017-notes/",
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
     "firebase": "^9.8.2",
+    "gh-pages": "^4.0.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-router-dom": "^6.3.0",
@@ -15,7 +17,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy" : "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
