@@ -12,7 +12,7 @@ export function Home() {
 
   const navigate = useNavigate();
   const btnLogin = () => {
-    navigate('/login');
+    navigate("/login", { replace: true });
     }
 
   return (
