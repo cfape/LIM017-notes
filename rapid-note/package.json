@@ -1,7 +1,7 @@
 {
-  "name": "rapid-note",
+  "name": "lim017-notes",
   "version": "0.1.0",
-  "homepage": "https://cfape.github.io/",
+  "homepage": "https://cfape.github.io/LIM017-notes",
   "private": true,
   "dependencies": {
     "@testing-library/user-event": "^13.5.0",
