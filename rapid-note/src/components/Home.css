@@ -1,130 +1,135 @@
 /*For tablet vertical*/
-@media only screen and (min-device-width: 810px)  {
-.App {
-  text-align: center;
-}
-.App-logotext {
-  width: 70vmin;
-  margin-left: 13vmin;
-  margin-top: -40vmin;
-}
-.App-logo {
-  margin-left: 25vmin;
-  width: 50vmin;
-  animation: App-logo-spin infinite 2s linear;
-  margin-top: -10vmin;
-}
+@media only screen and (min-width: 365px) {
+  * {
+    text-align: center;
+    margin: 0 auto;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  .App-logotext {
+    width: 20em;
+    margin-left: 1.3em;
+    margin-top: -12em;
+  }
+  .App-logo {
+    margin-left: 5em;
+    width: 12em;
+    animation: App-logo-spin infinite 2s linear;
+    margin-top: -1em;
+  }
 
-.Title-home {
-  font-family: 'Sanchez';
-  font-size: calc(18px + 2vmin);
-  margin-top: 4vmin;
-  margin-left: 10vmin;
+  .Title-home {
+    font-family: "Sanchez";
+    font-size: 19px;
+    margin-top: 4vmin;
+    margin-left: 0em;
+    padding: 0px;
+    text-align: center;
+  }
+  .Content-home {
+    background-color: #92daee;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .Content-btn {
+    background-color: #92daee;
+    margin-top: -13em;
+    align-items: center;
+    width: 9em;
+  }
+  .Btn-home {
+    height: 12vmin;
+    width: 8em;
+    font-family: "Sanchez";
+    font-size: 20px;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    color: black;
+  }
+  .Content-link {
+    margin-top: 8vmin;
+    background-color: #92daee;
+    text-align: center;
+    width: 20em;
+  }
+  .Link-home {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    padding: 2vmin 2vmin 2vmin 2vmin;
+  }
 }
-.Content-home {
-  background-color: #92daee;
-  min-height: 100vh;
-  min-width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  margin-top: 0vmin;
-  font-size: calc(12px + 2vmin);
-  color: #15181a;
-}
-.Content-btn {
-  background-color: #92daee ;
-  margin-top: -46vmin;
-  margin-left: 30vmin;
-}
-.Btn-home {
-  height: 12vmin;
-  width: 40vmin;
-  font-family: 'Sanchez';
-  font-size: calc(20px + 3vmin);
-  background-color: white;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  color: black;
-}
-.Content-link {
-  margin-top: 2vmin;
-  background-color: #92daee;
-  margin-right: 4vmin;
-}
-.Link-home {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: calc(20px + 3vmin);
-  color: black;
-  padding: 2vmin 2vmin 2vmin 2vmin;
-}
-}
-/*For tablet horizontal*/
-@media only screen and (min-device-width: 1180px)  {
-.App-logotext {
-  margin-left: 23vmin;
-  height: 23vmin;
-  width: 85vmin;
-  margin-top: -40vmin;
-}
-.Title-home {
-  font-size: calc(28px + 2vmin);
-  color: #15181a;
-  padding: 0px 0px 0px 0px;
-  margin-left: 17vmin;
-  margin-top: -55vmin;
-}
-.App-logo {
-  animation: App-logo-spin infinite 2s linear;
-  margin-top: -0vmin;
-  width: 55vmin;
-  margin-left: -2vmin;
-}
-.Content-home {
-  background-color: #92daee;
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  font-size: calc(15px + 2vmin);
-  color: #15181a;
-}
-.Content-btn {
-  background-color: #92daee;
-  margin-top: -45vmin;
-  margin-left: 56vmin;
-}
-.Btn-home {
-  height: 11vmin;
-  width: 50vmin;
-  font-family: 'Sanchez';
-  font-size: calc(20px + 4vmin);
-  background-color: white;
-  border-radius: 20px;
-  border: none;
-  cursor: pointer;
-  color: black;
-}
-.Content-link {
-  margin-top: 0vmin;
-  background-color: #92daee;
-  margin-left: 30vmin;
-}
-.Link-home {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: calc(20px + 3vmin);
-  color: black;
-  padding: 2vmin 2vmin 2vmin 2vmin;
-}
+/*For mobile horizontal*/
+@media only screen and (min-width: 670px) {
+  .App-logotext {
+    margin-left:2em;
+    height: 5em;
+    width: 25em;
+    margin-top: -40vmin;
+  }
+  .Title-home {
+    font-size: 24px;
+    color: #15181a;
+    padding: 0px 0px 0px 0px;
+    text-align: center;
+    margin-top: -55vmin;
+  }
+  .App-logo {
+    animation: App-logo-spin infinite 2s linear;
+    margin-top: -0vmin;
+    width: 55vmin;
+    margin-left: 4em;
+  }
+  .Content-home {
+    background-color: #92daee;
+    min-height: 100vh;
+    min-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 23px;
+    color: #15181a;
+  }
+  .Content-btn {
+    background-color: #92daee;
+    margin-top: -10em;
+    margin-left: 13em;
+  }
+  .Btn-home {
+    height: 1.5em;
+    width: 8em;
+    font-family: "Sanchez";
+    font-size: 26px;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    margin-left: 3em;
+    cursor: pointer;
+    color: black;
 
+  }
+  .Content-link {
+    margin-top: 1vmin;
+    background-color: #92daee;
+    margin-left: 14.5em;
+  }
+  .Link-home {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size:24px;
+    color: black;
+    padding: 2vmin 2vmin 2vmin 2vmin;
+  }
 }
 
 /*For Desktop*/
@@ -164,14 +169,14 @@
     color: #15181a;
   }
   .Content-btn {
-    background-color: #92daee ;
+    background-color: #92daee;
     margin-top: -40vmin;
     margin-left: 40vmin;
   }
   .Btn-home {
     height: 11vmin;
     width: 37vmin;
-    font-family: 'Sanchez';
+    font-family: "Sanchez";
     font-size: calc(20px + 2vmin);
     background-color: white;
     border-radius: 20px;
@@ -180,9 +185,9 @@
     color: black;
   }
   .Content-link {
-  margin-top: 2vmin;
-  background-color: #92daee;
-  margin-right: 100vmin;
+    margin-top: 2vmin;
+    background-color: #92daee;
+    margin-right: 100vmin;
   }
   .Link-home {
     display: flex;
@@ -195,9 +200,9 @@
 }
 @keyframes App-logo-spin {
   from {
-    transform: translate(0px,10px);
+    transform: translate(0px, 10px);
   }
   to {
-    transform: translate(20px,50px);
+    transform: translate(20px, 50px);
   }
 }
