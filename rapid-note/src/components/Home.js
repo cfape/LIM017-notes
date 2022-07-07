@@ -4,7 +4,6 @@ import { useAuth } from '../contex/authContext.js';
 import logo from '../img/logo.png';
 import logotext from '../img/logotext.png';
 
-
 export function Home() {
 
   const { user } = useAuth()
