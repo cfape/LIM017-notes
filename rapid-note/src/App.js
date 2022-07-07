@@ -20,7 +20,7 @@ import './components/Header.css';
 
 function App() {
   return (
-    <div className='App-route'>
+
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -31,7 +31,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </AuthProvider>
-    </div>
+    
   );
 }
 
