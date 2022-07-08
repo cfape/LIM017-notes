@@ -22,10 +22,10 @@ function App() {
       <AuthProvider>
         <BrowserRouter>
           <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='login' element={<Login />} />
-            <Route path='/register' element={<Register />} />
-            <Route path='/rapidnote' element={<><Header /> <Notes /></>} />
+            <Route path='/LIM017-notes/' element={<Home />} />
+            <Route path='/LIM017-notes/login/' element={<Login />} />
+            <Route path='/LIM017-notes/register/' element={<Register />} />
+            <Route path='/LIM017-notes/rapidnote/' element={<><Header /> <Notes /></>} />
           </Routes>
         </BrowserRouter>
       </AuthProvider>
