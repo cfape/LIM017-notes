@@ -16,11 +16,9 @@ import './components/Login.css';
 import './components/Notes.css';
 import './components/Header.css';
 
-//import './components/NoteForm.css';
 
 function App() {
   return (
-
       <AuthProvider>
         <BrowserRouter>
           <Routes>
@@ -31,7 +29,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </AuthProvider>
-
   );
 }
 

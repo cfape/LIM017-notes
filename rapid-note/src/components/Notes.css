@@ -1,4 +1,4 @@
-@media only screen and (min-device-width: 810px) {
+@media only screen and (min-width: 365px) {
 
   .Container-note-form {
     width: 100vw;
@@ -13,10 +13,10 @@
   }
   .Container-note {
     background-color: #92daee;
-    width: 84vw;
-    margin-left: 10vmin;
+    width: 13em;
+    margin-left: 2vmin;
     margin-top: 10vmin;
-    border-radius: 15px;
+    border-radius: 10px;
     padding: 10px 10px 6vmin 10px;
   }
   .LogNote {
@@ -29,23 +29,23 @@
   }
   .catNote {
     width: 40vmin;
-    margin-top: 17vmin;
-    margin-left: 36vmin;
+    margin-top: 20vmin;
+    margin-left: 1em;
   }
   .titleAddNote{
     font-family: "Sanchez";
-    font-size: calc(22px + 4vmin);
+    font-size: 30px;
     color: black;
-    margin-top: 2vmin;
+    margin-top: 0vmin;
     margin-left: 0vmin;
   }
   .input-group-text {
     margin-top: 0vmin;
   }
   input.formTitleNote {
-    width: 75vmin;
+    width: 84vmin;
     text-align: center;
-    margin-left: 1vmin;
+    margin-left: -0.2em;
     margin-top: -5vmin;
   }
   .input-group-textarea {
@@ -54,9 +54,9 @@
   }
   textarea.textareaNote {
     margin-top: 0vmin;
-    width: 80vmin;
-    border-radius: 15px;
-    margin-left: 1vmin;
+    width: 85vmin;
+    border-radius: 10px;
+    margin-left: -3.5em;
     text-align: center;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
@@ -65,13 +65,14 @@
   .btnPrimary {
     background-color: white;
     margin-top: 1vmin;
-    margin-left: 25vmin;
+    margin-left: 0vmin;
     border: none;
-    border-radius: 15px;
+    border-radius: 10px;
     font-family: "Sanchez";
-    font-size: calc(22px + 3vmin);
+    font-size: 24px;
     color: #15181a;
     padding: 10px 10px 10px 10px;
+    width: 85vmin;
   }
   .noteList {
     width: 100vmin;
@@ -89,13 +90,13 @@
     align-items: center;
     justify-content: center;
     background-color: rgb(247, 247, 156);
-    width: 86vw;
+    width: 95vw;
     border-radius: 15px;
     font-family: "Sanchez";
     font-size: calc(22px + 2vmin);
     color: #15181a;
     margin-top: 2vmin;
-    margin-left: 1vmin;
+    margin-left: -9vmin;
     padding: 10px 10px 4vmin 10px;
   }
   h5 {
@@ -122,17 +123,16 @@
     margin-top: -4vmin;
   }
 
-  .contentBtnClose {
-    margin-left: 15em;
-    margin-top: -7vmin;
+    .contentBtnClose {
+    margin-left: 10em;
+    margin-top: -11vmin;
     width: 2vmin;
     border: none;
   }
   .closeNote {
-    width: 6vmin;
+    width: 9vmin;
+    height: 7vmin;
     background-color: rgb(247, 247, 156);
-    margin-left: 0vmin;
-    margin-top: 0vmin;
     border: none;
   }
   .btnClose {
@@ -145,10 +145,11 @@
     width: 2vmin;
   }
   .editNote {
-    width: 7vmin;
+    width: 8vmin;
+    height: 8vmin;
     background-color: rgb(247, 247, 156);
-    margin-left: -1vmin;
-    margin-top: 3vmin;
+    margin-left: -0.5vmin;
+    margin-top: 2vmin;
     border-radius: 5px;
     border: none;
   }
@@ -164,10 +165,10 @@
     padding: 5px 5px 5px 5px;
   }
   .editTitleLoad{
-    width: 55vmin;
+    width: 90vmin;
     margin-left: 0vmin;
-    margin-top: -5vmin;
-    border-radius: 15px;
+    margin-top: 0vmin;
+    border-radius: 10px;
     font-size: 1em;
     text-align: center;
     border-color: #818283;

@@ -138,7 +138,7 @@ export const Notes = () => {
                     className="editNote"
                     onClick={() => setCurrentId(note.id)}
                   >
-                    <img src={editNote} className="closeNote" alt="btn" />
+                    <img src={editNote} className="editNote" alt="btn" />
                   </button>
                 </div>
                 <div className="contentBtnClose">
