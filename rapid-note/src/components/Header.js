@@ -10,7 +10,7 @@ export function Header() {
   const handleLogout = async () => {
     try {
     await logOut()
-    navigate('/');
+    navigate('/LIM017-notes/');
   } catch (error) {
     console.error(error)
   }
