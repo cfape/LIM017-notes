@@ -16,6 +16,7 @@
     margin-left: 3vmin;
     margin-top: 1vmin;
   }
+  
   .Content-btn-login {
     display: flex;
     flex-direction: column;
@@ -75,20 +76,20 @@
 }
 }
 
-@media only screen and (min-device-width: 1180px) {
+@media only screen and (min-device-width: 650px) {
 
   .Logotext-login {
-    width: 70vmin;
-    height: 24vmin;
-    margin-left: -5vmin;
-    margin-top: -10vmin;
+    margin-left: -0.5em;
+    height: 4em;
+    width: 28em;
+    margin-top: -1em;
   }
   .Form-login {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    margin-right: 15vmin;
+    text-align: start;
+    margin-left: 7em;
     margin-top: 0vmin;
   }
   .Content-btn-login {
@@ -96,38 +97,37 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin-left: 60vmin;
-    margin-top: -36vmin;
+    margin-left: -46vmin;
+    margin-top: -2vmin;
   }
   .BtnLogin {
-    height: 11vmin;
-    width: 40vmin;
+    height: 2em;
+    width: 8em;
     font-family: "Sanchez";
-    font-size: calc(16px + 3vmin);
+    font-size: 24px;
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     color: black;
     margin: 4vmin;
   }
   .Content-btn-google{
-    margin-left: 48vmin;
-    margin-top: 5vmin;
+    margin-left: -9em;
+    margin-top: -17vmin;
   }
   .LogoGoogle {
-    height: 9vmin;
-    width: 38vmin;
+    height: 11vmin;
+    width: 48vmin;
     margin-top: 1vmin;
-    margin-left: 0vmin;
+    margin-left: -1vmin;
   }
   .BtnGoogle {
-    height: 11vmin;
-    width: 40vmin;
+    height: 13vmin;
+    width: 8em;
     font-family: "Sanchez";
-    font-size: calc(16px + 2vmin);
     background-color: white;
-    border-radius: 20px;
+    border-radius: 10px;
     border: none;
     cursor: pointer;
     color: black;
@@ -139,6 +139,7 @@
     font-size: calc(17px + 3vmin);
     color: black;
     padding: 4vmin 0vmin 0vmin 0vmin;
-    margin-left: 35vmin;
+    margin-left: 11vmin;
+    margin-top: -16vmin;
   }
 }
