@@ -93,7 +93,7 @@
     width: 95vw;
     border-radius: 15px;
     font-family: "Sanchez";
-    font-size: calc(22px + 2vmin);
+    font-size: 24px;
     color: #15181a;
     margin-top: 2vmin;
     margin-left: -9vmin;
@@ -124,8 +124,8 @@
   }
 
     .contentBtnClose {
-    margin-left: 10em;
-    margin-top: -11vmin;
+    margin-left: 12em;
+    margin-top: -9vmin;
     width: 2vmin;
     border: none;
   }
@@ -148,8 +148,8 @@
     width: 8vmin;
     height: 8vmin;
     background-color: rgb(247, 247, 156);
-    margin-left: -0.5vmin;
-    margin-top: 2vmin;
+    margin-left: 0.5vmin;
+    margin-top: 0vmin;
     border-radius: 5px;
     border: none;
   }
@@ -165,8 +165,8 @@
     padding: 5px 5px 5px 5px;
   }
   .editTitleLoad{
-    width: 90vmin;
-    margin-left: 0vmin;
+    width: 87vmin;
+    margin-left: 2vmin;
     margin-top: 0vmin;
     border-radius: 10px;
     font-size: 1em;
@@ -176,7 +176,7 @@
     background-color: rgb(247, 247, 156);
   }
   .editDescriptionLoad {
-    width: 80vmin;
+    width: 88vmin;
     border-radius: 15px;
     margin-left: 1vmin;
     text-align: center;

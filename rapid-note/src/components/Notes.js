@@ -123,7 +123,7 @@ export const Notes = () => {
               ></textarea>
             </div>
           </div>
-          <button className="btnPrimary">{currentId === '' ? 'Guardar': 'Actualizar'}</button>
+          <button className="btnPrimary">{currentId === '' ? 'Guardar': 'Guardar'}</button>
         </div>
       </form>
 
