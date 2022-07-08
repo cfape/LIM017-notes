@@ -1,5 +1,4 @@
 @media only screen and (min-width: 365px) {
-
   .Container-note-form {
     width: 100vw;
     display: flex;
@@ -7,7 +6,7 @@
     align-items: center;
     justify-content: center;
     font-family: "Sanchez";
-    font-size: calc(20px + 2vmin);
+    font-size: 24px;
     color: #15181a;
     margin-top: -5vmin;
   }
@@ -32,7 +31,7 @@
     margin-top: 20vmin;
     margin-left: 1em;
   }
-  .titleAddNote{
+  .titleAddNote {
     font-family: "Sanchez";
     font-size: 30px;
     color: black;
@@ -59,7 +58,7 @@
     margin-left: -3.5em;
     text-align: center;
     font-family: "Sanchez";
-    font-size: calc(22px + 2vmin);
+    font-size: 24px;
     color: #15181a;
   }
   .btnPrimary {
@@ -105,7 +104,7 @@
     align-items: center;
     justify-content: center;
     font-family: "Sanchez";
-    font-size: 34px;
+    font-size: 24px;
     color: #15181a;
     margin-top: 0vmin;
     padding: 0vmin;
@@ -117,13 +116,13 @@
     justify-content: center;
     text-align: center;
     font-family: "Sanchez";
-    font-size: calc(14px + 2vmin);
+    font-size: 24px;
     padding: 5px 5px 5px 5px;
     color: #15181a;
     margin-top: -4vmin;
   }
 
-    .contentBtnClose {
+  .contentBtnClose {
     margin-left: 12em;
     margin-top: -9vmin;
     width: 2vmin;
@@ -164,7 +163,7 @@
     border-color: #818283;
     padding: 5px 5px 5px 5px;
   }
-  .editTitleLoad{
+  .editTitleLoad {
     width: 87vmin;
     margin-left: 2vmin;
     margin-top: 0vmin;
@@ -187,4 +186,52 @@
     margin-top: 3vmin;
     background-color: rgb(247, 247, 156);
   }
+}
+/*For tablet horizontal*/
+@media only screen and (min-width: 650px) {
+  .catNote {
+    width: 40vmin;
+    margin-top: 20vmin;
+    margin-left: 1em;
+    display: none;
+  }
+  .Container-note {
+    background-color: #92daee;
+    width: 23em;
+    margin-left: 0.5em;
+    margin-top: 6em;
+    border-radius: 10px;
+    padding: 10px 10px 6vmin 10px;
+  }
+  input.formTitleNote {
+    width: 22em;
+    margin-left: -0.2em;
+    margin-top: -5vmin;
+  }
+  textarea.textareaNote {
+    width: 20em;
+    margin-left: -6em;
+    text-align: center;
+    font-family: "Sanchez";
+    font-size: 24px;
+    color: #15181a;
+  }
+  .btnPrimary {
+    font-size: 22px;
+    width: 85vmin;
+}
+  .noteCard {
+    width: 84vw;
+}
+.editTitleLoad {
+  width: 20em;
+  margin-left: 1em;
+  border-radius: 10px;;
+}
+
+.editDescriptionLoad {
+  width: 20em;
+  border-radius: 10px;
+  margin-left: 1em;
+}
 }
