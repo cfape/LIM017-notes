@@ -68,7 +68,7 @@ describe('usuario no identificado', () => {
     fireEvent.click(btnLogin);
 
       await waitFor(() => {
-      expect(history.location.pathname).toBe('/');
+      expect(history.location.pathname).toBe('/LIM017-notes/');
     });
   });
 });
@@ -86,7 +86,7 @@ describe('link volver al home', () => {
     );
     const linkGoHome =  await screen.findByText('Volver al inicio');
     fireEvent.change(linkGoHome);
-      expect(history.location.pathname).toBe('/');
+      expect(history.location.pathname).toBe('/LIM017-notes/');
     });
   });
 

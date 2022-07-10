@@ -21,6 +21,7 @@ export const login = (email, password) => signInWithEmailAndPassword(auth, email
 
 
 export   const loginWithGoogle = () => {
+  console.log ('bbbbbbb');
   const googleProvider = new GoogleAuthProvider()
   return signInWithPopup(auth, googleProvider)
   }

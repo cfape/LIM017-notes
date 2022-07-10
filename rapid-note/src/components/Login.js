@@ -88,7 +88,7 @@ export function Login() {
         </div>
 
         <div className="Content-link-login">
-          <Link to="/" className="App-link">
+          <Link to='/LIM017-notes/' className="App-link">
             Volver al inicio
           </Link>
         </div>
