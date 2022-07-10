@@ -67,7 +67,7 @@ export function Register() {
         </div>
 
         <div className='Content-link-register'>
-        <Link to='/LIM017-notes/' className='Link-register'>
+        <Link to='/' className='Link-register'>
         Volver al inicio
         </Link>
         </div>

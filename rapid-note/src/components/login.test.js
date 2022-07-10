@@ -77,7 +77,7 @@ describe('link volver al home', () => {
     );
     const linkGoHome =  await screen.findByText('Volver al inicio');
     fireEvent.change(linkGoHome);
-      expect(history.location.pathname).toBe('/LIM017-notes/');
+      expect(history.location.pathname).toBe('/');
     });
   });
 

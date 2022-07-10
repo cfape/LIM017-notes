@@ -12,8 +12,7 @@
   }
   .Container-note {
     background-color: #92daee;
-    width: 13em;
-    margin-left: 2vmin;
+    width: 98vw;
     margin-top: 10vmin;
     border-radius: 10px;
     padding: 10px 10px 6vmin 10px;
@@ -55,7 +54,7 @@
     margin-top: 0vmin;
     width: 85vmin;
     border-radius: 10px;
-    margin-left: -3.5em;
+    margin-left: -4.5em;
     text-align: center;
     font-family: "Sanchez";
     font-size: 24px;
@@ -64,7 +63,7 @@
   .btnPrimary {
     background-color: white;
     margin-top: 1vmin;
-    margin-left: 0vmin;
+    margin-left: -1vmin;
     border: none;
     border-radius: 10px;
     font-family: "Sanchez";

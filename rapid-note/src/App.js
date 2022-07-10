@@ -23,6 +23,7 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path='/LIM017-notes/' element={<Home />} />
+            <Route path='/' element={<Home />} />
             <Route path='/login/' element={<Login />} />
             <Route path='/register/' element={<Register />} />
             <Route path='/rapidnote/' element={<><Header /> <Notes /></>} />
