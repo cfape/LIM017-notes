@@ -5,7 +5,7 @@ import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import { Login }  from "./Login.js";
-import { AuthProvider } from "../contex/authContext.js";
+import { useAuth } from "../contex/authContext.js";
 
 jest.mock('../contex/authContext.js')
 
@@ -13,11 +13,9 @@ describe("renders Iniciar sesión", () => {
   it("Iniciar sesión", () => {
     const history = createMemoryHistory();
     render(
-      <AuthProvider>
         <Router location={history.location} navigator={history}>
           <Login />
         </Router>
-      </AuthProvider>
     );
     const btnLogin = screen.getByText("Inicia Sesión");
     expect(btnLogin).toBeInTheDocument();
@@ -29,11 +27,9 @@ describe('usuario identificado', () => {
 
     const history = createMemoryHistory();
     render(
-      <AuthProvider>
         <Router location={history.location} navigator={history}>
           <Login />
         </Router>
-      </AuthProvider>
     );
     const emailInput = screen.getByPlaceholderText("correo@ejemplo.com");
     const pswInput = screen.getByPlaceholderText("******");
@@ -50,15 +46,13 @@ describe('usuario identificado', () => {
 });
 
 describe('usuario no identificado', () => {
-  fit('usuario falla en ingresar email', async () => {
+  it('usuario falla en ingresar email', async () => {
 
     const history = createMemoryHistory();
     render(
-      <AuthProvider>
         <Router location={history.location} navigator={history}>
           <Login />
         </Router>
-      </AuthProvider>
     );
     const emailInput = screen.getByPlaceholderText("correo@ejemplo.com");
     const pswInput = screen.getByPlaceholderText("******");
@@ -68,25 +62,25 @@ describe('usuario no identificado', () => {
     fireEvent.click(btnLogin);
 
       await waitFor(() => {
-      expect(history.location.pathname).toBe('/LIM017-notes/');
+      expect(history.location.pathname).toBe('/rapidnote');
     });
   });
 });
 
 describe('link volver al home', () => {
-  it('link route home', async () => {
+  fit('link route home', async () => {
 
     const history = createMemoryHistory();
     render(
-      <AuthProvider>
-        <Router location={history.location} navigator={history}>
-          <Login />
-        </Router>
-      </AuthProvider>
+
+          <Router location={history.location} navigator={history}>
+            <Login />
+          </Router>
+
     );
     const linkGoHome =  await screen.findByText('Volver al inicio');
     fireEvent.change(linkGoHome);
-      expect(history.location.pathname).toBe('/LIM017-notes/');
+      expect(history.location.pathname).toBe('/');
     });
   });
 
