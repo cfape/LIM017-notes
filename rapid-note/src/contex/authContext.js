@@ -13,7 +13,7 @@ export const authContext = createContext()
 
 export const useAuth = () => {
   const context = useContext(authContext);
-  if (!context) throw new Error('No hay usuario');
+  //if (!context) throw new Error('No hay usuario');
   return context
 }
 
