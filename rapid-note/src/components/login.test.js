@@ -5,7 +5,6 @@ import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 import { Login }  from "./Login.js";
-import { useAuth } from "../contex/authContext.js";
 
 jest.mock('../contex/authContext.js')
 
@@ -68,19 +67,17 @@ describe('usuario no identificado', () => {
 });
 
 describe('link volver al home', () => {
-  fit('link route home', async () => {
+  it('link route home', async () => {
 
     const history = createMemoryHistory();
     render(
-
           <Router location={history.location} navigator={history}>
             <Login />
           </Router>
-
     );
     const linkGoHome =  await screen.findByText('Volver al inicio');
     fireEvent.change(linkGoHome);
-      expect(history.location.pathname).toBe('/');
+      expect(history.location.pathname).toBe('/LIM017-notes/');
     });
   });
 

@@ -28,8 +28,6 @@ export function Login() {
       //console.log(error);
       if (error.code === "auth/invalid-email") {
         setError("Correo inválido");
-      } else if (error.code === "auth/weak-password") {
-        setError("La contraseña debe contener mínimo 6 caracteres");
       } else if (error.code === "auth/user-not-found") {
         setError("El correo no está registrado");
       }
@@ -46,9 +44,7 @@ export function Login() {
       //console.log(error);
     if (error) {
   } if (error.code === "auth/invalid-email") {
-    setError("Correo inválido");
-  } else if (error.code === "auth/weak-password") {
-    setError("La contraseña debe contener mínimo 6 caracteres");
+    setError("auth/correo inválido");
   } else if (error.code === "auth/user-not-found") {
     setError("El correo no está registrado");
   }
