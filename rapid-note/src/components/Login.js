@@ -78,7 +78,7 @@ export function Login() {
         </div>
 
         <div className="Content-btn-google">
-          <button className="BtnGoogle" onClick={handleGoogleSignin}>
+          <button className="BtnGoogle" data-testid="btnGoogle" onClick={handleGoogleSignin}>
             <img src={btnGoogle} className="LogoGoogle" alt="logo" />
           </button>
         </div>

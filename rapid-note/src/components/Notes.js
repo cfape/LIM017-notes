@@ -19,6 +19,7 @@ export const Notes = () => {
     title: "",
     description: "",
     author: localStorage.getItem("email"),
+
   };
   const [values, setValues] = useState(initialStateValues);
   const [currentId, setCurrentId] = useState('');

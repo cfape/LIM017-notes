@@ -25,7 +25,15 @@ export const login = (email, password) => Promise.resolve({
     }
 })
 
-
+export const loginWithGoogle = (email, password) => {
+    console.log('loginWithGoogle')
+    return Promise.resolve({
+    user: {
+        email: 'correo@gmail.com',
+        password: '******',
+    }
+    })
+}
 
 
 

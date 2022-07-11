@@ -1,58 +1,55 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import { Login }  from "./Login.js";
+import { Login } from "./Login.js";
 
-
-jest.mock('../contex/authContext.js')
+jest.mock("../contex/authContext.js");
 
 describe("renders Iniciar sesión", () => {
   it("Iniciar sesión", () => {
     const history = createMemoryHistory();
     render(
-        <Router location={history.location} navigator={history}>
-          <Login />
-        </Router>
+      <Router location={history.location} navigator={history}>
+        <Login />
+      </Router>
     );
     const btnLogin = screen.getByText("Inicia Sesión");
     expect(btnLogin).toBeInTheDocument();
   });
 });
 
-describe('usuario identificado', () => {
-  it('usuario identificado', async () => {
-
+describe("usuario identificado", () => {
+  it("usuario identificado", async () => {
     const history = createMemoryHistory();
     render(
-        <Router location={history.location} navigator={history}>
-          <Login />
-        </Router>
+      <Router location={history.location} navigator={history}>
+        <Login />
+      </Router>
     );
     const emailInput = screen.getByPlaceholderText("correo@ejemplo.com");
     const pswInput = screen.getByPlaceholderText("******");
     const btnLogin = await screen.findByText("Inicia Sesión");
 
-    fireEvent.change(emailInput, {target: {value: "correo@ejemplo.com"}});
-    fireEvent.change(pswInput, {target: {value: "******"}});
+    fireEvent.change(emailInput, { target: { value: "correo@ejemplo.com" } });
+    fireEvent.change(pswInput, { target: { value: "******" } });
     fireEvent.click(btnLogin);
 
     await waitFor(() => {
-      expect(history.location.pathname).toBe('/rapidnote');
+      expect(history.location.pathname).toBe("/rapidnote");
     });
   });
 });
 
-describe('usuario no identificado', () => {
-  it('usuario falla en ingresar email', async () => {
-
+describe("usuario no identificado", () => {
+  it("usuario falla en ingresar email", async () => {
     const history = createMemoryHistory();
     render(
-        <Router location={history.location} navigator={history}>
-          <Login />
-        </Router>
+      <Router location={history.location} navigator={history}>
+        <Login />
+      </Router>
     );
     const emailInput = screen.getByPlaceholderText("correo@ejemplo.com");
     const pswInput = screen.getByPlaceholderText("******");
@@ -61,24 +58,38 @@ describe('usuario no identificado', () => {
     fireEvent.change(pswInput, { target: { value: "123456" } });
     fireEvent.click(btnLogin);
 
-      await waitFor(() => {
-      expect(history.location.pathname).toBe('/rapidnote');
+    await waitFor(() => {
+      expect(history.location.pathname).toBe("/rapidnote");
     });
   });
 });
 
-describe('link volver al home', () => {
-  it('link route home', async () => {
-
+describe("link volver al home", () => {
+  it("link route home", async () => {
     const history = createMemoryHistory();
     render(
-          <Router location={history.location} navigator={history}>
-            <Login />
-          </Router>
+      <Router location={history.location} navigator={history}>
+        <Login />
+      </Router>
     );
-    const linkGoHome =  await screen.findByText('Volver al inicio');
+    const linkGoHome = await screen.findByText("Volver al inicio");
     fireEvent.change(linkGoHome);
-      expect(history.location.pathname).toBe('/');
+    expect(history.location.pathname).toBe("/");
+  });
+});
+
+describe("usuario identificado con Google", () => {
+  it("usuario identificado", async () => {
+    const history = createMemoryHistory();
+    render(
+      <Router location={history.location} navigator={history}>
+        <Login />
+      </Router>
+    );
+    const btnLogin = await screen.findByTestId("btnGoogle");
+    fireEvent.click(btnLogin);
+    await waitFor(() => {
+      expect(history.location.pathname).toBe("/rapidnote");
     });
   });
-
+});
