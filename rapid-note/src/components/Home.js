@@ -22,7 +22,7 @@ export function Home() {
         <h1 className='Title-home'>Escribe tus notas, sin temor a perderlas</h1>
       </div>
       <div className='Content-btn'>
-        <button onClick={btnLogin} className='Btn-home'>Iniciar Sesión</button>
+        <button onClick={btnLogin} data-testid="btnLogin" className='Btn-home'>Iniciar Sesión</button>
       </div>
       <div className='Content-link'>
         <Link to='/register' className='Link-home'>¿No tienes cuenta? Regístrate</Link>

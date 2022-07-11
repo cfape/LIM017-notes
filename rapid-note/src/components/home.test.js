@@ -1,5 +1,5 @@
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
@@ -59,5 +59,21 @@ describe("link envía a register", () => {
         const linkGoRegister = await screen.findByText("¿No tienes cuenta? Regístrate");
         fireEvent.change(linkGoRegister);
         expect(history.location.pathname).toBe("/");
+    });
+    });
+
+describe("test cambio de route", () => {
+    it("cambio de vista", async () => {
+        const history = createMemoryHistory();
+        render(
+          <Router location={history.location} navigator={history}>
+            <Home />
+          </Router>
+        );
+        const btnHome = await screen.findByTestId("btnLogin");
+        fireEvent.click(btnHome);
+        await waitFor(() => {
+          expect(history.location.pathname).toBe("/login");
+        });
     });
     });
