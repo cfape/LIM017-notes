@@ -20,7 +20,7 @@ describe.only("renders texto logOut", () => {
   });
 });
 
-describe("usuario retorna al home", () => {
+/*describe("usuario retorna al home", () => {
   it("usuario cerrando sesión", async () => {
     const history = createMemoryHistory();
     render(
@@ -35,4 +35,4 @@ describe("usuario retorna al home", () => {
     });
   });
 });
-
+*/

@@ -21,7 +21,7 @@ describe("renders texte Regístrate", () => {
 });
 
 describe("usuario registrado", () => {
-  it("usuario identificado", async () => {
+  it("usuario ingresa correo correcto", async () => {
     const history = createMemoryHistory();
     render(
       <Router location={history.location} navigator={history}>
@@ -31,38 +31,31 @@ describe("usuario registrado", () => {
     const emailInput = screen.getByPlaceholderText("correo@ejemplo.com");
     const pswInput = screen.getByPlaceholderText("******");
     const btnRegister = await screen.findByText("Regístrate");
-
     fireEvent.change(emailInput, { target: { value: "correo@ejemplo.com" } });
     fireEvent.change(pswInput, { target: { value: "******" } });
     fireEvent.click(btnRegister);
-
     await waitFor(() => {
-      expect(history.location.pathname).toBe("/");
+      expect(history.location.pathname).toBe("/login");
     });
   });
 });
 
-describe("usuario no registrado", () => {
-  it("usuario no identificado", async () => {
-    const history = createMemoryHistory();
-    render(
+describe("test cambio de route", () => {
+  it("cambio de vista a login", async () => {
+      const history = createMemoryHistory();
+      render(
       <Router location={history.location} navigator={history}>
-        <Register />
+          <Register />
       </Router>
-    );
-    const emailInput = screen.getByPlaceholderText("correo");
-    const pswInput = screen.getByPlaceholderText("******");
-    const btnRegister = await screen.findByText("Regístrate");
-
-    fireEvent.change(emailInput, { target: { value: "correo@ejemplo.com" } });
-    fireEvent.change(pswInput, { target: { value: "******" } });
-    fireEvent.click(btnRegister);
-
-    await waitFor(() => {
-      expect(history.location.pathname).toBe("/");
-    });
+      );
+      const btnRegister = await screen.findByTestId("btnRegister");
+      fireEvent.click(btnRegister);
+      await waitFor(() => {
+      expect(history.location.pathname).toBe("/login");
+      });
   });
-});
+  });
+
 
 describe("link volver al home", () => {
   it("link route home", async () => {

@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import { useAuth } from '../contex/authContext.js';
+import { signUp } from '../contex/authContext.js';
 import { Link, useNavigate } from 'react-router-dom'
 import  logoregister  from '../img/logoregister.png';
 import cat from '../img/cat.gif';
@@ -11,7 +11,7 @@ export function Register() {
     password: '',
   });
 
-  const { signUp } = useAuth()
+  //const { signUp } = useAuth()
   const navigate = useNavigate()
   const [error, setError] = useState()
 
@@ -22,10 +22,10 @@ export function Register() {
     e.preventDefault();
     setError('')
     try {
-      await signUp(user.email, user.password)
+      const userRegister = await signUp(user.email, user.password)
+      //console.log(userRegister)
       navigate('/login')
     } catch (error) {
-      console.log(error.code);
       if (error.code === 'auth/invalid-email') {
         setError('Correo inválido')
       }
@@ -36,7 +36,6 @@ export function Register() {
         setError('Cuenta ya registrada')
       }
     }
-
   };
 
   return (
@@ -63,7 +62,9 @@ export function Register() {
         />
 
         <div className='Content-btn-register'>
-          <button className='btnRegister'>Regístrate</button>
+          <button onClick={handleSubmit} className='btnRegister' data-testid="btnRegister" >
+            Regístrate
+          </button>
         </div>
 
         <div className='Content-link-register'>

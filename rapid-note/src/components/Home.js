@@ -6,8 +6,8 @@ import logotext from '../img/logotext.png';
 
 export function Home() {
 
-  const { user } = useAuth()
-  console.log(user);
+  const { user } = useAuth();
+  //console.log(user);
 
   const navigate = useNavigate();
   const btnLogin = () => {

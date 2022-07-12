@@ -66,14 +66,14 @@ describe("test cambio de route", () => {
     it("cambio de vista", async () => {
         const history = createMemoryHistory();
         render(
-          <Router location={history.location} navigator={history}>
+        <Router location={history.location} navigator={history}>
             <Home />
-          </Router>
+        </Router>
         );
         const btnHome = await screen.findByTestId("btnLogin");
         fireEvent.click(btnHome);
         await waitFor(() => {
-          expect(history.location.pathname).toBe("/login");
+        expect(history.location.pathname).toBe("/login");
         });
     });
     });
