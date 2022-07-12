@@ -1,13 +1,14 @@
+/* eslint-disable no-const-assign */
 /* eslint-disable no-unreachable */
 export const createUser = function () {
     return { email: () => Promise.resolve(), password: () => Promise.resolve()}
 }
 export const signInWithEmailAndPassword = ( auth= {}, emailUser, passwordUser ) => Promise.resolve({user: {email:'correo@prueba.com'}})
 
-export const useAuth = function () {
-    return {
-        logOut: () => Promise.resolve(),
-    }
+export const useAuth = ( displayName, email , logOut ) => {
+    //console.log('useHeader')
+    return Promise.resolve({
+    displayName, email,logOut});
 }
 
 export function AuthProvider({ children }) {

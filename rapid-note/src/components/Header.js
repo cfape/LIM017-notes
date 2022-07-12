@@ -25,7 +25,7 @@ export function Header() {
     <h3>Hola, {user.displayName || user.email}</h3>
     </div>
     <div className='Content-BtnLogOut'>
-    <button className='BtnLogOut' onClick={handleLogout}>
+    <button className='BtnLogOut' data-testid="btnLogOutNote" onClick={handleLogout}>
       Cerrar Sesión
     </button>
     </div>

@@ -13,7 +13,7 @@ export const authContext = createContext()
 
 export const useAuth = () => {
   const context = useContext(authContext);
-  //if (!context) throw new Error('No hay usuario');
+  if (!context) throw new Error('No hay usuario');
   return context
 }
 
@@ -32,6 +32,9 @@ export function AuthProvider({ children }) {
 const [user, setUser] = useState(null);
 const [loading, setLoading] = useState(true);
 
+  const signUp = ( email, password) =>
+    createUserWithEmailAndPassword( auth, email, password);
+
   const logOut = () => signOut(auth);
 
     useEffect (() => {
@@ -42,6 +45,6 @@ const [loading, setLoading] = useState(true);
     },[])
 
   return (
-  <authContext.Provider value={{ user, logOut, loading }}>{children}</authContext.Provider>
+  <authContext.Provider value={{ user, signUp, logOut, loading }}>{children}</authContext.Provider>
   );
 }
