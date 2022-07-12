@@ -12,7 +12,7 @@ export function Header() {
     await logOut()
     navigate('/');
   } catch (error) {
-    console.error(error)
+    console.log(error)
   }
 };
 
@@ -22,10 +22,13 @@ export function Header() {
     <div className='Container-HeaderRapidNote'>
     <div className='Content-HeaderInfo'>
     <img src={logotext} className='LogoHeader' alt='img' />
-    <h3>Hola, {user.displayName || user.email}</h3>
+    <h3 data-testid='welcome' >Hola, {user.displayName || user.email}</h3>
     </div>
     <div className='Content-BtnLogOut'>
-    <button className='BtnLogOut' data-testid="btnLogOutNote" onClick={handleLogout}>
+    <button
+    className ='BtnLogOut'
+    data-testid ="btnLogOutNote"
+    onClick={handleLogout}>
       Cerrar Sesión
     </button>
     </div>

@@ -3,36 +3,32 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import { Header } from "./Header.js";
+import { Notes } from "./Notes.js";
 
 jest.mock("../contex/authContext.js");
 
-describe("renders texto logOut", () => {
-  it("Render texto", () => {
+describe("renders texto notes", () => {
+  it("renders texto en form", () => {
     const history = createMemoryHistory();
     render(
       <Router location={history.location} navigator={history}>
-        <Header />
+        <Notes />
       </Router>
     );
-    const welcomeHeader = screen.getByTestId("welcome");
-    expect(welcomeHeader).toBeInTheDocument();
+    const textNotes = screen.getByText("Agregar nota");
+    expect(textNotes).toBeInTheDocument();
   });
 });
 
-describe("usuario retorna al home", () => {
-  it("usuario cerrando sesión", async () => {
+describe("renders texto btn", () => {
+  it("renders texto btn form", () => {
     const history = createMemoryHistory();
     render(
       <Router location={history.location} navigator={history}>
-        <Header />
+        <Notes />
       </Router>
     );
-    const btnHeader = await screen.findByTestId("btnLogOutNote");
-    fireEvent.click(btnHeader);
-    await waitFor(() => {
-      expect(history.location.pathname).toBe("/");
-    });
+    const textBtn = screen.getByText("Guardar");
+    expect(textBtn).toBeInTheDocument();
   });
 });
-

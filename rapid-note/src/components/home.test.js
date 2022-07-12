@@ -15,10 +15,10 @@ describe("renders texto h1", () => {
             <Home />
         </Router>
     );
-    const btnLogin = screen.getByText(
+    const textLogin = screen.getByText(
         "Escribe tus notas, sin temor a perderlas"
     );
-    expect(btnLogin).toBeInTheDocument();
+    expect(textLogin).toBeInTheDocument();
     });
 });
 
