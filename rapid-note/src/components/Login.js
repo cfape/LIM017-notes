@@ -21,11 +21,9 @@ export function Login() {
     setError("");
     try {
       const objectUser = await login(user.email, user.password);
-      //console.log(objectUser);
       localStorage.setItem('email', objectUser.user.email);
       navigate("/rapidnote");
     } catch (error) {
-      //console.log(error);
       if (error.code === "auth/invalid-email") {
         setError("Correo inválido");
       } else if (error.code === "auth/user-not-found") {
