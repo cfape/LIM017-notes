@@ -22,7 +22,8 @@ export function Home() {
         <button onClick={btnLogin} data-testid="btnLogin" className='Btn-home'>Iniciar Sesión</button>
       </div>
       <div className='Content-link'>
-        <Link to='/register' className='Link-home'>¿No tienes cuenta? Regístrate</Link>
+        <p className='styleLine' >¿No tienes cuenta?</p>
+        <Link to='/register' className='Link-home'> Regístrate</Link>
       </div>
       </div>
   );
