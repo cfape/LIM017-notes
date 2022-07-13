@@ -23,6 +23,7 @@ export const Notes = () => {
   };
   const [values, setValues] = useState(initialStateValues);
   const [currentId, setCurrentId] = useState('');
+  const [notes, setNotes] = useState([]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -48,7 +49,6 @@ export const Notes = () => {
     setValues({ ...docSnap.data()})
   }
 
-  const [notes, setNotes] = useState([]);
 
   const addnote = async (objectNote) => {
     console.log(currentId);
@@ -155,10 +155,12 @@ export const Notes = () => {
                 </div>
                 <input
                   className="editTitleLoad"
+                  onChange={handleInputChange}
                   value={note.title}
                 />
                 <textarea
                   className="editDescriptionLoad"
+                  onChange={handleInputChange}
                   rows="5"
                   value={note.description}
                 >

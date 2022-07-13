@@ -9,10 +9,19 @@ export const useAuth = () => {
     user:    {
       displayName: 'Carmen PG',
       email: 'correo@gmail.com',
-      logOut: function() {
-        console.log(logOut)
-      }
-  }}}
+    },
+    logOut: () => {}
+  }}
+
+/*export const logOut = (email, password) => {
+  return Promise.resolve({
+    user: {
+      email: "correo@gmail.com",
+      password: "******",
+    },
+  });
+};*/
+
 
 export function AuthProvider({ children }) {
   return <>{children}</>;

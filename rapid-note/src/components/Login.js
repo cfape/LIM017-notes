@@ -74,7 +74,7 @@ export function Login() {
         <div className="Content-btn-login">
           <button className="BtnLogin">Inicia Sesión</button>
         </div>
-
+        </form>
         <div className="Content-btn-google">
           <button className="BtnGoogle" data-testid="btnGoogle" onClick={handleGoogleSignin}>
             <img src={btnGoogle} className="LogoGoogle" alt="logo" />
@@ -91,7 +91,7 @@ export function Login() {
           {error && <p>{error}</p>}
         </div>
 
-      </form>
+
     </section>
   );
 }
