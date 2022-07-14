@@ -16,7 +16,6 @@
     margin-left: 3vmin;
     margin-top: 1vmin;
   }
-  
   .Content-btn-login {
     display: flex;
     flex-direction: column;
@@ -75,14 +74,13 @@
 
 }
 }
-
+/*Vista horizontal mobile*/
 @media only screen and (min-device-width: 650px) {
-
   .Logotext-login {
     margin-left: -0.5em;
-    height: 4em;
+    height: 4.5em;
     width: 28em;
-    margin-top: -1em;
+    margin-top: 0em;
   }
   .Form-login {
     display: flex;
@@ -97,7 +95,7 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin-left: -46vmin;
+    margin-left: -1em;
     margin-top: -2vmin;
   }
   .BtnLogin {
@@ -113,7 +111,7 @@
     margin: 4vmin;
   }
   .Content-btn-google{
-    margin-left: -9em;
+    margin-left: -2em;
     margin-top: -17vmin;
   }
   .LogoGoogle {
@@ -139,7 +137,8 @@
     font-size: calc(17px + 3vmin);
     color: black;
     padding: 4vmin 0vmin 0vmin 0vmin;
-    margin-left: 11vmin;
-    margin-top: -16vmin;
+    margin-left: 0em;
+    margin-top: -2vmin;
+    color: blue;
   }
 }
