@@ -4,12 +4,12 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import { Home }  from  './components/Home.jsx';
-import { Login } from './components/Login.jsx';
-import { Register } from './components/Register.jsx'
+import { Home }  from  './components/Home.js';
+import { Login } from './components/Login.js';
+import { Register } from './components/Register.js'
 import { AuthProvider } from './contex/authContext.js';
-import { Header } from './components/Header.jsx';
-import { Notes } from './components/Notes.jsx';
+import { Header } from './components/Header.js';
+import { Notes } from './components/Notes.js';
 import './components/Home.css';
 import './components/Register.css';
 import './components/Login.css';
