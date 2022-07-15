@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 
 export const createUser = function () {
   return { email: () => Promise.resolve(), password: () => Promise.resolve() };
@@ -12,16 +11,6 @@ export const useAuth = () => {
     },
     logOut: () => {}
   }}
-
-/*export const logOut = (email, password) => {
-  return Promise.resolve({
-    user: {
-      email: "correo@gmail.com",
-      password: "******",
-    },
-  });
-};*/
-
 
 export function AuthProvider({ children }) {
   return <>{children}</>;

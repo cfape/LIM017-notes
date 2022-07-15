@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 
 import { useState } from 'react';
 import { signUp } from '../contex/authContext.js';
@@ -11,7 +12,6 @@ export function Register() {
     password: '',
   });
 
-  //const { signUp } = useAuth()
   const navigate = useNavigate()
   const [error, setError] = useState()
 
@@ -23,7 +23,7 @@ export function Register() {
     setError('')
     try {
       const userRegister = await signUp(user.email, user.password)
-      //console.log(userRegister)
+      localStorage.setItem('email', userRegister.user.email);
       navigate('/login')
     } catch (error) {
       if (error.code === 'auth/invalid-email') {
