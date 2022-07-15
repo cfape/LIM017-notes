@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import { Header } from "./Header.js";
+import { Header } from "../components/Header.js";
 
 jest.mock("../contex/authContext.js");
 

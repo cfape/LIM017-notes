@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import { Home } from "./Home.js";
+import { Home } from "../components/Home.js";
 
 jest.mock("../contex/authContext.js");
 
@@ -43,8 +43,8 @@ describe("renders texto link", () => {
             <Home />
         </Router>
         );
-        const btnLogin = screen.getByText("¿No tienes cuenta? Regístrate");
-        expect(btnLogin).toBeInTheDocument();
+        const textHome = screen.getByText("¿No tienes cuenta?");
+        expect(textHome).toBeInTheDocument();
     });
     });
 
@@ -56,7 +56,7 @@ describe("link envía a register", () => {
             <Home />
         </Router>
         );
-        const linkGoRegister = await screen.findByText("¿No tienes cuenta? Regístrate");
+        const linkGoRegister = await screen.findByText("Regístrate");
         fireEvent.change(linkGoRegister);
         expect(history.location.pathname).toBe("/");
     });
