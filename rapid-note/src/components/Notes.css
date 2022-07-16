@@ -132,6 +132,7 @@
     height: 7vmin;
     background-color: rgb(247, 247, 156);
     border: none;
+    margin-top: -3vmin;
   }
   .btnClose {
     border: none;
@@ -186,13 +187,14 @@
     background-color: rgb(247, 247, 156);
   }
 }
-/*For tablet horizontal*/
+/*Mobile horizontal*/
 @media only screen and (min-width: 650px) {
   .catNote {
-    width: 40vmin;
-    margin-top: 20vmin;
-    margin-left: 1em;
     display: none;
+  }
+  .titleAddNote {
+    margin-left: -3.5em;
+    margin-top: -1em;
   }
   .Container-note {
     background-color: #92daee;
@@ -205,25 +207,34 @@
   }
   input.formTitleNote {
     width: 22em;
-    /*margin-left: -0.2em;*/
+    margin-left: -4em;
     margin-top: -5vmin;
     display: flex;
     align-items: center;
   }
   textarea.textareaNote {
     width: 20em;
-    margin-left: -6em;
+    margin-left: -10.5em;
     text-align: center;
     font-family: "Sanchez";
     font-size: 24px;
     color: #15181a;
   }
+
   .btnPrimary {
+    margin-top: 12em;
     font-size: 22px;
-    width: 85vmin;
+    margin-left: -29em;
 }
   .noteCard {
     width: 84vw;
+    margin-left: 0.7em;
+}
+.contentBtnClose {
+  margin-left: 17em;
+}
+.contentBtnEdit {
+  margin-right: 21.5em;
 }
 .editTitleLoad {
   width: 20em;

@@ -21,7 +21,7 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin-left: 0em;
+    margin-left: -0.4em;
   }
   .BtnLogin {
     height: 1.5em;
@@ -36,7 +36,7 @@
     margin: 4vmin;
   }
   .Content-btn-google{
-    margin-left: 0.5em;
+    margin-left: 0.4em;
     width: 0em;
   }
   .LogoGoogle {
