@@ -197,15 +197,18 @@
   .Container-note {
     background-color: #92daee;
     width: 23em;
-    margin-left: 0.5em;
-    margin-top: 6em;
+    display: flex;
+    align-items: center;
+    margin-top: 8em;
     border-radius: 10px;
     padding: 10px 10px 6vmin 10px;
   }
   input.formTitleNote {
     width: 22em;
-    margin-left: -0.2em;
+    /*margin-left: -0.2em;*/
     margin-top: -5vmin;
+    display: flex;
+    align-items: center;
   }
   textarea.textareaNote {
     width: 20em;
@@ -233,4 +236,7 @@
   border-radius: 10px;
   margin-left: 1em;
 }
+  .BtnLogOut {
+    margin-left: 9em;
+  }
 }

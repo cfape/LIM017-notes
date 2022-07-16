@@ -14,23 +14,23 @@
     margin-top: 1vmin;
     margin-left: -1.5em;
   }
-  h3 {
+  .Welcome {
     margin-left: -5em;
     margin-top: 0vmin;
     font-family: 'apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;';
-    font-size: 20px;
+    font-size: 14px;
   }
   .Content-BtnLogOut {
     margin-top: -6vmin;
-    margin-left: 7em;
+    margin-left: 8em;
   }
   .BtnLogOut{
   height: 1vmin;
   width: 50vmin;
   font-family: 'apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;';
-  font-size: 20px;
+  font-size: 16px;
   background-color: white;
-  border-radius: 20px;
+  border-radius: 10px;
   border: none;
   cursor: pointer;
   color: blue;
@@ -41,9 +41,29 @@
 @media only screen and (min-width: 650px) {
 
   .LogoHeader {
-    width: 100vw;
-    height: 25vh;
-    margin-top: 1.5vmin;
+    width: 95vw;
+    height: 8em;
+    margin-top: 2em;
     margin-left: -1em;
   }
+  .Welcome {
+    margin-left: -6em;
+    font-size: 20px;
+  }
+  .Content-BtnLogOut {
+    margin-top: -6vmin;
+    margin-left: 7em;
+  }
+  .BtnLogOut{
+    height: 1vmin;
+    width: 60vmin;
+    font-family: 'apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;';
+    font-size: 20px;
+    background-color: white;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    color: blue;
+    padding: 0px 0px 0px 0px;
+    }
 }
