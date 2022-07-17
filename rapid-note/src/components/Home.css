@@ -1,4 +1,4 @@
-/*For tablet vertical*/
+/*Mobile vertical*/
 @media only screen and (min-width: 365px) {
   * {
     text-align: center;
@@ -76,8 +76,8 @@
     padding: 2vmin 2vmin 2vmin 2vmin;
   }
 }
-/*For mobile horizontal*/
-@media only screen and (min-width: 650px) {
+/*Mobile horizontal*/
+@media only screen and (min-width: 600px) {
   * {
     margin: 0 auto;
     box-sizing: border-box;
@@ -88,18 +88,18 @@
     height: 5em;
     width: 90%;
     align-items: center;
-    margin-top: -9em;
+    margin-top: -10em;
   }
   .Title-home {
     font-size: 24px;
     color: #15181a;
     padding: 0px 0px 0px 0px;
     text-align: center;
-    margin-top: -55vmin;
+    margin-top: -8.5em;
   }
   .App-logo {
     animation: App-logo-spin infinite 2s linear;
-    margin-top: -0vmin;
+    margin-top: -1em;
     width: 55vmin;
     margin-left: 4em;
   }
@@ -116,7 +116,7 @@
   }
   .Content-btn {
     background-color: #92daee;
-    margin-top: -10em;
+    margin-top: -12em;
     margin-left: 13em;
   }
   .Btn-home {
@@ -149,7 +149,53 @@
     padding: 2vmin 2vmin 2vmin 2vmin;
   }
 }
-
+/*Tablet vertical*/
+@media only screen and (min-width: 600px) {
+  .App-logotext {
+    width: 100%;
+    height: 10em;
+    margin-left: -0.8em;
+    margin-top: -15em;
+  }
+  .App-logo {
+    margin-left: 5em;
+    width: 25em;
+    animation: App-logo-spin infinite 2s linear;
+    margin-top: -1em;
+    margin-left: 8em;
+  }
+  .Title-home {
+    font-family: "Sanchez";
+    font-size: 40px;
+    margin-top: 0em;
+    text-align: center;
+  }
+  .Content-btn {
+    margin-top: -20em;
+    margin-left: 8em;
+    width: 8em;
+  }
+  .Btn-home {
+    height: 2.5em;
+    width: 10em;
+    font-size: 36px;
+  }
+  .styleLine {
+    font-size: 36px;
+    width: 10em;
+    margin-top: 0.2em;
+    margin-left: -0.6em;
+  }
+  .Content-link {
+    width: 20em;
+    margin-left: 19em;
+  }
+  .Link-home {
+    text-align: center;
+    font-size: 40px;
+    margin-left: 0.4em;
+  }
+}
 /*For Desktop*/
 @media only screen and (min-width: 1200px) {
   .App-logotext {
