@@ -21,10 +21,10 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin-left: -0.4em;
+    margin-left: -0.3em;
   }
   .BtnLogin {
-    height: 1.5em;
+    height: 1.7em;
     width: 8em;
     font-family: "Sanchez";
     font-size: calc(16px + 3vmin);
@@ -36,7 +36,7 @@
     margin: 4vmin;
   }
   .Content-btn-google{
-    margin-left: 0.4em;
+    margin-left: 0.5em;
     width: 0em;
   }
   .LogoGoogle {
@@ -95,7 +95,7 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin-left: -2em;
+    margin-left: -1em;
     margin-top: -2vmin;
   }
   .BtnLogin {
@@ -111,7 +111,7 @@
     margin: 4vmin;
   }
   .Content-btn-google{
-    margin-left: 3em;
+    margin-left: -2em;
     margin-top: -17vmin;
   }
   .LogoGoogle {
