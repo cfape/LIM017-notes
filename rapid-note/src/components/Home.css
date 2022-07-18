@@ -19,7 +19,7 @@
   }
   .Title-home {
     font-family: "Sanchez";
-    font-size: 19px;
+    font-size: 18px;
     margin-top: 4vmin;
     margin-left: 0em;
     padding: 0px;
@@ -216,6 +216,7 @@
     padding: 2vmin 2vmin 2vmin 2vmin;
   }
 }
+
 @keyframes App-logo-spin {
   from {
     transform: translate(0px, 10px);
