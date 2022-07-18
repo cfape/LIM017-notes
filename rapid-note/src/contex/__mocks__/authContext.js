@@ -12,9 +12,9 @@ export const useAuth = () => {
     logOut: () => {}
   }}
 
-export function AuthProvider({ children }) {
+/*export function AuthProvider({ children }) {
   return <>{children}</>;
-}
+}*/
 
 export const navigate = function ({ useNavigate }) {
   return <>{useNavigate}</>;

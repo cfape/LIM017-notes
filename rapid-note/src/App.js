@@ -9,6 +9,7 @@ import { Home }  from  './components/Home.js';
 import { Login } from './components/Login.js';
 import { Register } from './components/Register.js'
 import { Header } from './components/Header.js';
+//import { ModalNotes} from './components/ModalNotes.js';
 import { Notes } from './components/Notes.js';
 import './components/Home.css';
 import './components/Register.css';
@@ -28,7 +29,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/login/' element={<Login />} />
             <Route path='/register/' element={<Register />} />
-            <Route path='/rapidnote/' element={<><Header /> <Notes /></>} />
+            <Route path='/rapidnote/' element={<><Header /> <Notes /> </>} />
           </Routes>
         </BrowserRouter>
   );
