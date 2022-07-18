@@ -14,7 +14,7 @@ import closeNote from "../img/closeNote.png";
 import editNote from "../img/editNote.png";
 import cat1 from "../img/cat1.gif";
 
-export const Notes = () => {
+export const Notes = (props) => {
   const initialStateValues = {
     title: "",
     description: "",
@@ -169,6 +169,5 @@ export const Notes = () => {
           ))}
         </div>
       </div>
-    </div>
-  );
+    </div>);
 };

@@ -4,23 +4,19 @@ import { Link, useNavigate } from "react-router-dom";
 import logotext from "../img/logotext.png";
 import btnGoogle from "../img/btnGoogle.png";
 
-export function Login() {
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
+export function Login(props) {
 
   const navigate = useNavigate();
   const [error, setError] = useState();
 
   const handleChange = ({ target: { name, value } }) =>
-    setUser({ ...user, [name]: value });
+    props.setUser({ ...props.user, [name]: value });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     try {
-      const objectUser = await login(user.email, user.password);
+      const objectUser = await login(props.user.email, props.user.password);
       localStorage.setItem('email', objectUser.user.email);
       navigate("/rapidnote");
     } catch (error) {
@@ -35,8 +31,8 @@ export function Login() {
   const handleGoogleSignin = async () => {
     try {
       const objectUser = await  loginWithGoogle();
-      //console.log(objectUser.user);
-      localStorage.setItem('email', objectUser.user.email);
+      props.setUser({ email: objectUser.user.email})
+      localStorage.setItem('email',objectUser.user.email);
       navigate("/rapidnote");
     } catch (error) {
       //console.log(error);
