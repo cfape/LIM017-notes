@@ -28,7 +28,7 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='/login/' element={<Login />} />
             <Route path='/register/' element={<Register />} />
-            <Route path='/rapid-note/' element={<><Header /> <Notes /></>} />
+            <Route path='/rapidnote/' element={<><Header /> <Notes /></>} />
           </Routes>
         </BrowserRouter>
   );
