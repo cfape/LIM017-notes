@@ -9,9 +9,8 @@ import { Home }  from  './components/Home.js';
 import { Login } from './components/Login.js';
 import { Register } from './components/Register.js'
 import { Header } from './components/Header.js';
-//import { useAuth } from './contex/authContext.js';
-//import { ModalNotes} from './components/ModalNotes.js';
 import { Notes } from './components/Notes.js';
+//import { Modal } from './components/Modal.js'
 import './components/Home.css';
 import './components/Register.css';
 import './components/Login.css';

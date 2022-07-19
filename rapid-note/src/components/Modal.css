@@ -1,0 +1,38 @@
+@media only screen and (min-device-width: 365px) {
+
+body-active-modal {
+	overflow: hidden;
+}
+
+.btn-modal {
+	padding: 10px 20px;
+	display: block;
+	margin: 100px auto 0;
+	font-size: 18px;
+}
+
+.modal, .overlay {
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	position: fixed;
+}
+
+.overlay {
+	background: rgba(49,49,49,0.8)
+}
+
+.modal-content {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	line-height: 1.4;
+	background: #f1f1f1;
+	padding: 10px 28px;
+	border-radius: 3px;
+	max-width: 600px;
+	min-width: 300px;
+}
+}

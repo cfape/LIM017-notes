@@ -13,6 +13,8 @@ import {
 import closeNote from "../img/closeNote.png";
 import editNote from "../img/editNote.png";
 import cat1 from "../img/cat1.gif";
+import {Modal} from './Modal.js'
+
 
 export const Notes = (props) => {
   const initialStateValues = {
@@ -74,7 +76,7 @@ export const Notes = (props) => {
       setNotes(docs);
     });
   };
-  getNotes();
+  //getNotes();
 
   const onDeleteNote = (id) => {
     deleteDoc(doc(db, "notes", id));
@@ -93,7 +95,7 @@ export const Notes = (props) => {
       }
       getNotes()
     }, [currentId]);
-
+console.log("test")
 
   return (
     <div className="Container-rapid-note">
@@ -152,6 +154,9 @@ export const Notes = (props) => {
                     <img src={closeNote} className="closeNote" alt="btn" />
                   </button>
                 </div>
+                <Modal>
+                  <div></div>
+                </Modal>
                 <input
                   className="editTitleLoad"
                   onChange={handleInputChange}
