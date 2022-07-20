@@ -2,7 +2,6 @@
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  //onAuthStateChanged,
   signOut,
   GoogleAuthProvider,
   signInWithPopup,
