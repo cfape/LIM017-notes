@@ -1,48 +1,21 @@
-import React, { useState } from "react";
-import { db} from "../Firebase/firebaseConfig.js";
-import {
-  getDoc,
-  doc,
-} from "firebase/firestore";
+import { updateNote} from "../Firebase/firebaseConfig.js";
 import "./Modal.css";
-import { useEffect } from "react";
 
 export function Modal(props) {
-  console.log('entro al modal', props);
-  // const [note, setNote] = useState({})
-  // const [modal, setModal] = useState(false);
-
+//console.log(props);
   const toggleModal = () => {
     props.setModal(!props.modal);
   };
 
+  const updateNoteModal = (objectNote) => {
+    updateNote(props.note, objectNote.title, objectNote.description).then(() => {
+    })
+  }
   const handleInputChangeModal = (e) => {
     const { name, value } = e.target;
     props.setValues({ ...props.values, [name]: value });
   };
 
-
-  // console.log(children);
-  //return <>{children}</>;
-//}
-
-// const getNoteById = async  (id) => {
-//   const docRefId = doc(db, "notes", id);
-//   const docSnap = await getDoc(docRefId);
-// console.log(docSnap.exists());
-//   if (docSnap.exists()) {
-
-//     console.log("Document data:", docSnap.data());
-//     return docSnap.data()
-//     //
-//   } else {
-//     console.log("No such document!");
-//   }
-//   //
-// }
-useEffect(()=>{
-  // getNoteById(props.note)
-})
   return (
 
   <>
@@ -59,7 +32,7 @@ useEffect(()=>{
         name="title"
         className="formTitleModal"
         placeholder='Título'
-        //onChange = {handleInputChangeModal}
+        onChange = {handleInputChangeModal}
         value={props.values.title}
       />
       <textarea
@@ -67,7 +40,7 @@ useEffect(()=>{
         name="description"
         rows="4"
         placeholder="Edita tu nota"
-        //onChange= {handleInputChangeModal}
+        onChange= {handleInputChangeModal}
         value={props.values.description}
       ></textarea>
 
@@ -80,7 +53,7 @@ useEffect(()=>{
 
       <button
       className='close-modal'
-      onClick={toggleModal}
+      onClick={()=>{toggleModal(); updateNoteModal(props.values)}}
       >
       Actualizar
       </button>

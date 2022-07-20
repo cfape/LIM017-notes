@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { db, updateNote} from "../Firebase/firebaseConfig.js";
+import { db } from "../Firebase/firebaseConfig.js";
 import {
   addDoc,
   collection,
@@ -16,7 +16,7 @@ import cat1 from "../img/cat1.gif";
 import {Modal} from './Modal.js'
 
 
-export const Notes = (props) => {
+export const Notes = () => {
   const initialStateValues = {
     title: "",
     description: "",
@@ -26,7 +26,6 @@ export const Notes = (props) => {
   const [values, setValues] = useState(initialStateValues);
   const [currentId, setCurrentId] = useState('');
   const [notes, setNotes] = useState([]);
-
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
@@ -41,7 +40,10 @@ export const Notes = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     addnote(values);
-    setValues({ ...initialStateValues });
+    //console.log(values);
+    // setValues({ ...initialStateValues });
+    e.target.reset()
+    
   };
 
   const getNoteById = async (id) => {
@@ -49,7 +51,7 @@ export const Notes = (props) => {
     const docSnap = await getDoc(docRefId);
 
     if (docSnap.exists()) {
-      console.log("Document data:", docSnap.data());
+      //console.log("Document data:", docSnap.data());
       setValues({ ...docSnap.data()})
     } else {
       console.log("No such document!");
@@ -58,15 +60,12 @@ export const Notes = (props) => {
 
 
   const addnote = async (objectNote) => {
-    console.log(currentId, 'antes');
+    //console.log(currentId, 'antes');
     if (currentId === '') {
       const docRef = await addDoc(collection(db, "notes"), objectNote);
       console.log("Document written with ID: ", docRef.id);
-    } else {
-      console.log(currentId, 'despues');
-    updateNote(currentId, objectNote.title, objectNote.description).then(() => {
-        getNotes();
-      })
+      getNotes();
+      // setValues({ ...initialStateValues });
     }
   };
 
@@ -83,26 +82,17 @@ export const Notes = (props) => {
       setNotes(docs);
     });
   };
-  // getNotes();
+
 
   const onDeleteNote = (id) => {
     deleteDoc(doc(db, "notes", id));
   };
 
     useEffect(() => {
-      const initialStateValues = {
-        title: "",
-        description: "",
-        author: localStorage.getItem("email"),
-      };
-      // if (currentId === '') {
-      //   setValues({...initialStateValues});
-      // } else {
-      //   getNoteById(currentId)
-      // }
+
       getNotes()
     }, []);
-console.log("test")
+
 
   return (
     <div className="Container-rapid-note">
@@ -119,7 +109,7 @@ console.log("test")
               className="formTitleNote"
               placeholder="Título"
               onChange={handleInputChange}
-              value={values.title}
+              //value={values.title}
             />
             <div className="input-group-textarea">
               <textarea
@@ -128,7 +118,7 @@ console.log("test")
                 rows="4"
                 placeholder="Escribe una nota"
                 onChange={handleInputChange}
-                value={values.description}
+                //value={values.description}
               ></textarea>
             </div>
           </div>
@@ -144,6 +134,8 @@ console.log("test")
                 <div className="contentBtnEdit">
                   <button
                     className="editNote"
+                    data-noteid={note.id}
+                    onClick ={() => {setCurrentId(note.id);  toggleModal(); getNoteById(note.id)}}
                   >
                     <img src={editNote} className="editNote" alt="btn" />
                   </button>
@@ -159,13 +151,12 @@ console.log("test")
                     <img src={closeNote} className="closeNote" alt="btn" />
                   </button>
                 </div>
-                <button
+                {/* <button
                 data-noteid={note.id}
-                // onClick={toggleModal}
-                onClick={() => {setCurrentId(note.id)|| console.log(currentId); getNoteById(note.id); toggleModal()}}
+                onClick ={() => {setCurrentId(note.id);  toggleModal()}}
                 className='btn-Modal'>
                 Editar Nota
-                </button>
+                </button> */}
 
                 <input
                   className="editTitleLoad"
@@ -182,7 +173,7 @@ console.log("test")
               </div>
             </div>
           ))}
-            <Modal note={currentId} values={values} modal={modal} setModal={setModal}/>
+            <Modal note={currentId} values={values} setValues={setValues} modal={modal} setModal={setModal}/>
         </div>
       </div>
     </div>);
