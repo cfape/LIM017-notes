@@ -25,7 +25,7 @@ body-active-modal {
 
 .modal-content {
 	position: absolute;
-	top: 40%;
+	top: 70%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	line-height: 1.4;
@@ -34,5 +34,29 @@ body-active-modal {
 	border-radius: 3px;
 	max-width: 600px;
 	min-width: 300px;
+}
+
+.input [type='text'] {
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 90%;
+  border-radius: 10px;
+  color: black;
+  font-family: "Sanchez";
+  font-size: 24px;
+  padding: 10px 25px;
+  text-decoration: none;
+  margin: 15px 1px;
+  cursor: pointer;
+}
+textarea.textareaModal {
+  margin-top: 0vmin;
+  width: 90%;
+	border: none;
+  border-radius: 5px;
+  text-align: center;
+  font-family: "Sanchez";
+  font-size: 24px;
+  color: #15181a;
 }
 }

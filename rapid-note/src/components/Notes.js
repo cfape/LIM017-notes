@@ -27,6 +27,12 @@ export const Notes = (props) => {
   const [currentId, setCurrentId] = useState('');
   const [notes, setNotes] = useState([]);
 
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
@@ -44,26 +50,27 @@ export const Notes = (props) => {
 
     if (docSnap.exists()) {
       console.log("Document data:", docSnap.data());
+      setValues({ ...docSnap.data()})
     } else {
       console.log("No such document!");
     }
-    setValues({ ...docSnap.data()})
   }
 
 
   const addnote = async (objectNote) => {
-    console.log(currentId);
+    console.log(currentId, 'antes');
     if (currentId === '') {
       const docRef = await addDoc(collection(db, "notes"), objectNote);
       console.log("Document written with ID: ", docRef.id);
     } else {
-      await updateNote(currentId, objectNote.title, objectNote.description).then(() => {
+      console.log(currentId, 'despues');
+    updateNote(currentId, objectNote.title, objectNote.description).then(() => {
         getNotes();
       })
     }
   };
 
-  const getNotes = async () => {
+  const getNotes = () => {
     const q =  query(
       collection(db, "notes"),
       where("author", "==", localStorage.getItem("email"))
@@ -76,7 +83,7 @@ export const Notes = (props) => {
       setNotes(docs);
     });
   };
-  //getNotes();
+  // getNotes();
 
   const onDeleteNote = (id) => {
     deleteDoc(doc(db, "notes", id));
@@ -88,13 +95,13 @@ export const Notes = (props) => {
         description: "",
         author: localStorage.getItem("email"),
       };
-      if (currentId === '') {
-        setValues({...initialStateValues});
-      } else {
-        getNoteById(currentId)
-      }
+      // if (currentId === '') {
+      //   setValues({...initialStateValues});
+      // } else {
+      //   getNoteById(currentId)
+      // }
       getNotes()
-    }, [currentId]);
+    }, []);
 console.log("test")
 
   return (
@@ -125,7 +132,7 @@ console.log("test")
               ></textarea>
             </div>
           </div>
-          <button className="btnPrimary">{currentId === '' ? 'Guardar': 'Guardar'}</button>
+          <button className="btnPrimary">'Guardar'</button>
         </div>
       </form>
 
@@ -136,9 +143,7 @@ console.log("test")
               <div className="noteCard">
                 <div className="contentBtnEdit">
                   <button
-                    data-noteid={note.id}
                     className="editNote"
-                    onClick={() => setCurrentId(note.id)}
                   >
                     <img src={editNote} className="editNote" alt="btn" />
                   </button>
@@ -154,9 +159,14 @@ console.log("test")
                     <img src={closeNote} className="closeNote" alt="btn" />
                   </button>
                 </div>
-                <Modal>
-                  <div></div>
-                </Modal>
+                <button
+                data-noteid={note.id}
+                // onClick={toggleModal}
+                onClick={() => {setCurrentId(note.id)|| console.log(currentId); getNoteById(note.id); toggleModal()}}
+                className='btn-Modal'>
+                Editar Nota
+                </button>
+
                 <input
                   className="editTitleLoad"
                   onChange={handleInputChange}
@@ -172,7 +182,9 @@ console.log("test")
               </div>
             </div>
           ))}
+            <Modal note={currentId} values={values} modal={modal} setModal={setModal}/>
         </div>
       </div>
     </div>);
 };
+
