@@ -15,6 +15,46 @@ import editNote from "../img/editNote.png";
 import cat1 from "../img/cat1.gif";
 import {Modal} from './Modal.js'
 
+const getNoteById = async (id) => {
+  const docRefId = doc(db, "notes", id);
+  const docSnap = await getDoc(docRefId);
+
+  if (docSnap.exists()) {
+    //console.log("Document data:", docSnap.data());
+    return { ...docSnap.data()};
+  } else {
+    console.log("No such document!");
+  }
+}
+
+const getNotes = (setNotes) => {
+  const q =  query(
+    collection(db, "notes"),
+    where("author", "==", localStorage.getItem("email"))
+  );
+  onSnapshot(q, (querySnapshot) => {
+    const docs = [];
+    querySnapshot.forEach((doc) => {
+      docs.push({ ...doc.data(), id: doc.id });
+    });
+    setNotes(docs);
+  });
+};
+
+const addnote = async (objectNote, currentId, setNotes) => {
+  //console.log(currentId, 'antes');
+  if (currentId === '') {
+    const docRef = await addDoc(collection(db, "notes"), objectNote);
+    console.log("Document written with ID: ", docRef.id);
+    getNotes(setNotes);
+    // setValues({ ...initialStateValues });
+  }
+};
+
+const onDeleteNote = (id) => {
+  deleteDoc(doc(db, "notes", id));
+};
+
 
 export const Notes = () => {
   const initialStateValues = {
@@ -39,58 +79,26 @@ export const Notes = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addnote(values);
+    addnote(values, currentId, setNotes);
     //console.log(values);
     // setValues({ ...initialStateValues });
     e.target.reset()
     
   };
 
-  const getNoteById = async (id) => {
-    const docRefId = doc(db, "notes", id);
-    const docSnap = await getDoc(docRefId);
-
-    if (docSnap.exists()) {
-      //console.log("Document data:", docSnap.data());
-      setValues({ ...docSnap.data()})
-    } else {
-      console.log("No such document!");
-    }
-  }
+  
 
 
-  const addnote = async (objectNote) => {
-    //console.log(currentId, 'antes');
-    if (currentId === '') {
-      const docRef = await addDoc(collection(db, "notes"), objectNote);
-      console.log("Document written with ID: ", docRef.id);
-      getNotes();
-      // setValues({ ...initialStateValues });
-    }
-  };
-
-  const getNotes = () => {
-    const q =  query(
-      collection(db, "notes"),
-      where("author", "==", localStorage.getItem("email"))
-    );
-    onSnapshot(q, (querySnapshot) => {
-      const docs = [];
-      querySnapshot.forEach((doc) => {
-        docs.push({ ...doc.data(), id: doc.id });
-      });
-      setNotes(docs);
-    });
-  };
 
 
-  const onDeleteNote = (id) => {
-    deleteDoc(doc(db, "notes", id));
-  };
+
+
+
+
 
     useEffect(() => {
 
-      getNotes()
+      getNotes(setNotes)
     }, []);
 
 
@@ -122,7 +130,7 @@ export const Notes = () => {
               ></textarea>
             </div>
           </div>
-          <button className="btnPrimary">'Guardar'</button>
+          <button className="btnPrimary">Guardar</button>
         </div>
       </form>
 
@@ -135,7 +143,12 @@ export const Notes = () => {
                   <button
                     className="editNote"
                     data-noteid={note.id}
-                    onClick ={() => {setCurrentId(note.id);  toggleModal(); getNoteById(note.id)}}
+                    onClick ={() => {
+                      setCurrentId(note.id);
+                      toggleModal();
+                      const notes = getNoteById(note.id)
+                      setNotes(notes);
+                    }}
                   >
                     <img src={editNote} className="editNote" alt="btn" />
                   </button>

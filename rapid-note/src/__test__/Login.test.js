@@ -8,12 +8,14 @@ import { Login } from "../components/Login.js";
 
 jest.mock("../contex/authContext.js");
 
+const setUser = jest.fn();
+
 describe("renders Iniciar sesión", () => {
   it("Iniciar sesión", () => {
     const history = createMemoryHistory();
     render(
       <Router location={history.location} navigator={history}>
-        <Login />
+        <Login setUser = {setUser}/>
       </Router>
     );
     const btnLogin = screen.getByText("Inicia Sesión");
@@ -26,7 +28,7 @@ describe("usuario identificado", () => {
     const history = createMemoryHistory();
     render(
       <Router location={history.location} navigator={history}>
-        <Login />
+        <Login setUser = {setUser}/>
       </Router>
     );
     const emailInput = screen.getByPlaceholderText("correo@ejemplo.com");
@@ -38,7 +40,7 @@ describe("usuario identificado", () => {
     fireEvent.click(btnLogin);
 
     await waitFor(() => {
-      expect(history.location.pathname).toBe("/rapidnote");
+      expect(history.location.pathname).toBe("/");
     });
   });
 });
@@ -48,7 +50,7 @@ describe("usuario no identificado", () => {
     const history = createMemoryHistory();
     render(
       <Router location={history.location} navigator={history}>
-        <Login />
+        <Login setUser = {setUser}/>
       </Router>
     );
     const emailInput = screen.getByPlaceholderText("correo@ejemplo.com");
@@ -59,7 +61,7 @@ describe("usuario no identificado", () => {
     fireEvent.click(btnLogin);
 
     await waitFor(() => {
-      expect(history.location.pathname).toBe("/rapidnote");
+      expect(history.location.pathname).toBe("/");
     });
   });
 });
@@ -69,7 +71,7 @@ describe("link volver al home", () => {
     const history = createMemoryHistory();
     render(
       <Router location={history.location} navigator={history}>
-        <Login />
+        <Login setUser = {setUser}/>
       </Router>
     );
     const linkGoHome = await screen.findByText("Volver al inicio");
@@ -83,7 +85,7 @@ describe("usuario identificado con Google", () => {
     const history = createMemoryHistory();
     render(
       <Router location={history.location} navigator={history}>
-        <Login />
+        <Login setUser = {setUser}/>
       </Router>
     );
     const btnLogin = await screen.findByTestId("btnGoogle");
