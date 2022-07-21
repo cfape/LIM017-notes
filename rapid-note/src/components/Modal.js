@@ -2,7 +2,6 @@ import { updateNote} from "../Firebase/firebaseConfig.js";
 import "./Modal.css";
 
 export function Modal(props) {
-//console.log(props);
   const toggleModal = () => {
     props.setModal(!props.modal);
   };
@@ -19,7 +18,6 @@ export function Modal(props) {
   return (
 
   <>
-
   {props.modal && (
 	<div className='modal'>
 		<div
@@ -65,13 +63,3 @@ export function Modal(props) {
 
   );
   }
-
-
-
-  /*<button
-    data-noteid={note.id}
-    className="editNote"
-    onClick={() => setCurrentId(note.id)}
-    >
-    <img src={editNote} className="editNote" alt="btn" />
-  </button>*/

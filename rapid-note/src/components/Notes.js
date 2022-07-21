@@ -13,22 +13,12 @@ import {
 import closeNote from "../img/closeNote.png";
 import editNote from "../img/editNote.png";
 import cat1 from "../img/cat1.gif";
-import {Modal} from './Modal.js'
+import { Modal } from "./Modal.js";
 
-const getNoteById = async (id) => {
-  const docRefId = doc(db, "notes", id);
-  const docSnap = await getDoc(docRefId);
 
-  if (docSnap.exists()) {
-    //console.log("Document data:", docSnap.data());
-    return { ...docSnap.data()};
-  } else {
-    console.log("No such document!");
-  }
-}
 
 const getNotes = (setNotes) => {
-  const q =  query(
+  const q = query(
     collection(db, "notes"),
     where("author", "==", localStorage.getItem("email"))
   );
@@ -36,17 +26,18 @@ const getNotes = (setNotes) => {
     const docs = [];
     querySnapshot.forEach((doc) => {
       docs.push({ ...doc.data(), id: doc.id });
+      
     });
-    setNotes(docs);
+  setNotes(docs);
   });
 };
 
 const addnote = async (objectNote, currentId, setNotes) => {
-  //console.log(currentId, 'antes');
-  if (currentId === '') {
+
+  if (currentId === "") {
     const docRef = await addDoc(collection(db, "notes"), objectNote);
     console.log("Document written with ID: ", docRef.id);
-    getNotes(setNotes);
+    getNotes(setNotes(objectNote));
     // setValues({ ...initialStateValues });
   }
 };
@@ -55,17 +46,16 @@ const onDeleteNote = (id) => {
   deleteDoc(doc(db, "notes", id));
 };
 
-
-export const Notes = () => {
+export const Notes =() => {
   const initialStateValues = {
     title: "",
     description: "",
     author: localStorage.getItem("email"),
-
   };
+
   const [values, setValues] = useState(initialStateValues);
-  const [currentId, setCurrentId] = useState('');
-  const [notes, setNotes] = useState([]);
+  const [currentId, setCurrentId] = useState("");
+  const [ notes, setNotes] = useState([]);
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
@@ -82,27 +72,32 @@ export const Notes = () => {
     addnote(values, currentId, setNotes);
     //console.log(values);
     // setValues({ ...initialStateValues });
-    e.target.reset()
-    
+    e.target.reset();
   };
 
-  
+  const getNoteById = async (id) => {
+    const docRefId = doc(db, "notes", id);
+    const docSnap = await getDoc(docRefId);
+    if (docSnap.exists()) {
+      // setNotes({ ...docSnap.data() })
+      return { ...docSnap.data() };
+    } else {
+      console.log("No such document!");
+    }
+  };
 
 
 
-
-
-
-
-
-
-    useEffect(() => {
-
-      getNotes(setNotes)
-    }, []);
-
-
-  return (
+  useEffect( () => {
+  getNotes();
+  async function setNotes() {
+    const notes = await fetchKey(props.notes);
+    setNotes(notes);
+  }
+  getNotes();
+  }, []);
+  console.log(notes);
+return (
     <div className="Container-rapid-note">
       <div className="Content-cat">
         <img src={cat1} className="catNote" alt="cat" />
@@ -143,11 +138,12 @@ export const Notes = () => {
                   <button
                     className="editNote"
                     data-noteid={note.id}
-                    onClick ={() => {
+                    onClick={() => {
                       setCurrentId(note.id);
                       toggleModal();
-                      const notes = getNoteById(note.id)
-                      setNotes(notes);
+                      //getNoteById(note.id)
+                     
+                       setNotes( getNoteById(note.id));
                     }}
                   >
                     <img src={editNote} className="editNote" alt="btn" />
@@ -164,12 +160,6 @@ export const Notes = () => {
                     <img src={closeNote} className="closeNote" alt="btn" />
                   </button>
                 </div>
-                {/* <button
-                data-noteid={note.id}
-                onClick ={() => {setCurrentId(note.id);  toggleModal()}}
-                className='btn-Modal'>
-                Editar Nota
-                </button> */}
 
                 <input
                   className="editTitleLoad"
@@ -186,9 +176,15 @@ export const Notes = () => {
               </div>
             </div>
           ))}
-            <Modal note={currentId} values={values} setValues={setValues} modal={modal} setModal={setModal}/>
+          <Modal
+            note={currentId}
+            values={values}
+            setValues={setValues}
+            modal={modal}
+            setModal={setModal}
+          />
         </div>
       </div>
-    </div>);
+    </div>
+  );
 };
-

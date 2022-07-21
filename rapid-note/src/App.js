@@ -10,7 +10,6 @@ import { Login } from './components/Login.js';
 import { Register } from './components/Register.js'
 import { Header } from './components/Header.js';
 import { Notes } from './components/Notes.js';
-//import { Modal } from './components/Modal.js'
 import './components/Home.css';
 import './components/Register.css';
 import './components/Login.css';

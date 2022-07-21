@@ -13,16 +13,16 @@ export function Login(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError("");
+    setError('');
     try {
       const objectUser = await login(props.user.email, props.user.password);
-      localStorage.setItem("email", objectUser.user.email);
-      navigate("/rapidnote");
+      localStorage.setItem('email', objectUser.user.email);
+      navigate('/rapidnote');
     } catch (error) {
-      if (error.code === "auth/invalid-email") {
-        setError("Correo inválido");
-      } else if (error.code === "auth/user-not-found") {
-        setError("El correo no está registrado");
+      if (error.code === 'auth/invalid-email') {
+        setError('Correo inválido');
+      } else if (error.code === 'auth/user-not-found') {
+        setError('El correo no está registrado');
       }
     }
   };
@@ -31,16 +31,15 @@ export function Login(props) {
     try {
       const objectUser = await loginWithGoogle();
       props.setUser({ email: objectUser.user.email });
-      localStorage.setItem("email", objectUser.user.email);
-      navigate("/rapidnote");
+      localStorage.setItem('email', objectUser.user.email);
+      navigate('/rapidnote');
     } catch (error) {
-      //console.log(error);
       if (error) {
       }
-      if (error.code === "auth/invalid-email") {
-        setError("auth/correo inválido");
-      } else if (error.code === "auth/user-not-found") {
-        setError("El correo no está registrado");
+      if (error.code === 'auth/invalid-email') {
+        setError('auth/correo inválido');
+      } else if (error.code === 'auth/user-not-found') {
+        setError('El correo no está registrado');
       }
     }
   };

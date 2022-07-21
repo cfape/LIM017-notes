@@ -18,6 +18,5 @@ export const db = getFirestore();
 
 
 export const updateNote = async (id, title, description) => {
-  //console.log(id, title, description);
   await updateDoc(doc(db, 'notes', id), {title:title, description:description})
 }
