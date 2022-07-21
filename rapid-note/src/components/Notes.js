@@ -15,8 +15,6 @@ import editNote from "../img/editNote.png";
 import cat1 from "../img/cat1.gif";
 import { Modal } from "./Modal.js";
 
-
-
 const getNotes = (setNotes) => {
   const q = query(
     collection(db, "notes"),
@@ -26,18 +24,16 @@ const getNotes = (setNotes) => {
     const docs = [];
     querySnapshot.forEach((doc) => {
       docs.push({ ...doc.data(), id: doc.id });
-      
     });
-  setNotes(docs);
+    setNotes(docs);
   });
 };
 
 const addnote = async (objectNote, currentId, setNotes) => {
-
   if (currentId === "") {
     const docRef = await addDoc(collection(db, "notes"), objectNote);
     console.log("Document written with ID: ", docRef.id);
-    getNotes(setNotes(objectNote));
+    getNotes(setNotes);
     // setValues({ ...initialStateValues });
   }
 };
@@ -46,7 +42,7 @@ const onDeleteNote = (id) => {
   deleteDoc(doc(db, "notes", id));
 };
 
-export const Notes =() => {
+export const Notes = () => {
   const initialStateValues = {
     title: "",
     description: "",
@@ -55,8 +51,9 @@ export const Notes =() => {
 
   const [values, setValues] = useState(initialStateValues);
   const [currentId, setCurrentId] = useState("");
-  const [ notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState([]);
   const [modal, setModal] = useState(false);
+ 
 
   const toggleModal = () => {
     setModal(!modal);
@@ -86,18 +83,12 @@ export const Notes =() => {
     }
   };
 
-
-
-  useEffect( () => {
-  getNotes();
-  async function setNotes() {
-    const notes = await fetchKey(props.notes);
-    setNotes(notes);
-  }
-  getNotes();
+  useEffect(() => {
+    getNotes(setNotes);
   }, []);
-  console.log(notes);
-return (
+ 
+
+  return (
     <div className="Container-rapid-note">
       <div className="Content-cat">
         <img src={cat1} className="catNote" alt="cat" />
@@ -141,9 +132,9 @@ return (
                     onClick={() => {
                       setCurrentId(note.id);
                       toggleModal();
-                      //getNoteById(note.id)
-                     
-                       setNotes( getNoteById(note.id));
+                      getNoteById(note.id)
+
+                      //setNotes(getNoteById(note.id));
                     }}
                   >
                     <img src={editNote} className="editNote" alt="btn" />
@@ -171,8 +162,7 @@ return (
                   onChange={handleInputChange}
                   rows="5"
                   value={note.description}
-                >
-                </textarea>
+                ></textarea>
               </div>
             </div>
           ))}
