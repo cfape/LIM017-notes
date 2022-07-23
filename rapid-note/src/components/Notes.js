@@ -7,7 +7,7 @@ import {
   where,
   query,
   deleteDoc,
-  getDoc,
+  //getDoc,
   doc,
 } from "firebase/firestore";
 import closeNote from "../img/closeNote.png";
@@ -53,7 +53,7 @@ export const Notes = () => {
   const [currentId, setCurrentId] = useState("");
   const [notes, setNotes] = useState([]);
   const [modal, setModal] = useState(false);
- 
+
 
   const toggleModal = () => {
     setModal(!modal);
@@ -72,7 +72,7 @@ export const Notes = () => {
     e.target.reset();
   };
 
-  const getNoteById = async (id) => {
+  /*const getNoteById = async (id) => {
     const docRefId = doc(db, "notes", id);
     const docSnap = await getDoc(docRefId);
     if (docSnap.exists()) {
@@ -81,7 +81,7 @@ export const Notes = () => {
     } else {
       console.log("No such document!");
     }
-  };
+  };*/
 
   useEffect(() => {
     getNotes(setNotes);
@@ -131,8 +131,9 @@ export const Notes = () => {
                     data-noteid={note.id}
                     onClick={() => {
                       setCurrentId(note.id);
+                      setValues({ title: note.title, description: note.description })
                       toggleModal();
-                      getNoteById(note.id)
+                      //getNoteById(note.id)
 
                       //setNotes(getNoteById(note.id));
                     }}
