@@ -1,5 +1,5 @@
-/*For tablet vertical*/
-@media only screen and (min-width: 365px) {
+/*For mobile*/
+/*@media only screen and (min-width: 350px) {*/
   * {
     text-align: center;
     margin: 0 auto;
@@ -75,7 +75,7 @@
     margin-top: -1em;
     padding: 2vmin 2vmin 2vmin 2vmin;
   }
-}
+/*}*/
 /*For mobile horizontal*/
 @media only screen and (min-width: 650px) {
   * {
