@@ -1,4 +1,4 @@
-@media only screen and (min-width: 350px) {
+
 
   .Container-HeaderRapidNote {
     background-color: white;
@@ -36,7 +36,7 @@
   color: blue;
   padding: 0px 0px 0px 0px;
   }
-}
+
 /*For tablet horizontal*/
 @media only screen and (min-width: 650px) {
 
