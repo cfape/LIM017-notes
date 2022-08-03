@@ -38,7 +38,7 @@
   }
 
 /*For tablet horizontal*/
-@media only screen and (min-width: 650px) {
+@media (min-width: 600px) and (max-width: 1199px) {
 
   .LogoHeader {
     width: 95vw;

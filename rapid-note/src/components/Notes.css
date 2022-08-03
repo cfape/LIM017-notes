@@ -188,7 +188,7 @@
   }
 
 /*Mobile horizontal*/
-@media only screen and (min-width: 600px) {
+@media (min-width: 600px) and (max-width: 1199px) {
   .catNote {
     display: none;
   }
