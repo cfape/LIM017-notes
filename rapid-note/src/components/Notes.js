@@ -68,25 +68,12 @@ export const Notes = () => {
     e.preventDefault();
     addnote(values, currentId, setNotes);
     //console.log(values);
-    // setValues({ ...initialStateValues });
     e.target.reset();
   };
-
-  /*const getNoteById = async (id) => {
-    const docRefId = doc(db, "notes", id);
-    const docSnap = await getDoc(docRefId);
-    if (docSnap.exists()) {
-      // setNotes({ ...docSnap.data() })
-      return { ...docSnap.data() };
-    } else {
-      console.log("No such document!");
-    }
-  };*/
 
   useEffect(() => {
     getNotes(setNotes);
   }, []);
- 
 
   return (
     <div className="Container-rapid-note">
@@ -103,7 +90,6 @@ export const Notes = () => {
               className="formTitleNote"
               placeholder="Título"
               onChange={handleInputChange}
-              //value={values.title}
             />
             <div className="input-group-textarea">
               <textarea
@@ -112,7 +98,6 @@ export const Notes = () => {
                 rows="4"
                 placeholder="Escribe una nota"
                 onChange={handleInputChange}
-                //value={values.description}
               ></textarea>
             </div>
           </div>
