@@ -92,12 +92,14 @@
   .App-logo {
     width: 50%;
     margin-top: -2em;
-    margin-left: 12em;
+    margin-left: 15em;
     animation: App-logo-spin infinite 2s linear;
   }
   .Content-btn {
-  align-items: center;
-  margin-top: -20em;
+    width: 16em;
+    height: 6em;
+    align-items: center;
+    margin-top: -12em;
   /*margin-left: 15em;*/
   }
   .Btn-home {
@@ -119,6 +121,7 @@
   }
   .Link-home {
   font-size: 36px;
+  margin-top: -2em;
   }
 }
 
