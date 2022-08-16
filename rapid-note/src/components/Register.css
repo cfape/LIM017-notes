@@ -7,7 +7,7 @@
     height: 6em;
     align-items: center;
   }
-  img.cat-register {
+  .cat-register {
     width: 20%;
     height: 9em;
     margin-top: -1em;
@@ -71,14 +71,14 @@
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    color: black;
+    color: blue;
   }
   .Link-register {
     display: flex;
     flex-direction: column;
     text-align: center;
     font-size: 24px;
-    color: black;
+    color: blue;
     padding: 2vmin 0vmin 0vmin 0vmin;
     margin-left: -0.2em;
     margin-top: 0.5em;
@@ -88,16 +88,10 @@
 @media (min-width: 600px) and (max-width: 1199px) {
   .Logotext-register {
     height: 9em;
-    width: 100%;
+    width: 80%;
     margin-top: 2em;
   }
-  img.cat-register {
-    width: 25%;
-    height: 14em;
-    margin-top: -2em;
-  }
   .Title-register {
-    font-family: "Sanchez";
     font-size: 24px;
   }
   .Form-register {
@@ -110,60 +104,46 @@
     margin-top: 0.5em;
   }
   label {
-    font-size: 24px;
+    font-size: 34px;
 }
   input[type="email"],
   input[type="text"],
   input[type="password"] {
-    background-color: rgb(255, 255, 255);
-    border: none;
-    border-radius: 10px;
-    color: black;
-    font-family: "Sanchez";
-    font-size: 22px;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 15px 1px;
-    cursor: pointer;
-    width: 90%;
-    height: 3em;
-    margin-left: 0em;
-    margin-top: 0em;
+    font-size: 30px;
   }
-
   .cat-register {
-    width: 4em;
-    height: 6em;
+    width: 10em;
+    height: 13em;
     margin-top: -2em;
-    margin-left: 22em;
+    margin-left: 17em;
+  }
+  .Content-btn-register {
+    margin-top: 0.5em;
+  }
+  .btnRegister {
+    font-size: 30px;
+  }
+  .Content-link-register {
+    width: 10em;
+  }
+  .Link-register {
+    font-size: 30px;
+  }
+}
+/*For desktop*/
+@media only screen and (min-width: 1200px) {
+  .Logotext-register {
+    height: 7em;
+    width: 80%;
+    margin-top: 6em;
+  }
+  .cat-register {
+    width: 10em;
+    height: 13em;
+    margin-top: -1em;
   }
 
   .Content-btn-register {
     margin-top: 0.5em;
-  }
-  button {
-    height: 11vmin;
-    width: 37vmin;
-    font-family: "Sanchez";
-    font-size: 20px;
-    background-color: white;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    color: black;
-  }
-  .Content-link-register {
-    width: 7em;
-    margin-top: 0em;
-    background-color: #92daee;
-
-  }
-  .Link-register {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 22px;
-    color: black;
-    padding: 2vmin 0vmin 0vmin 0vmin;
   }
 }
