@@ -59,6 +59,7 @@
     font-family: "Sanchez";
     font-size: 24px;
     color: #15181a;
+    background-color: #fff;
   }
   .btnPrimary {
     background-color: white;
@@ -125,6 +126,7 @@
     margin-top: -9vmin;
     width: 2vmin;
     border: none;
+    background-color: rgb(247, 247, 156);
   }
   .closeNote {
     width: 7vmin;
@@ -142,6 +144,7 @@
     margin-right: 17em;
     margin-top: 0vmin;
     width: 2vmin;
+    background-color: rgb(247, 247, 156);
   }
   .editNote {
     width: 8vmin;
@@ -187,14 +190,14 @@
     background-color: rgb(247, 247, 156);
   }
 
-/*Mobile horizontal*/
+/*Tablet iPad Air*/
 @media (min-width: 600px) and (max-width: 1199px) {
   .catNote {
     display: none;
   }
   .titleAddNote {
-    margin-left: -3.5em;
-    margin-top: -1em;
+    align-items: center;
+    margin-top: -4em;
   }
   .Container-note {
     background-color: #92daee;
@@ -206,16 +209,16 @@
     padding: 10px 10px 6vmin 10px;
   }
   input.formTitleNote {
-    width: 22em;
-    margin-left: -4em;
+    width: 20em;
+    margin-left: -1.5em;
     margin-top: -5vmin;
     display: flex;
     align-items: center;
   }
   textarea.textareaNote {
-    width: 20em;
-    margin-left: -10.5em;
-    text-align: center;
+    width: 25em;
+    margin-left: -8em;
+    align-items: center;
     font-family: "Sanchez";
     font-size: 24px;
     color: #15181a;
@@ -224,31 +227,42 @@
   .btnPrimary {
     margin-top: 12em;
     font-size: 22px;
-    margin-left: -29em;
+    margin-left: -23em;
+    width: 14em;
 }
   .noteCard {
-    width: 84vw;
+    width: 80%;
     margin-left: 0.7em;
 }
 .contentBtnClose {
   margin-left: 19.5em;
+  width: 2em;
+  margin-top: -3vmin;
+}
+.closeNote {
+  width: 4vmin;
+  height: 4vmin;
 }
 .contentBtnEdit {
-  margin-left: -2.2em;
+  margin-left: -4em;
   width: 2em;
 }
+.editNote {
+  width: 4vmin;
+  height: 4vmin;
+  margin-left: 0.5vmin;
+
+}
 .editTitleLoad {
-  width: 20em;
+  width: 21em;
   margin-left: 1em;
   border-radius: 10px;;
 }
 
 .editDescriptionLoad {
-  width: 20em;
+  width: 21em;
   border-radius: 10px;
   margin-left: 1em;
 }
-  .BtnLogOut {
-    margin-left: 9em;
-  }
+
 }
