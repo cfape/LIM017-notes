@@ -40,7 +40,6 @@
     flex-direction: column;
     align-content: center;
     align-items: center;
-    margin-left: 4em;
   }
   .LogoGoogle {
     height: 2.2em;
@@ -77,72 +76,64 @@
     margin-top: 6em;
 }
 
-/*Vista horizontal mobile*/
+/*Vista tablet iPad Air*/
 @media (min-width: 600px) and (max-width: 1199px) {
   .Logotext-login {
-    margin-left: -0.5em;
-    height: 4.5em;
-    width: 28em;
-    margin-top: 0em;
+    height: 8em;
+    width: 80%;
+    align-items: center;
+    margin-top: -3em;
   }
   .Form-login {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: start;
-    margin-left: 7em;
-    margin-top: 0vmin;
+    font-size: 30px;
   }
 
   .Content-btn-login {
-    display: flex;
-    flex-direction: column;
-    align-content: center;
     align-items: center;
-    margin-left: -2em;
-    margin-top: -2vmin;
+    margin-top: 0em;
   }
   .BtnLogin {
-    height: 2em;
+    height: 2.5em;
     width: 8em;
-    font-family: "Sans-serif";
-    font-size: 23px;
-    background-color: white;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    color: #6A6F6A;
-    margin: 4vmin;
+    font-size: 32px;
   }
   .Content-btn-google{
-    margin-left: 3em;
-    margin-top: -17vmin;
+    margin-left: 9em;
+    margin-top: 1em;
   }
   .LogoGoogle {
-    height: 11vmin;
-    width: 48vmin;
+    height: 2.5em;
+    width: 10em;
     margin-top: 1vmin;
-    margin-left: 0vmin;
   }
   .BtnGoogle {
-    height: 13vmin;
-    width: 8em;
-    font-family: "Sanchez";
-    background-color: white;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    color: black;
+    height: 3.5em;
+    width: 11em;
   }
   .App-link {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    font-size: 24px;
-    color: black;
-    padding: 4vmin 0vmin 0vmin 0vmin;
+    font-size: 30px;
     margin-left: 1em;
-    margin-top: 0vmin;
-    color: blue;
+    margin-top: 0.5em;
+  }
+}
+/*Vista desktop*/
+@media only screen and (min-width: 1200px) {
+  .Logotext-login {
+    height: 5em;
+    width: 40%;
+    align-items: center;
+    margin-top: 1em;
+  }
+  .Form-login {
+    font-size: 20px;
+  }
+  .Content-btn-google{
+    margin-left: 20em;
+    margin-top: 0em;
+  }
+  .App-link {
+    font-size: 24px;
+    margin-left: 0.2em;
+    margin-top: 0em;
   }
 }

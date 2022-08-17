@@ -84,7 +84,7 @@
     margin-top: 0.5em;
   }
 
-/*For tablet*/
+/*For tablet iPad Air*/
 @media (min-width: 600px) and (max-width: 1199px) {
   .Logotext-register {
     height: 9em;
@@ -101,7 +101,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 0.5em;
+    margin-top: -1em;
   }
   label {
     font-size: 34px;
@@ -115,7 +115,7 @@
     width: 10em;
     height: 13em;
     margin-top: -2em;
-    margin-left: 17em;
+    margin-left: 13em;
   }
   .Content-btn-register {
     margin-top: 0.5em;
@@ -127,7 +127,7 @@
     width: 10em;
   }
   .Link-register {
-    font-size: 30px;
+    font-size: 32px;
   }
 }
 /*For desktop*/

@@ -74,7 +74,7 @@
     padding: 2vmin 2vmin 2vmin 2vmin;
   }
 
-/*For tablet*/
+/*For tablet iPad Air*/
 @media (min-width: 600px) and (max-width: 1199px) {
   .Container-home {
     background-color: #92daee;
@@ -92,25 +92,23 @@
   .App-logo {
     width: 50%;
     margin-top: -2em;
-    margin-left: 15em;
+    margin-left: 13em;
     animation: App-logo-spin infinite 2s linear;
   }
   .Content-btn {
     width: 16em;
-    height: 6em;
     align-items: center;
     margin-top: -12em;
-  /*margin-left: 15em;*/
   }
   .Btn-home {
     background-color: white;
     font-size: 36px;
-    margin-top: 0.5em;
+    margin-top: -7em;
     width: 9em;
     text-align: center;
   }
   .styleLine {
-  margin-top: 2.5em;
+  margin-top: 0em;
   font-size: 36px;
   text-align: center;
   }
